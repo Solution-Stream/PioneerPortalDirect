@@ -22,6 +22,9 @@
 		EC1CBF4A18AC34EE00076249 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2E18AC34EE00076249 /* CoreData.framework */; };
 		EC1CBF5218AC34EE00076249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5018AC34EE00076249 /* InfoPlist.strings */; };
 		EC1CBF5418AC34EE00076249 /* PioneerPortalDirectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF5318AC34EE00076249 /* PioneerPortalDirectTests.m */; };
+		EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */; };
+		EC1CBF6118AC381D00076249 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5E18AC381D00076249 /* Default.png */; };
+		EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5F18AC381D00076249 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		EC1CBF4F18AC34EE00076249 /* PioneerPortalDirectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PioneerPortalDirectTests-Info.plist"; sourceTree = "<group>"; };
 		EC1CBF5118AC34EE00076249 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC1CBF5318AC34EE00076249 /* PioneerPortalDirectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PioneerPortalDirectTests.m; sourceTree = "<group>"; };
+		EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EC1CBF5E18AC381D00076249 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EC1CBF5F18AC381D00076249 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 		EC1CBF1C18AC34ED00076249 = {
 			isa = PBXGroup;
 			children = (
+				EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */,
+				EC1CBF5E18AC381D00076249 /* Default.png */,
+				EC1CBF5F18AC381D00076249 /* Default@2x.png */,
 				EC1CBF3018AC34EE00076249 /* PioneerPortalDirect */,
 				EC1CBF4D18AC34EE00076249 /* PioneerPortalDirectTests */,
 				EC1CBF2718AC34EE00076249 /* Frameworks */,
@@ -230,6 +239,9 @@
 			files = (
 				EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */,
 				EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */,
+				EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */,
+				EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */,
+				EC1CBF6118AC381D00076249 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
