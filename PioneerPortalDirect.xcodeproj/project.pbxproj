@@ -14,7 +14,6 @@
 		EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF3318AC34EE00076249 /* InfoPlist.strings */; };
 		EC1CBF3718AC34EE00076249 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF3618AC34EE00076249 /* main.m */; };
 		EC1CBF3B18AC34EE00076249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF3A18AC34EE00076249 /* AppDelegate.m */; };
-		EC1CBF3E18AC34EE00076249 /* PioneerPortalDirect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF3C18AC34EE00076249 /* PioneerPortalDirect.xcdatamodeld */; };
 		EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF3F18AC34EE00076249 /* Images.xcassets */; };
 		EC1CBF4718AC34EE00076249 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF4618AC34EE00076249 /* XCTest.framework */; };
 		EC1CBF4818AC34EE00076249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2818AC34EE00076249 /* Foundation.framework */; };
@@ -25,6 +24,86 @@
 		EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */; };
 		EC1CBF6118AC381D00076249 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5E18AC381D00076249 /* Default.png */; };
 		EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5F18AC381D00076249 /* Default@2x.png */; };
+		EC1CBF6718AC39CF00076249 /* PD_Icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */; };
+		EC1CBF6818AC39CF00076249 /* PD_Icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */; };
+		EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */; };
+		EC1CBF6B18AC3AA900076249 /* blueCar.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6A18AC3AA900076249 /* blueCar.png */; };
+		EC1CBF7018AC3ABF00076249 /* Cabriolet_Red.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6C18AC3ABF00076249 /* Cabriolet_Red.png */; };
+		EC1CBF7118AC3ABF00076249 /* car-side.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6D18AC3ABF00076249 /* car-side.png */; };
+		EC1CBF7218AC3ABF00076249 /* checked.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6E18AC3ABF00076249 /* checked.jpeg */; };
+		EC1CBF7318AC3ABF00076249 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6F18AC3ABF00076249 /* checked.png */; };
+		EC1CBF8018AC3B9000076249 /* AddDriverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF7518AC3B9000076249 /* AddDriverTableViewController.m */; };
+		EC1CBF8118AC3B9000076249 /* AddVehicleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF7718AC3B9000076249 /* AddVehicleTableViewController.m */; };
+		EC1CBF8C18AC3BAC00076249 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF8718AC3BAC00076249 /* CoreDataTableViewController.m */; };
+		EC1CBF9F18AC3BD100076249 /* DriverDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF9018AC3BD100076249 /* DriverDetailViewController.m */; };
+		EC1CBFA118AC3BD100076249 /* DriversOnPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF9418AC3BD100076249 /* DriversOnPolicy.m */; };
+		EC1CBFA218AC3BD100076249 /* DriversTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF9618AC3BD100076249 /* DriversTableViewCell.m */; };
+		EC1CBFA318AC3BD100076249 /* DriversTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF9818AC3BD100076249 /* DriversTableViewController.m */; };
+		EC1CBFA518AC3BD100076249 /* DropDownDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF9C18AC3BD100076249 /* DropDownDataList.m */; };
+		EC1CBFAF18AC3BED00076249 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFA818AC3BED00076249 /* Globals.m */; };
+		EC1CBFB018AC3BED00076249 /* HomeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFAA18AC3BED00076249 /* HomeNavController.m */; };
+		EC1CBFB118AC3BED00076249 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFAC18AC3BED00076249 /* HomeTableViewController.m */; };
+		EC1CBFB218AC3BED00076249 /* HomNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFAE18AC3BED00076249 /* HomNavControllerViewController.m */; };
+		EC1CBFEC18AC3C9800076249 /* PolicyInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFB618AC3C9800076249 /* PolicyInfoList.m */; };
+		EC1CBFF118AC3C9800076249 /* QuoteAddDriverUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */; };
+		EC1CBFF218AC3C9800076249 /* QuoteAddDriverUITableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */; };
+		EC1CBFF418AC3C9800076249 /* QuoteApplicantListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */; };
+		EC1CBFF518AC3C9800076249 /* QuoteApplicantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC718AC3C9800076249 /* QuoteApplicantTableViewCell.m */; };
+		EC1CBFF618AC3C9800076249 /* QuoteApplicantUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC918AC3C9800076249 /* QuoteApplicantUITableViewController.m */; };
+		EC1CBFF718AC3C9800076249 /* QuoteAssignDriversTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFCB18AC3C9800076249 /* QuoteAssignDriversTableViewController.m */; };
+		EC1CBFF918AC3C9800076249 /* QuoteCoveragesUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFCF18AC3C9800076249 /* QuoteCoveragesUITableViewController.m */; };
+		EC1CBFFB18AC3C9800076249 /* QuoteDriver.xml in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBFD218AC3C9800076249 /* QuoteDriver.xml */; };
+		EC1CBFFC18AC3C9800076249 /* QuoteDriverListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFD418AC3C9800076249 /* QuoteDriverListTableCell.m */; };
+		EC1CBFFD18AC3C9800076249 /* QuoteDriverListUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFD618AC3C9800076249 /* QuoteDriverListUITableViewController.m */; };
+		EC1CBFFE18AC3C9800076249 /* QuoteDriverSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFD818AC3C9800076249 /* QuoteDriverSelectTableViewController.m */; };
+		EC1CBFFF18AC3C9800076249 /* QuoteReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFDA18AC3C9800076249 /* QuoteReviewTableViewCell.m */; };
+		EC1CC00018AC3C9800076249 /* QuoteReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFDC18AC3C9800076249 /* QuoteReviewTableViewController.m */; };
+		EC1CC00218AC3C9800076249 /* QuoteUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFE018AC3C9800076249 /* QuoteUITabBarController.m */; };
+		EC1CC00518AC3C9800076249 /* QuoteVehicleListUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFE518AC3C9800076249 /* QuoteVehicleListUITableViewController.m */; };
+		EC1CC00618AC3C9800076249 /* QuoteVehicleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFE718AC3C9800076249 /* QuoteVehicleNavigationController.m */; };
+		EC1CC00718AC3C9800076249 /* QuoteXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBFE818AC3C9800076249 /* QuoteXML.xml */; };
+		EC1CC01E18AC3D0B00076249 /* SetUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC00A18AC3D0A00076249 /* SetUserInfo.m */; };
+		EC1CC01F18AC3D0B00076249 /* TabBarContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC00C18AC3D0A00076249 /* TabBarContainerViewController.m */; };
+		EC1CC02018AC3D0B00076249 /* VehiclesDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC00D18AC3D0A00076249 /* VehiclesDetailTableViewController.m */; };
+		EC1CC02118AC3D0B00076249 /* VehiclesOnPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC00F18AC3D0A00076249 /* VehiclesOnPolicy.m */; };
+		EC1CC02218AC3D0B00076249 /* VehiclesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC01118AC3D0A00076249 /* VehiclesTableViewCell.m */; };
+		EC1CC02318AC3D0B00076249 /* VehiclesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC01318AC3D0A00076249 /* VehiclesTableViewController.m */; };
+		EC1CC02618AC3D0B00076249 /* ViewCertificateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC01918AC3D0B00076249 /* ViewCertificateTableViewCell.m */; };
+		EC1CC02718AC3D0B00076249 /* ViewCertificateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC01B18AC3D0B00076249 /* ViewCertificateTableViewController.m */; };
+		EC1CC02818AC3D0B00076249 /* ViewCertificateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC01D18AC3D0B00076249 /* ViewCertificateViewController.m */; };
+		EC1CC03618AC5A5100076249 /* PDMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC03518AC5A5100076249 /* PDMain.storyboard */; };
+		EC1CC04418AC5BCD00076249 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC04118AC5BCD00076249 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EC1CC04518AC5BCD00076249 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC04318AC5BCD00076249 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EC1CC04C18AC5D9E00076249 /* DeleteVehicleFromPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC04B18AC5D9E00076249 /* DeleteVehicleFromPolicy.m */; };
+		EC1CC04E18AC5DC300076249 /* EditUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC04D18AC5DC300076249 /* EditUserInfo.m */; };
+		EC1CC05218AC5DE200076249 /* GetQuoteRate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC04F18AC5DE200076249 /* GetQuoteRate.m */; };
+		EC1CC05318AC5DE200076249 /* InsertDriverIntoQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC05018AC5DE200076249 /* InsertDriverIntoQuote.m */; };
+		EC1CC05418AC5DE200076249 /* InsertVehicleIntoQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC05118AC5DE200076249 /* InsertVehicleIntoQuote.m */; };
+		EC1CC05718AC5E1200076249 /* QuoteListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC05518AC5E1200076249 /* QuoteListTableViewCell.m */; };
+		EC1CC05818AC5E1200076249 /* SendEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC05618AC5E1200076249 /* SendEmail.m */; };
+		EC1CC05C18AC6B5300076249 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC05918AC6B5300076249 /* Model.xcdatamodeld */; };
+		EC1CC05E18AC75F800076249 /* blueGrad5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC05D18AC75F800076249 /* blueGrad5.jpeg */; };
+		EC1CC06018AC769300076249 /* PSM-logo-150px.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC05F18AC769300076249 /* PSM-logo-150px.png */; };
+		EC1CC06318AC77FA00076249 /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC06218AC77FA00076249 /* LoginTableViewController.m */; };
+		EC1CC06618AC782800076249 /* ForgotPasswordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC06518AC782800076249 /* ForgotPasswordTableViewController.m */; };
+		EC1CC06818AC7A5D00076249 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC06718AC7A5D00076249 /* question.png */; };
+		EC1CC06B18AC7A9A00076249 /* SmallBluePlus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC06918AC7A9A00076249 /* SmallBluePlus.jpg */; };
+		EC1CC06C18AC7A9A00076249 /* SmallBluePlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC06A18AC7A9A00076249 /* SmallBluePlus.png */; };
+		EC1CC06F18AC7B4D00076249 /* QuoteListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC06E18AC7B4D00076249 /* QuoteListTableViewController.m */; };
+		EC1CC07218AC7BC800076249 /* QuoteVehicleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC07118AC7BC800076249 /* QuoteVehicleTableViewController.m */; };
+		EC1CC07418AC7C3300076249 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC07318AC7C3300076249 /* tick.png */; };
+		EC1CC07618AC7CBB00076249 /* user_real_person.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CC07518AC7CBB00076249 /* user_real_person.png */; };
+		EC1CC09B18AD07B800076249 /* DropdownData.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC09A18AD07B800076249 /* DropdownData.m */; };
+		EC1CC09E18AD07B900076249 /* QuoteCoverages.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC09D18AD07B900076249 /* QuoteCoverages.m */; };
+		EC1CC0A118AD07B900076249 /* VehicleList.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0A018AD07B900076249 /* VehicleList.m */; };
+		EC1CC0A418AD07B900076249 /* PolicyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0A318AD07B900076249 /* PolicyInfo.m */; };
+		EC1CC0A718AD07B900076249 /* QuoteApplicant.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0A618AD07B900076249 /* QuoteApplicant.m */; };
+		EC1CC0AA18AD07B900076249 /* Quotes.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0A918AD07B900076249 /* Quotes.m */; };
+		EC1CC0AD18AD07B900076249 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0AC18AD07B900076249 /* UserInfo.m */; };
+		EC1CC0B018AD07B900076249 /* DriverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0AF18AD07B900076249 /* DriverInfo.m */; };
+		EC1CC0B318AD07B900076249 /* QuoteDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B218AD07B900076249 /* QuoteDriver.m */; };
+		EC1CC0B618AD07B900076249 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B518AD07B900076249 /* Login.m */; };
+		EC1CC0B918AD07B900076249 /* QuoteVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B818AD07B900076249 /* QuoteVehicle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +128,6 @@
 		EC1CBF3818AC34EE00076249 /* PioneerPortalDirect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PioneerPortalDirect-Prefix.pch"; sourceTree = "<group>"; };
 		EC1CBF3918AC34EE00076249 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC1CBF3A18AC34EE00076249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EC1CBF3D18AC34EE00076249 /* PioneerPortalDirect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PioneerPortalDirect.xcdatamodel; sourceTree = "<group>"; };
 		EC1CBF3F18AC34EE00076249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC1CBF4518AC34EE00076249 /* PioneerPortalDirectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PioneerPortalDirectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1CBF4618AC34EE00076249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -59,6 +137,149 @@
 		EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EC1CBF5E18AC381D00076249 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		EC1CBF5F18AC381D00076249 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_57.png; sourceTree = "<group>"; };
+		EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_114.png; sourceTree = "<group>"; };
+		EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PSM-logo-57px.png"; sourceTree = "<group>"; };
+		EC1CBF6A18AC3AA900076249 /* blueCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueCar.png; sourceTree = "<group>"; };
+		EC1CBF6C18AC3ABF00076249 /* Cabriolet_Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cabriolet_Red.png; sourceTree = "<group>"; };
+		EC1CBF6D18AC3ABF00076249 /* car-side.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car-side.png"; sourceTree = "<group>"; };
+		EC1CBF6E18AC3ABF00076249 /* checked.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = checked.jpeg; sourceTree = "<group>"; };
+		EC1CBF6F18AC3ABF00076249 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		EC1CBF7418AC3B9000076249 /* AddDriverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDriverTableViewController.h; sourceTree = "<group>"; };
+		EC1CBF7518AC3B9000076249 /* AddDriverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDriverTableViewController.m; sourceTree = "<group>"; };
+		EC1CBF7618AC3B9000076249 /* AddVehicleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVehicleTableViewController.h; sourceTree = "<group>"; };
+		EC1CBF7718AC3B9000076249 /* AddVehicleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVehicleTableViewController.m; sourceTree = "<group>"; };
+		EC1CBF8618AC3BAC00076249 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		EC1CBF8718AC3BAC00076249 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		EC1CBF8F18AC3BD100076249 /* DriverDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverDetailViewController.h; sourceTree = "<group>"; };
+		EC1CBF9018AC3BD100076249 /* DriverDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverDetailViewController.m; sourceTree = "<group>"; };
+		EC1CBF9318AC3BD100076249 /* DriversOnPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriversOnPolicy.h; sourceTree = "<group>"; };
+		EC1CBF9418AC3BD100076249 /* DriversOnPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriversOnPolicy.m; sourceTree = "<group>"; };
+		EC1CBF9518AC3BD100076249 /* DriversTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriversTableViewCell.h; sourceTree = "<group>"; };
+		EC1CBF9618AC3BD100076249 /* DriversTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriversTableViewCell.m; sourceTree = "<group>"; };
+		EC1CBF9718AC3BD100076249 /* DriversTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriversTableViewController.h; sourceTree = "<group>"; };
+		EC1CBF9818AC3BD100076249 /* DriversTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriversTableViewController.m; sourceTree = "<group>"; };
+		EC1CBF9B18AC3BD100076249 /* DropDownDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownDataList.h; sourceTree = "<group>"; };
+		EC1CBF9C18AC3BD100076249 /* DropDownDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownDataList.m; sourceTree = "<group>"; };
+		EC1CBFA718AC3BED00076249 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		EC1CBFA818AC3BED00076249 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		EC1CBFA918AC3BED00076249 /* HomeNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavController.h; sourceTree = "<group>"; };
+		EC1CBFAA18AC3BED00076249 /* HomeNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavController.m; sourceTree = "<group>"; };
+		EC1CBFAB18AC3BED00076249 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		EC1CBFAC18AC3BED00076249 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		EC1CBFAD18AC3BED00076249 /* HomNavControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomNavControllerViewController.h; sourceTree = "<group>"; };
+		EC1CBFAE18AC3BED00076249 /* HomNavControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomNavControllerViewController.m; sourceTree = "<group>"; };
+		EC1CBFB518AC3C9800076249 /* PolicyInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolicyInfoList.h; sourceTree = "<group>"; };
+		EC1CBFB618AC3C9800076249 /* PolicyInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolicyInfoList.m; sourceTree = "<group>"; };
+		EC1CBFBF18AC3C9800076249 /* QuoteAddDriverUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteAddDriverUITableViewController.h; sourceTree = "<group>"; };
+		EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAddDriverUITableViewController.m; sourceTree = "<group>"; };
+		EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteAddDriverUITableViewController.xib; sourceTree = "<group>"; };
+		EC1CBFC418AC3C9800076249 /* QuoteApplicantListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicantListTableViewController.h; sourceTree = "<group>"; };
+		EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteApplicantListTableViewController.m; sourceTree = "<group>"; };
+		EC1CBFC618AC3C9800076249 /* QuoteApplicantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicantTableViewCell.h; sourceTree = "<group>"; };
+		EC1CBFC718AC3C9800076249 /* QuoteApplicantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteApplicantTableViewCell.m; sourceTree = "<group>"; };
+		EC1CBFC818AC3C9800076249 /* QuoteApplicantUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicantUITableViewController.h; sourceTree = "<group>"; };
+		EC1CBFC918AC3C9800076249 /* QuoteApplicantUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteApplicantUITableViewController.m; sourceTree = "<group>"; };
+		EC1CBFCA18AC3C9800076249 /* QuoteAssignDriversTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteAssignDriversTableViewController.h; sourceTree = "<group>"; };
+		EC1CBFCB18AC3C9800076249 /* QuoteAssignDriversTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAssignDriversTableViewController.m; sourceTree = "<group>"; };
+		EC1CBFCE18AC3C9800076249 /* QuoteCoveragesUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCoveragesUITableViewController.h; sourceTree = "<group>"; };
+		EC1CBFCF18AC3C9800076249 /* QuoteCoveragesUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCoveragesUITableViewController.m; sourceTree = "<group>"; };
+		EC1CBFD218AC3C9800076249 /* QuoteDriver.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = QuoteDriver.xml; sourceTree = "<group>"; };
+		EC1CBFD318AC3C9800076249 /* QuoteDriverListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriverListTableCell.h; sourceTree = "<group>"; };
+		EC1CBFD418AC3C9800076249 /* QuoteDriverListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriverListTableCell.m; sourceTree = "<group>"; };
+		EC1CBFD518AC3C9800076249 /* QuoteDriverListUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriverListUITableViewController.h; sourceTree = "<group>"; };
+		EC1CBFD618AC3C9800076249 /* QuoteDriverListUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriverListUITableViewController.m; sourceTree = "<group>"; };
+		EC1CBFD718AC3C9800076249 /* QuoteDriverSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriverSelectTableViewController.h; sourceTree = "<group>"; };
+		EC1CBFD818AC3C9800076249 /* QuoteDriverSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriverSelectTableViewController.m; sourceTree = "<group>"; };
+		EC1CBFD918AC3C9800076249 /* QuoteReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteReviewTableViewCell.h; sourceTree = "<group>"; };
+		EC1CBFDA18AC3C9800076249 /* QuoteReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteReviewTableViewCell.m; sourceTree = "<group>"; };
+		EC1CBFDB18AC3C9800076249 /* QuoteReviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteReviewTableViewController.h; sourceTree = "<group>"; };
+		EC1CBFDC18AC3C9800076249 /* QuoteReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteReviewTableViewController.m; sourceTree = "<group>"; };
+		EC1CBFDF18AC3C9800076249 /* QuoteUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteUITabBarController.h; sourceTree = "<group>"; };
+		EC1CBFE018AC3C9800076249 /* QuoteUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteUITabBarController.m; sourceTree = "<group>"; };
+		EC1CBFE418AC3C9800076249 /* QuoteVehicleListUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVehicleListUITableViewController.h; sourceTree = "<group>"; };
+		EC1CBFE518AC3C9800076249 /* QuoteVehicleListUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVehicleListUITableViewController.m; sourceTree = "<group>"; };
+		EC1CBFE618AC3C9800076249 /* QuoteVehicleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVehicleNavigationController.h; sourceTree = "<group>"; };
+		EC1CBFE718AC3C9800076249 /* QuoteVehicleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVehicleNavigationController.m; sourceTree = "<group>"; };
+		EC1CBFE818AC3C9800076249 /* QuoteXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = QuoteXML.xml; sourceTree = "<group>"; };
+		EC1CC00918AC3D0A00076249 /* SetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUserInfo.h; sourceTree = "<group>"; };
+		EC1CC00A18AC3D0A00076249 /* SetUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUserInfo.m; sourceTree = "<group>"; };
+		EC1CC00B18AC3D0A00076249 /* TabBarContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarContainerViewController.h; sourceTree = "<group>"; };
+		EC1CC00C18AC3D0A00076249 /* TabBarContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarContainerViewController.m; sourceTree = "<group>"; };
+		EC1CC00D18AC3D0A00076249 /* VehiclesDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesDetailTableViewController.m; sourceTree = "<group>"; };
+		EC1CC00E18AC3D0A00076249 /* VehiclesOnPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesOnPolicy.h; sourceTree = "<group>"; };
+		EC1CC00F18AC3D0A00076249 /* VehiclesOnPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesOnPolicy.m; sourceTree = "<group>"; };
+		EC1CC01018AC3D0A00076249 /* VehiclesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesTableViewCell.h; sourceTree = "<group>"; };
+		EC1CC01118AC3D0A00076249 /* VehiclesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesTableViewCell.m; sourceTree = "<group>"; };
+		EC1CC01218AC3D0A00076249 /* VehiclesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesTableViewController.h; sourceTree = "<group>"; };
+		EC1CC01318AC3D0A00076249 /* VehiclesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesTableViewController.m; sourceTree = "<group>"; };
+		EC1CC01818AC3D0B00076249 /* ViewCertificateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCertificateTableViewCell.h; sourceTree = "<group>"; };
+		EC1CC01918AC3D0B00076249 /* ViewCertificateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCertificateTableViewCell.m; sourceTree = "<group>"; };
+		EC1CC01A18AC3D0B00076249 /* ViewCertificateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCertificateTableViewController.h; sourceTree = "<group>"; };
+		EC1CC01B18AC3D0B00076249 /* ViewCertificateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCertificateTableViewController.m; sourceTree = "<group>"; };
+		EC1CC01C18AC3D0B00076249 /* ViewCertificateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCertificateViewController.h; sourceTree = "<group>"; };
+		EC1CC01D18AC3D0B00076249 /* ViewCertificateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCertificateViewController.m; sourceTree = "<group>"; };
+		EC1CC02B18AC575600076249 /* VehiclesDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesDetailTableViewController.h; sourceTree = "<group>"; };
+		EC1CC02C18AC586900076249 /* QuoteListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteListTableViewCell.h; sourceTree = "<group>"; };
+		EC1CC02D18AC58A900076249 /* QuoteVehicleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVehicleTableViewController.h; sourceTree = "<group>"; };
+		EC1CC02E18AC58E500076249 /* QuoteListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteListTableViewController.h; sourceTree = "<group>"; };
+		EC1CC03118AC597E00076249 /* SendEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendEmail.h; sourceTree = "<group>"; };
+		EC1CC03418AC59C200076249 /* QuoteDriverUITabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriverUITabController.h; sourceTree = "<group>"; };
+		EC1CC03518AC5A5100076249 /* PDMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDMain.storyboard; sourceTree = "<group>"; };
+		EC1CC03B18AC5AD500076249 /* EditUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserInfo.h; sourceTree = "<group>"; };
+		EC1CC03C18AC5AEE00076249 /* InsertVehicleIntoQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertVehicleIntoQuote.h; sourceTree = "<group>"; };
+		EC1CC04018AC5BCD00076249 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		EC1CC04118AC5BCD00076249 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		EC1CC04218AC5BCD00076249 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		EC1CC04318AC5BCD00076249 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		EC1CC04618AC5CB900076249 /* GetQuoteRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetQuoteRate.h; sourceTree = "<group>"; };
+		EC1CC04A18AC5D9E00076249 /* DeleteVehicleFromPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteVehicleFromPolicy.h; sourceTree = "<group>"; };
+		EC1CC04B18AC5D9E00076249 /* DeleteVehicleFromPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteVehicleFromPolicy.m; sourceTree = "<group>"; };
+		EC1CC04D18AC5DC300076249 /* EditUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfo.m; sourceTree = "<group>"; };
+		EC1CC04F18AC5DE200076249 /* GetQuoteRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetQuoteRate.m; sourceTree = "<group>"; };
+		EC1CC05018AC5DE200076249 /* InsertDriverIntoQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertDriverIntoQuote.m; sourceTree = "<group>"; };
+		EC1CC05118AC5DE200076249 /* InsertVehicleIntoQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertVehicleIntoQuote.m; sourceTree = "<group>"; };
+		EC1CC05518AC5E1200076249 /* QuoteListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteListTableViewCell.m; sourceTree = "<group>"; };
+		EC1CC05618AC5E1200076249 /* SendEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendEmail.m; sourceTree = "<group>"; };
+		EC1CC05A18AC6B5300076249 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		EC1CC05B18AC6B5300076249 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EC1CC05D18AC75F800076249 /* blueGrad5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueGrad5.jpeg; sourceTree = "<group>"; };
+		EC1CC05F18AC769300076249 /* PSM-logo-150px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PSM-logo-150px.png"; sourceTree = "<group>"; };
+		EC1CC06118AC77FA00076249 /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
+		EC1CC06218AC77FA00076249 /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
+		EC1CC06418AC782800076249 /* ForgotPasswordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordTableViewController.h; sourceTree = "<group>"; };
+		EC1CC06518AC782800076249 /* ForgotPasswordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordTableViewController.m; sourceTree = "<group>"; };
+		EC1CC06718AC7A5D00076249 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		EC1CC06918AC7A9A00076249 /* SmallBluePlus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SmallBluePlus.jpg; sourceTree = "<group>"; };
+		EC1CC06A18AC7A9A00076249 /* SmallBluePlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallBluePlus.png; sourceTree = "<group>"; };
+		EC1CC06D18AC7B4D00076249 /* QuoteListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteListTableViewController.h; sourceTree = "<group>"; };
+		EC1CC06E18AC7B4D00076249 /* QuoteListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteListTableViewController.m; sourceTree = "<group>"; };
+		EC1CC07118AC7BC800076249 /* QuoteVehicleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVehicleTableViewController.m; sourceTree = "<group>"; };
+		EC1CC07318AC7C3300076249 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		EC1CC07518AC7CBB00076249 /* user_real_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_real_person.png; sourceTree = "<group>"; };
+		EC1CC09818AD05B500076249 /* InsertDriverIntoQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertDriverIntoQuote.h; sourceTree = "<group>"; };
+		EC1CC09918AD07B800076249 /* DropdownData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownData.h; sourceTree = "<group>"; };
+		EC1CC09A18AD07B800076249 /* DropdownData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropdownData.m; sourceTree = "<group>"; };
+		EC1CC09C18AD07B900076249 /* QuoteCoverages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCoverages.h; sourceTree = "<group>"; };
+		EC1CC09D18AD07B900076249 /* QuoteCoverages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCoverages.m; sourceTree = "<group>"; };
+		EC1CC09F18AD07B900076249 /* VehicleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleList.h; sourceTree = "<group>"; };
+		EC1CC0A018AD07B900076249 /* VehicleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleList.m; sourceTree = "<group>"; };
+		EC1CC0A218AD07B900076249 /* PolicyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolicyInfo.h; sourceTree = "<group>"; };
+		EC1CC0A318AD07B900076249 /* PolicyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolicyInfo.m; sourceTree = "<group>"; };
+		EC1CC0A518AD07B900076249 /* QuoteApplicant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicant.h; sourceTree = "<group>"; };
+		EC1CC0A618AD07B900076249 /* QuoteApplicant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteApplicant.m; sourceTree = "<group>"; };
+		EC1CC0A818AD07B900076249 /* Quotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotes.h; sourceTree = "<group>"; };
+		EC1CC0A918AD07B900076249 /* Quotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotes.m; sourceTree = "<group>"; };
+		EC1CC0AB18AD07B900076249 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		EC1CC0AC18AD07B900076249 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		EC1CC0AE18AD07B900076249 /* DriverInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverInfo.h; sourceTree = "<group>"; };
+		EC1CC0AF18AD07B900076249 /* DriverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverInfo.m; sourceTree = "<group>"; };
+		EC1CC0B118AD07B900076249 /* QuoteDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriver.h; sourceTree = "<group>"; };
+		EC1CC0B218AD07B900076249 /* QuoteDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriver.m; sourceTree = "<group>"; };
+		EC1CC0B418AD07B900076249 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		EC1CC0B518AD07B900076249 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		EC1CC0B718AD07B900076249 /* QuoteVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVehicle.h; sourceTree = "<group>"; };
+		EC1CC0B818AD07B900076249 /* QuoteVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVehicle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +343,95 @@
 		EC1CBF3018AC34EE00076249 /* PioneerPortalDirect */ = {
 			isa = PBXGroup;
 			children = (
+				EC1CC02A18AC54DB00076249 /* Action Classes */,
+				EC1CC02918AC53B100076249 /* Entities */,
+				EC1CBF7418AC3B9000076249 /* AddDriverTableViewController.h */,
+				EC1CBF7518AC3B9000076249 /* AddDriverTableViewController.m */,
+				EC1CBF7618AC3B9000076249 /* AddVehicleTableViewController.h */,
+				EC1CBF7718AC3B9000076249 /* AddVehicleTableViewController.m */,
 				EC1CBF3918AC34EE00076249 /* AppDelegate.h */,
 				EC1CBF3A18AC34EE00076249 /* AppDelegate.m */,
+				EC1CBF8618AC3BAC00076249 /* CoreDataTableViewController.h */,
+				EC1CBF8718AC3BAC00076249 /* CoreDataTableViewController.m */,
+				EC1CBF8F18AC3BD100076249 /* DriverDetailViewController.h */,
+				EC1CBF9018AC3BD100076249 /* DriverDetailViewController.m */,
+				EC1CBF9518AC3BD100076249 /* DriversTableViewCell.h */,
+				EC1CBF9618AC3BD100076249 /* DriversTableViewCell.m */,
+				EC1CBF9718AC3BD100076249 /* DriversTableViewController.h */,
+				EC1CBF9818AC3BD100076249 /* DriversTableViewController.m */,
+				EC1CC06418AC782800076249 /* ForgotPasswordTableViewController.h */,
+				EC1CC06518AC782800076249 /* ForgotPasswordTableViewController.m */,
+				EC1CBFA718AC3BED00076249 /* Globals.h */,
+				EC1CBFA818AC3BED00076249 /* Globals.m */,
+				EC1CBFA918AC3BED00076249 /* HomeNavController.h */,
+				EC1CBFAA18AC3BED00076249 /* HomeNavController.m */,
+				EC1CBFAB18AC3BED00076249 /* HomeTableViewController.h */,
+				EC1CBFAC18AC3BED00076249 /* HomeTableViewController.m */,
+				EC1CBFAD18AC3BED00076249 /* HomNavControllerViewController.h */,
+				EC1CBFAE18AC3BED00076249 /* HomNavControllerViewController.m */,
 				EC1CBF3F18AC34EE00076249 /* Images.xcassets */,
-				EC1CBF3C18AC34EE00076249 /* PioneerPortalDirect.xcdatamodeld */,
+				EC1CC04018AC5BCD00076249 /* JSONKit.h */,
+				EC1CC04118AC5BCD00076249 /* JSONKit.m */,
+				EC1CC04218AC5BCD00076249 /* KeychainItemWrapper.h */,
+				EC1CC04318AC5BCD00076249 /* KeychainItemWrapper.m */,
+				EC1CC06118AC77FA00076249 /* LoginTableViewController.h */,
+				EC1CC06218AC77FA00076249 /* LoginTableViewController.m */,
+				EC1CC05918AC6B5300076249 /* Model.xcdatamodeld */,
+				EC1CC03518AC5A5100076249 /* PDMain.storyboard */,
+				EC1CBFBF18AC3C9800076249 /* QuoteAddDriverUITableViewController.h */,
+				EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */,
+				EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */,
+				EC1CBFC418AC3C9800076249 /* QuoteApplicantListTableViewController.h */,
+				EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */,
+				EC1CBFC618AC3C9800076249 /* QuoteApplicantTableViewCell.h */,
+				EC1CBFC718AC3C9800076249 /* QuoteApplicantTableViewCell.m */,
+				EC1CBFC818AC3C9800076249 /* QuoteApplicantUITableViewController.h */,
+				EC1CBFC918AC3C9800076249 /* QuoteApplicantUITableViewController.m */,
+				EC1CBFCA18AC3C9800076249 /* QuoteAssignDriversTableViewController.h */,
+				EC1CBFCB18AC3C9800076249 /* QuoteAssignDriversTableViewController.m */,
+				EC1CBFCE18AC3C9800076249 /* QuoteCoveragesUITableViewController.h */,
+				EC1CBFCF18AC3C9800076249 /* QuoteCoveragesUITableViewController.m */,
+				EC1CBFD218AC3C9800076249 /* QuoteDriver.xml */,
+				EC1CBFD318AC3C9800076249 /* QuoteDriverListTableCell.h */,
+				EC1CBFD418AC3C9800076249 /* QuoteDriverListTableCell.m */,
+				EC1CBFD518AC3C9800076249 /* QuoteDriverListUITableViewController.h */,
+				EC1CBFD618AC3C9800076249 /* QuoteDriverListUITableViewController.m */,
+				EC1CBFD718AC3C9800076249 /* QuoteDriverSelectTableViewController.h */,
+				EC1CBFD818AC3C9800076249 /* QuoteDriverSelectTableViewController.m */,
+				EC1CC03418AC59C200076249 /* QuoteDriverUITabController.h */,
+				EC1CC02C18AC586900076249 /* QuoteListTableViewCell.h */,
+				EC1CC05518AC5E1200076249 /* QuoteListTableViewCell.m */,
+				EC1CC06D18AC7B4D00076249 /* QuoteListTableViewController.h */,
+				EC1CC06E18AC7B4D00076249 /* QuoteListTableViewController.m */,
+				EC1CBFD918AC3C9800076249 /* QuoteReviewTableViewCell.h */,
+				EC1CBFDA18AC3C9800076249 /* QuoteReviewTableViewCell.m */,
+				EC1CBFDB18AC3C9800076249 /* QuoteReviewTableViewController.h */,
+				EC1CBFDC18AC3C9800076249 /* QuoteReviewTableViewController.m */,
+				EC1CBFDF18AC3C9800076249 /* QuoteUITabBarController.h */,
+				EC1CBFE018AC3C9800076249 /* QuoteUITabBarController.m */,
+				EC1CBFE418AC3C9800076249 /* QuoteVehicleListUITableViewController.h */,
+				EC1CBFE518AC3C9800076249 /* QuoteVehicleListUITableViewController.m */,
+				EC1CBFE618AC3C9800076249 /* QuoteVehicleNavigationController.h */,
+				EC1CBFE718AC3C9800076249 /* QuoteVehicleNavigationController.m */,
+				EC1CC02D18AC58A900076249 /* QuoteVehicleTableViewController.h */,
+				EC1CC07118AC7BC800076249 /* QuoteVehicleTableViewController.m */,
+				EC1CBFE818AC3C9800076249 /* QuoteXML.xml */,
+				EC1CC00B18AC3D0A00076249 /* TabBarContainerViewController.h */,
+				EC1CC00C18AC3D0A00076249 /* TabBarContainerViewController.m */,
+				EC1CC02B18AC575600076249 /* VehiclesDetailTableViewController.h */,
+				EC1CC00D18AC3D0A00076249 /* VehiclesDetailTableViewController.m */,
+				EC1CC01018AC3D0A00076249 /* VehiclesTableViewCell.h */,
+				EC1CC01118AC3D0A00076249 /* VehiclesTableViewCell.m */,
+				EC1CC01218AC3D0A00076249 /* VehiclesTableViewController.h */,
+				EC1CC01318AC3D0A00076249 /* VehiclesTableViewController.m */,
+				EC1CC01818AC3D0B00076249 /* ViewCertificateTableViewCell.h */,
+				EC1CC01918AC3D0B00076249 /* ViewCertificateTableViewCell.m */,
+				EC1CC01A18AC3D0B00076249 /* ViewCertificateTableViewController.h */,
+				EC1CC01B18AC3D0B00076249 /* ViewCertificateTableViewController.m */,
+				EC1CC01C18AC3D0B00076249 /* ViewCertificateViewController.h */,
+				EC1CC01D18AC3D0B00076249 /* ViewCertificateViewController.m */,
+				EC1CC02E18AC58E500076249 /* QuoteListTableViewController.h */,
+				EC1CC02D18AC58A900076249 /* QuoteVehicleTableViewController.h */,
 				EC1CBF3118AC34EE00076249 /* Supporting Files */,
 			);
 			path = PioneerPortalDirect;
@@ -163,11 +469,85 @@
 		EC1CBF6318AC38C600076249 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EC1CBF6A18AC3AA900076249 /* blueCar.png */,
+				EC1CC05D18AC75F800076249 /* blueGrad5.jpeg */,
+				EC1CBF6C18AC3ABF00076249 /* Cabriolet_Red.png */,
+				EC1CBF6D18AC3ABF00076249 /* car-side.png */,
+				EC1CBF6E18AC3ABF00076249 /* checked.jpeg */,
+				EC1CBF6F18AC3ABF00076249 /* checked.png */,
 				EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */,
 				EC1CBF5E18AC381D00076249 /* Default.png */,
 				EC1CBF5F18AC381D00076249 /* Default@2x.png */,
+				EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */,
+				EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */,
+				EC1CC05F18AC769300076249 /* PSM-logo-150px.png */,
+				EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */,
+				EC1CC06718AC7A5D00076249 /* question.png */,
+				EC1CC06918AC7A9A00076249 /* SmallBluePlus.jpg */,
+				EC1CC06A18AC7A9A00076249 /* SmallBluePlus.png */,
+				EC1CC07318AC7C3300076249 /* tick.png */,
+				EC1CC07518AC7CBB00076249 /* user_real_person.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		EC1CC02918AC53B100076249 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EC1CC0AE18AD07B900076249 /* DriverInfo.h */,
+				EC1CC0AF18AD07B900076249 /* DriverInfo.m */,
+				EC1CC09918AD07B800076249 /* DropdownData.h */,
+				EC1CC09A18AD07B800076249 /* DropdownData.m */,
+				EC1CC0B418AD07B900076249 /* Login.h */,
+				EC1CC0B518AD07B900076249 /* Login.m */,
+				EC1CC0A218AD07B900076249 /* PolicyInfo.h */,
+				EC1CC0A318AD07B900076249 /* PolicyInfo.m */,
+				EC1CC0A518AD07B900076249 /* QuoteApplicant.h */,
+				EC1CC0A618AD07B900076249 /* QuoteApplicant.m */,
+				EC1CC09C18AD07B900076249 /* QuoteCoverages.h */,
+				EC1CC09D18AD07B900076249 /* QuoteCoverages.m */,
+				EC1CC0B118AD07B900076249 /* QuoteDriver.h */,
+				EC1CC0B218AD07B900076249 /* QuoteDriver.m */,
+				EC1CC0A818AD07B900076249 /* Quotes.h */,
+				EC1CC0A918AD07B900076249 /* Quotes.m */,
+				EC1CC0B718AD07B900076249 /* QuoteVehicle.h */,
+				EC1CC0B818AD07B900076249 /* QuoteVehicle.m */,
+				EC1CC0AB18AD07B900076249 /* UserInfo.h */,
+				EC1CC0AC18AD07B900076249 /* UserInfo.m */,
+				EC1CC09F18AD07B900076249 /* VehicleList.h */,
+				EC1CC0A018AD07B900076249 /* VehicleList.m */,
+			);
+			name = Entities;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EC1CC02A18AC54DB00076249 /* Action Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC1CC04A18AC5D9E00076249 /* DeleteVehicleFromPolicy.h */,
+				EC1CC04B18AC5D9E00076249 /* DeleteVehicleFromPolicy.m */,
+				EC1CBF9318AC3BD100076249 /* DriversOnPolicy.h */,
+				EC1CBF9418AC3BD100076249 /* DriversOnPolicy.m */,
+				EC1CBF9B18AC3BD100076249 /* DropDownDataList.h */,
+				EC1CBF9C18AC3BD100076249 /* DropDownDataList.m */,
+				EC1CC03B18AC5AD500076249 /* EditUserInfo.h */,
+				EC1CC04D18AC5DC300076249 /* EditUserInfo.m */,
+				EC1CC04618AC5CB900076249 /* GetQuoteRate.h */,
+				EC1CC04F18AC5DE200076249 /* GetQuoteRate.m */,
+				EC1CC09818AD05B500076249 /* InsertDriverIntoQuote.h */,
+				EC1CC05018AC5DE200076249 /* InsertDriverIntoQuote.m */,
+				EC1CC03C18AC5AEE00076249 /* InsertVehicleIntoQuote.h */,
+				EC1CC05118AC5DE200076249 /* InsertVehicleIntoQuote.m */,
+				EC1CBFB518AC3C9800076249 /* PolicyInfoList.h */,
+				EC1CBFB618AC3C9800076249 /* PolicyInfoList.m */,
+				EC1CC03118AC597E00076249 /* SendEmail.h */,
+				EC1CC05618AC5E1200076249 /* SendEmail.m */,
+				EC1CC00918AC3D0A00076249 /* SetUserInfo.h */,
+				EC1CC00A18AC3D0A00076249 /* SetUserInfo.m */,
+				EC1CC00E18AC3D0A00076249 /* VehiclesOnPolicy.h */,
+				EC1CC00F18AC3D0A00076249 /* VehiclesOnPolicy.m */,
+			);
+			name = "Action Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,11 +625,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1CBF6B18AC3AA900076249 /* blueCar.png in Resources */,
+				EC1CBF6718AC39CF00076249 /* PD_Icon_57.png in Resources */,
 				EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */,
+				EC1CBF7318AC3ABF00076249 /* checked.png in Resources */,
+				EC1CBFF218AC3C9800076249 /* QuoteAddDriverUITableViewController.xib in Resources */,
+				EC1CC05E18AC75F800076249 /* blueGrad5.jpeg in Resources */,
 				EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */,
+				EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */,
 				EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */,
+				EC1CBFFB18AC3C9800076249 /* QuoteDriver.xml in Resources */,
+				EC1CC06018AC769300076249 /* PSM-logo-150px.png in Resources */,
+				EC1CBF6818AC39CF00076249 /* PD_Icon_114.png in Resources */,
+				EC1CBF7018AC3ABF00076249 /* Cabriolet_Red.png in Resources */,
+				EC1CC06C18AC7A9A00076249 /* SmallBluePlus.png in Resources */,
+				EC1CC07618AC7CBB00076249 /* user_real_person.png in Resources */,
+				EC1CC07418AC7C3300076249 /* tick.png in Resources */,
 				EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */,
 				EC1CBF6118AC381D00076249 /* Default.png in Resources */,
+				EC1CC06B18AC7A9A00076249 /* SmallBluePlus.jpg in Resources */,
+				EC1CC03618AC5A5100076249 /* PDMain.storyboard in Resources */,
+				EC1CC06818AC7A5D00076249 /* question.png in Resources */,
+				EC1CBF7118AC3ABF00076249 /* car-side.png in Resources */,
+				EC1CC00718AC3C9800076249 /* QuoteXML.xml in Resources */,
+				EC1CBF7218AC3ABF00076249 /* checked.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +667,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1CC02018AC3D0B00076249 /* VehiclesDetailTableViewController.m in Sources */,
+				EC1CC04418AC5BCD00076249 /* JSONKit.m in Sources */,
+				EC1CBFB118AC3BED00076249 /* HomeTableViewController.m in Sources */,
+				EC1CC0B018AD07B900076249 /* DriverInfo.m in Sources */,
+				EC1CC00518AC3C9800076249 /* QuoteVehicleListUITableViewController.m in Sources */,
+				EC1CC04C18AC5D9E00076249 /* DeleteVehicleFromPolicy.m in Sources */,
+				EC1CBFEC18AC3C9800076249 /* PolicyInfoList.m in Sources */,
+				EC1CBFF918AC3C9800076249 /* QuoteCoveragesUITableViewController.m in Sources */,
+				EC1CC04518AC5BCD00076249 /* KeychainItemWrapper.m in Sources */,
+				EC1CC0AD18AD07B900076249 /* UserInfo.m in Sources */,
+				EC1CBFF118AC3C9800076249 /* QuoteAddDriverUITableViewController.m in Sources */,
+				EC1CC0B618AD07B900076249 /* Login.m in Sources */,
 				EC1CBF3B18AC34EE00076249 /* AppDelegate.m in Sources */,
+				EC1CC05418AC5DE200076249 /* InsertVehicleIntoQuote.m in Sources */,
+				EC1CBF8018AC3B9000076249 /* AddDriverTableViewController.m in Sources */,
+				EC1CBFA218AC3BD100076249 /* DriversTableViewCell.m in Sources */,
+				EC1CC09B18AD07B800076249 /* DropdownData.m in Sources */,
+				EC1CC02818AC3D0B00076249 /* ViewCertificateViewController.m in Sources */,
 				EC1CBF3718AC34EE00076249 /* main.m in Sources */,
-				EC1CBF3E18AC34EE00076249 /* PioneerPortalDirect.xcdatamodeld in Sources */,
+				EC1CBFB218AC3BED00076249 /* HomNavControllerViewController.m in Sources */,
+				EC1CC0A118AD07B900076249 /* VehicleList.m in Sources */,
+				EC1CBFF618AC3C9800076249 /* QuoteApplicantUITableViewController.m in Sources */,
+				EC1CC09E18AD07B900076249 /* QuoteCoverages.m in Sources */,
+				EC1CC06318AC77FA00076249 /* LoginTableViewController.m in Sources */,
+				EC1CC0A718AD07B900076249 /* QuoteApplicant.m in Sources */,
+				EC1CBF9F18AC3BD100076249 /* DriverDetailViewController.m in Sources */,
+				EC1CBFFD18AC3C9800076249 /* QuoteDriverListUITableViewController.m in Sources */,
+				EC1CBFFF18AC3C9800076249 /* QuoteReviewTableViewCell.m in Sources */,
+				EC1CC02118AC3D0B00076249 /* VehiclesOnPolicy.m in Sources */,
+				EC1CBFF518AC3C9800076249 /* QuoteApplicantTableViewCell.m in Sources */,
+				EC1CC04E18AC5DC300076249 /* EditUserInfo.m in Sources */,
+				EC1CC00618AC3C9800076249 /* QuoteVehicleNavigationController.m in Sources */,
+				EC1CC05818AC5E1200076249 /* SendEmail.m in Sources */,
+				EC1CBF8C18AC3BAC00076249 /* CoreDataTableViewController.m in Sources */,
+				EC1CC00018AC3C9800076249 /* QuoteReviewTableViewController.m in Sources */,
+				EC1CC07218AC7BC800076249 /* QuoteVehicleTableViewController.m in Sources */,
+				EC1CC05718AC5E1200076249 /* QuoteListTableViewCell.m in Sources */,
+				EC1CBF8118AC3B9000076249 /* AddVehicleTableViewController.m in Sources */,
+				EC1CC02218AC3D0B00076249 /* VehiclesTableViewCell.m in Sources */,
+				EC1CC0AA18AD07B900076249 /* Quotes.m in Sources */,
+				EC1CC0A418AD07B900076249 /* PolicyInfo.m in Sources */,
+				EC1CBFF718AC3C9800076249 /* QuoteAssignDriversTableViewController.m in Sources */,
+				EC1CBFA318AC3BD100076249 /* DriversTableViewController.m in Sources */,
+				EC1CC01F18AC3D0B00076249 /* TabBarContainerViewController.m in Sources */,
+				EC1CC05C18AC6B5300076249 /* Model.xcdatamodeld in Sources */,
+				EC1CBFAF18AC3BED00076249 /* Globals.m in Sources */,
+				EC1CBFFE18AC3C9800076249 /* QuoteDriverSelectTableViewController.m in Sources */,
+				EC1CC05218AC5DE200076249 /* GetQuoteRate.m in Sources */,
+				EC1CBFF418AC3C9800076249 /* QuoteApplicantListTableViewController.m in Sources */,
+				EC1CC0B318AD07B900076249 /* QuoteDriver.m in Sources */,
+				EC1CC01E18AC3D0B00076249 /* SetUserInfo.m in Sources */,
+				EC1CC02718AC3D0B00076249 /* ViewCertificateTableViewController.m in Sources */,
+				EC1CC06F18AC7B4D00076249 /* QuoteListTableViewController.m in Sources */,
+				EC1CBFB018AC3BED00076249 /* HomeNavController.m in Sources */,
+				EC1CC0B918AD07B900076249 /* QuoteVehicle.m in Sources */,
+				EC1CC00218AC3C9800076249 /* QuoteUITabBarController.m in Sources */,
+				EC1CBFFC18AC3C9800076249 /* QuoteDriverListTableCell.m in Sources */,
+				EC1CC02318AC3D0B00076249 /* VehiclesTableViewController.m in Sources */,
+				EC1CBFA118AC3BD100076249 /* DriversOnPolicy.m in Sources */,
+				EC1CBFA518AC3BD100076249 /* DropDownDataList.m in Sources */,
+				EC1CC02618AC3D0B00076249 /* ViewCertificateTableViewCell.m in Sources */,
+				EC1CC05318AC5DE200076249 /* InsertDriverIntoQuote.m in Sources */,
+				EC1CC06618AC782800076249 /* ForgotPasswordTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +851,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PioneerPortalDirect/PioneerPortalDirect-Prefix.pch";
 				INFOPLIST_FILE = "PioneerPortalDirect/PioneerPortalDirect-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,6 +865,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PioneerPortalDirect/PioneerPortalDirect-Prefix.pch";
 				INFOPLIST_FILE = "PioneerPortalDirect/PioneerPortalDirect-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -471,6 +932,7 @@
 				EC1CBF5918AC34EE00076249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC1CBF5A18AC34EE00076249 /* Build configuration list for PBXNativeTarget "PioneerPortalDirectTests" */ = {
 			isa = XCConfigurationList;
@@ -479,17 +941,19 @@
 				EC1CBF5C18AC34EE00076249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EC1CBF3C18AC34EE00076249 /* PioneerPortalDirect.xcdatamodeld */ = {
+		EC1CC05918AC6B5300076249 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EC1CBF3D18AC34EE00076249 /* PioneerPortalDirect.xcdatamodel */,
+				EC1CC05A18AC6B5300076249 /* Model 2.xcdatamodel */,
+				EC1CC05B18AC6B5300076249 /* Model.xcdatamodel */,
 			);
-			currentVersion = EC1CBF3D18AC34EE00076249 /* PioneerPortalDirect.xcdatamodel */;
-			path = PioneerPortalDirect.xcdatamodeld;
+			currentVersion = EC1CC05A18AC6B5300076249 /* Model 2.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AnnualIncome" representedClassName="AnnualIncome" syncable="YES">
+        <attribute name="incomeText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DriverInfo" representedClassName="DriverInfo" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="annualIncome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="atFault5Years" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clientNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notFault3Years" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneHome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneWork" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="policyNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="speedingTickets" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="EmploymentStatus" representedClassName="EmploymentStatus" syncable="YES">
+        <attribute name="statusName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusValue" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Login" representedClassName="Login" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Occupations" representedClassName="Occupations" syncable="YES">
+        <attribute name="occupationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupationName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PolicyInfo" representedClassName="PolicyInfo" syncable="YES">
+        <attribute name="effectiveDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expirationDate" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QuoteApplicant" representedClassName="QuoteApplicant" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateBirth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="residencyType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ssn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QuoteCoverages" syncable="YES"/>
+    <entity name="QuoteDriver" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Quotes" syncable="YES">
+        <attribute name="quoteID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteSubmitted" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QuoteVehicle" representedClassName="QuoteVehicle" syncable="YES">
+        <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clientNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneHome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneWork" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="policyNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="VehicleList" representedClassName="VehicleList" syncable="YES">
+        <attribute name="bodilyInjury" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comprehensive" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uninsuredMotorist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AnnualIncome" positionX="-90" positionY="429" width="128" height="75"/>
+        <element name="DriverInfo" positionX="-1305" positionY="-1782" width="128" height="343"/>
+        <element name="EmploymentStatus" positionX="43" positionY="-1335" width="128" height="75"/>
+        <element name="Login" positionX="-117" positionY="-108" width="128" height="60"/>
+        <element name="Occupations" positionX="36" positionY="-72" width="128" height="75"/>
+        <element name="PolicyInfo" positionX="-153" positionY="312" width="128" height="75"/>
+        <element name="QuoteApplicant" positionX="162" positionY="189" width="128" height="223"/>
+        <element name="QuoteCoverages" positionX="306" positionY="198" width="128" height="45"/>
+        <element name="QuoteDriver" positionX="-0" positionY="342" width="128" height="75"/>
+        <element name="QuoteVehicle" positionX="-126" positionY="-36" width="128" height="120"/>
+        <element name="UserInfo" positionX="196" positionY="-108" width="128" height="268"/>
+        <element name="VehicleList" positionX="43" positionY="9" width="128" height="150"/>
+        <element name="Quotes" positionX="-1026" positionY="-1566" width="128" height="105"/>
+    </elements>
+</model>
