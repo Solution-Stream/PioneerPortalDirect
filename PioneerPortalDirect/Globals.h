@@ -11,10 +11,10 @@
 @interface Globals : NSObject{
     UIAlertView *alert;
 }
-@property (nonatomic, assign) int numberQuoteVehicles;
-@property (nonatomic, assign) int numberQuoteDrivers;
-@property (nonatomic, assign) int numQuoteVehiclesLoaded;
-@property (nonatomic, assign) int numQuoteDriversLoaded;
+@property (nonatomic, assign) NSInteger numberQuoteVehicles;
+@property (nonatomic, assign) NSInteger numberQuoteDrivers;
+@property (nonatomic, assign) NSInteger numQuoteVehiclesLoaded;
+@property (nonatomic, assign) NSInteger numQuoteDriversLoaded;
 @property (nonatomic, assign) NSMutableArray *arrayGlobalPolicyNumbers;
 @property (nonatomic, assign) UIViewController *vcAddDriver;
 @property (nonatomic, assign) NSString *globalServerName;

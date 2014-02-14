@@ -69,10 +69,10 @@
     
     if ([saveResponse isEqualToString:@"success"])
     {
-        int numQuoteVehiclesLoaded = tmp.numQuoteVehiclesLoaded;
-        int totalQuotedVehicles = tmp.numberQuoteVehicles;
+        NSInteger numQuoteVehiclesLoaded = tmp.numQuoteVehiclesLoaded;
+        NSInteger totalQuotedVehicles = tmp.numberQuoteVehicles;
         tmp.numQuoteVehiclesLoaded = numQuoteVehiclesLoaded++;
-        int totalQuotedVehiclesLoaded = tmp.numQuoteVehiclesLoaded;
+        NSInteger totalQuotedVehiclesLoaded = tmp.numQuoteVehiclesLoaded;
         if(totalQuotedVehiclesLoaded == totalQuotedVehicles){
             tmp.QuoteVehiclesAddedToQuote = @"YES";
         }

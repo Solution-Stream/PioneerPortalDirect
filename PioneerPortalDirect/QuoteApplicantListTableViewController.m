@@ -246,7 +246,7 @@
     
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:_fetchReqE error:nil];
     
-    int qa = 0;
+    NSInteger qa = 0;
     
     for (NSManagedObject *info in fetchedObjects)
     {

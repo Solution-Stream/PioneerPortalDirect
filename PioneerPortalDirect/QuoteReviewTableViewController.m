@@ -101,8 +101,8 @@
         NSString *uninsuredValue = cov.uninsuredMotoristValue;
         NSString *underinsuredValue = cov.underinsuredMotoristValue;
         
-        int driverCount = quote.quoteDriver.count;
-        int vehicleCount = quote.quoteVehicle.count;
+        NSInteger driverCount = quote.quoteDriver.count;
+        NSInteger vehicleCount = quote.quoteVehicle.count;
         tmp.numberQuoteDrivers = driverCount;
         tmp.numberQuoteVehicles = vehicleCount;
         tmp.QuoteDriversAddedToQuote = @"NO";

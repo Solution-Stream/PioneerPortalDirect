@@ -857,7 +857,7 @@ static Globals *shared = NULL;
     unsigned flags = NSDayCalendarUnit;
     NSDateComponents *difference = [[NSCalendar currentCalendar] components:flags fromDate:startDate toDate:endDate options:0];
     
-    int dayDiff = [difference day] * -1;
+    long dayDiff = [difference day] * -1;
     
     if(dayDiff > 5844 && dayDiff > 0){
         return YES;

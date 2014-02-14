@@ -77,10 +77,10 @@
     
     if ([saveResponse isEqualToString:@"success"])
     {
-        int numQuoteDriversLoaded = tmp.numQuoteDriversLoaded;
-        int totalQuotedDrivers = tmp.numberQuoteDrivers;
+        NSInteger numQuoteDriversLoaded = tmp.numQuoteDriversLoaded;
+        NSInteger totalQuotedDrivers = tmp.numberQuoteDrivers;
         tmp.numQuoteDriversLoaded = numQuoteDriversLoaded + 1;
-        int totalQuotedDriversLoaded = tmp.numQuoteDriversLoaded;
+        NSInteger totalQuotedDriversLoaded = tmp.numQuoteDriversLoaded;
         if(totalQuotedDriversLoaded == totalQuotedDrivers){
             tmp.QuoteDriversAddedToQuote = @"YES";
         }
