@@ -94,20 +94,8 @@
     arrayQuoteSubmitted = [[NSMutableArray alloc] init];
     arrayQuoteStatus = [[NSMutableArray alloc] init];
     
-//    [arrayQuoteID removeAllObjects];
-//    [arrayQuoteName removeAllObjects];
-//    [arrayQuoteSubmitted removeAllObjects];
-//    [arrayQuoteStatus removeAllObjects];
-    
+   
     self.title = @"Auto Quote List";
-    CGRect frame = CGRectMake(0, 0, [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}].width, 44);
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.textColor = [UIColor whiteColor];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:15.0];
-    label.textAlignment = NSTextAlignmentCenter;
-    self.navigationItem.titleView = label;
-    label.text = self.title;
     
     [self LoadQuoteList];
     

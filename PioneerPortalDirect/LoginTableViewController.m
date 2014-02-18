@@ -65,14 +65,19 @@ BOOL bStayLoggedIn = false;
 {
     [super viewDidLoad];
     
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lightHouse640-960.png"]];
+    //UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightHouse640-960.png"]];
+    //[self.view addSubview:backgroundView];
     
-//    self.tableView.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin |
-//                                UIViewAutoresizingFlexibleTopMargin);
-//    self.tableView = LoginTableView_Landscape;
-//    CGRect tableViewFrame = [LoginTableView_Landscape frame];
-//    tableViewFrame.origin.x = 0;
-//    tableViewFrame.origin.y = 500;
-//    self.tableView.frame = tableViewFrame;
+    [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightHouse320-480.png"]]];
+    
+    Globals *tmp = [Globals sharedSingleton];
+    if([tmp.DropdownListLoaded isEqualToString:@"YES"]){
+        [self EnableButtons];
+    }
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
     self.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
     [self.navigationController setToolbarHidden:NO];    
     
@@ -90,6 +95,18 @@ BOOL bStayLoggedIn = false;
     timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
     
     timerRetryConn = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(TestConnection) userInfo:nil repeats:YES];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    
+    [self.navigationController setToolbarHidden:NO];
+    
+    Globals *tmp = [Globals sharedSingleton];
+    if([tmp.DropdownListLoaded isEqualToString:@"YES"]){
+        [self EnableButtons];
+    }
     
 }
 
@@ -114,24 +131,23 @@ BOOL bStayLoggedIn = false;
         timerDDLoaded = nil;
     }
     
-    //if((([tmp.AnnualIncomeListLoaded isEqualToString:@"YES"] && [tmp.EmployeeStatusListLoaded isEqualToString:@"YES"] && [tmp.OccupationListLoaded isEqualToString:@"YES"])) || ([tmp.devMode isEqualToString:@"YES"])){
     if([tmp.DropdownListLoaded isEqualToString:@"YES"] || [tmp.devMode isEqualToString:@"YES"]){
     if(timerDDLoaded){
             [timerDDLoaded invalidate];
             timerDDLoaded = nil;
         }
-        btnLogin.enabled = YES;        
-        btnLogin.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [btnLogin.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
-        btnLogin.titleLabel.text = @"Login";
-        buttonForgotPassword.enabled = YES;
-        buttonGetQuote.enabled = YES;
+        [self EnableButtons];
     }
     connectionAttempts++;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [self.navigationController setToolbarHidden:NO];    
+-(void)EnableButtons{
+    btnLogin.enabled = YES;
+    btnLogin.titleLabel.textAlignment = NSTextAlignmentCenter;
+    //[btnLogin.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
+    btnLogin.titleLabel.text = @"Login";
+    buttonForgotPassword.enabled = YES;
+    buttonGetQuote.enabled = YES;
 }
 
 - (void)didReceiveMemoryWarning

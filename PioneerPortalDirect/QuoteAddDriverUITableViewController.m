@@ -715,6 +715,7 @@
             driver.incomeLevel = txtIncomeLevel.text;
             driver.incomeLevelValue = AnnualIncomeValue;
         }
+        currentQuote.quoteStatus = @"In Progress";
         [self.managedObjectContext save:nil];
     }
 
@@ -747,6 +748,7 @@
         tmp.createNewDriver = @"";
         
         [currentQuote addQuoteDriverObject:qa];
+        currentQuote.quoteStatus = @"In Progress";
         
         [self.managedObjectContext save:nil];  // write to database
     }

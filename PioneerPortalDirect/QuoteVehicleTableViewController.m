@@ -14,6 +14,7 @@
 #import "JSONKit.h"
 #import "DropdownData.h"
 #import "QuoteUITabBarController.h"
+#import "LookupVINValues.h"
 
 @interface QuoteVehicleTableViewController ()
 
@@ -674,6 +675,7 @@
             vehicle.splitCity = txtSplitCity.text;
             
         }
+        currentQuote.quoteStatus = @"In Progress";
         NSError *error;
         if (![self.managedObjectContext save:&error])
         {
@@ -721,7 +723,7 @@
         vehicle.vehicleID = guid;
         
         [currentQuote addQuoteVehicleObject:vehicle];
-                    
+        currentQuote.quoteStatus = @"In Progress";
         NSError *error;
         if (![self.managedObjectContext save:&error])
         {
@@ -812,8 +814,10 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
     
     - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
         NSDictionary *resultsDictionary = [responseData objectFromJSONData];
-        
         NSArray *arrCodes = [resultsDictionary objectForKey:@"CheckVINResult"];
+        LookupVINValues *lookupVINValues = [[LookupVINValues alloc] init];
+        NSString *ABS_Text;
+        NSString *Restraint_Text;
                 
         [activityIndicator startAnimating];
         [txtVIN resignFirstResponder];
@@ -824,7 +828,13 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
         if([returnCode isEqualToString:@"0"]){
             txtMake.text = [occ objectForKey:@"Make"];
             txtModel.text = [occ objectForKey:@"Model"];
-            txtYear.text = [occ objectForKey:@"Year"];            
+            txtYear.text = [occ objectForKey:@"Year"];
+            ABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
+            Restraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
+            txtAntiLockBrakes.text = ABS_Text;
+            txtPassiveRestraints.text = Restraint_Text;
+            antLockBrakeCodeValue = [occ objectForKey:@"ABS"];
+            passiveRestraintCodeValue = [occ objectForKey:@"Restraint"];
         }
         else{
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid VIN"

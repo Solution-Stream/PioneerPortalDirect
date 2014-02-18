@@ -501,7 +501,7 @@
         
         qt.quoteID = guid;
         qt.quoteName = [NSString stringWithFormat:@"%@%@%@", txtFirstName.text, @" ", txtLastName.text];
-        qt.quoteStatus = @"Started";
+        qt.quoteStatus = @"In Progress";
         qt.quoteSubmitted = @"test";
         
         NSError *error;
@@ -562,6 +562,7 @@
             qa.residencyType = txtResidencyType.text;
             qa.residencyTypeValue = residencyTypeValue;
         }
+        currentQuote.quoteStatus = @"In Progress";
         [self.managedObjectContext save:nil];
     }
     

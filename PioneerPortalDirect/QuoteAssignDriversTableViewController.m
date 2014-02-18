@@ -194,11 +194,12 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return @"Quote - Review and Submit";
+	return @"Quote - Assign Drivers";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return @"Assign drivers to vehicles";
+    //return @"Assign drivers to vehicles";
+    return @"";
 }
 
 
@@ -232,7 +233,7 @@
 - (IBAction)SubmitQuote:(id)sender{
     
     if([saveStatus isEqualToString:@"saveOnly"]){
-        [self CommitChanges:@"Started"];
+        [self CommitChanges:@"In Progress"];
     }
     else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Submit Quote Confirmation"
@@ -252,7 +253,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1){
         if(alertView.tag == 10){
-            [self CommitChanges:@"Submitted"];
+            [self CommitChanges:@"In Progress"];
         }
     }
 }

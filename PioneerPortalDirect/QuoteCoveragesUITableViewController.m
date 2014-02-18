@@ -711,6 +711,7 @@
             quote1.quoteCoverages.miniTortValue = miniTortValue;
             quote1.quoteCoverages.quotes = currentQuote;
     
+            currentQuote.quoteStatus = @"In Progress";
             [self.managedObjectContext save:nil];
     
     
@@ -740,7 +741,7 @@
             qa.completed = [NSNumber numberWithInt:1];
             qa.quotes = currentQuote;
     
-    
+            currentQuote.quoteStatus = @"In Progress";
             [self.managedObjectContext save:nil];  // write to database
         }
         

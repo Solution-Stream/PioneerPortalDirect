@@ -108,6 +108,7 @@
         tmp.QuoteDriversAddedToQuote = @"NO";
         tmp.QuoteVehiclesAddedToQuote = @"YES";
         
+        int driverNum = 0;
         
         for(QuoteDriver *Driver in quote.quoteDriver)
         {
@@ -123,9 +124,12 @@
             [dateFormatter setDateFormat:@"MM-dd-yyyy"];
             
             NSString *dateBirth = [dateFormatter stringFromDate:date];
+            NSString *_driverNum = [NSString stringWithFormat:@"%d", driverNum];
             
             InsertDriverIntoQuote *insertDriver = [[InsertDriverIntoQuote alloc] init];
-            [insertDriver InsertDriverIntoQuote:tmp.currentQuoteGuid firstName:Driver.firstName middle:Driver.middleInitial lastName:Driver.lastName dateBirth:dateBirth gender:Driver.gender maritalStatus:Driver.maritalStatus relationApplicant:Driver.relationApplicantValue dependents:Driver.dependents licenseState:Driver.licenseStateValue licenseNum:Driver.licenseNum occupation:Driver.occupationValue incomeLevel:Driver.incomeLevelValue];
+            [insertDriver InsertDriverIntoQuote:tmp.currentQuoteGuid firstName:Driver.firstName middle:Driver.middleInitial lastName:Driver.lastName dateBirth:dateBirth gender:Driver.gender maritalStatus:Driver.maritalStatus relationApplicant:Driver.relationApplicantValue dependents:Driver.dependents licenseState:Driver.licenseStateValue licenseNum:Driver.licenseNum occupation:Driver.occupationValue incomeLevel:Driver.incomeLevelValue driverNum:_driverNum];
+            
+            driverNum++;
 //            NSString *pathDriver = [[NSBundle mainBundle] bundlePath];
 //            NSString *xmlDriverPath = [pathDriver stringByAppendingPathComponent:@"QuoteDriver.xml"];
 //            NSString *xmlDriverString = [NSString stringWithContentsOfFile:xmlDriverPath encoding:NSUTF8StringEncoding error:nil];
@@ -380,13 +384,13 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if(section == 0){
-        return @"Premium";
+        return @"Annual Premium";
     }
     else if(section == 1){
-        return @"Vehicles";
+        return @"Quoted Vehicles";
     }
     else if(section == 2){
-        return @"Drivers";
+        return @"Quoted Drivers";
     }
     else{
         return @"";

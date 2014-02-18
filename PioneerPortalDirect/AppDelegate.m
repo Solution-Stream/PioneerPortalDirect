@@ -20,6 +20,8 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // !!!: Use the next line only during beta
@@ -53,13 +55,25 @@
     tmp.GlobalTimeout = @"20.0"; //timeout for all web service connections
     tmp.requiredFieldColor = [UIColor colorWithRed:1 green: 0.0 blue:0.0 alpha:.1];
     
-    tmp.devMode = @"NO";
+    tmp.devMode = @"YES";
     
     //Load dropdown data into Core Data
     [tmp LoadCoreData];
     
+    //navigation bar properties
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(54/255.0) green:(100/255.0) blue:(139/255.0) alpha:1]] ;
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     
+    // your bar button text attributes dictionary
+    NSDictionary *textAttributes = @{ //NSForegroundColorAttributeName       : [UIColor blackColor],
+                                      NSFontAttributeName            : [UIFont systemFontOfSize:12.0f]
+                                      };
+    [[UIBarButtonItem appearanceWhenContainedIn: [UINavigationController class],nil]
+     setTitleTextAttributes:textAttributes
+     forState:UIControlStateNormal];
+
     
     return YES;
 }
