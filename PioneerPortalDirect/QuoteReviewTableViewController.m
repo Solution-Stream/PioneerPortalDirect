@@ -27,6 +27,8 @@
 @implementation QuoteReviewTableViewController
 @synthesize txtAnnualPremium,QuoteReviewTableView;
 
+int GetQuoteNumTries;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -262,6 +264,25 @@
         [tmp HideWaitScreen];
         [QuoteReviewTableView reloadData];
         [self UpdateQuoteStatus];
+    }
+    else{
+        GetQuoteNumTries++;
+        if(GetQuoteNumTries > 10){
+            [tmp HideWaitScreen];
+            [timer invalidate];
+            timer = nil;
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error Getting Quote Rate"
+                                                           message: @"Error getting rate. Please try again later."
+                                                          delegate: self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+            alert.tag = 7;
+            [alert show];
+            GetQuoteNumTries = 0;
+
+        }
+        
     }
 }
 
