@@ -55,7 +55,7 @@
     tmp.GlobalTimeout = @"20.0"; //timeout for all web service connections
     tmp.requiredFieldColor = [UIColor colorWithRed:1 green: 0.0 blue:0.0 alpha:.1];
     
-    tmp.devMode = @"YES";
+    tmp.devMode = @"NO";
     
     //Load dropdown data into Core Data
     [tmp LoadCoreData];

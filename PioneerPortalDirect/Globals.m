@@ -807,7 +807,7 @@ static Globals *shared = NULL;
         
         
         if(qc != nil){
-            if(qc == [NSNumber numberWithInt:1]){
+            if([qc isEqualToNumber:[NSNumber numberWithInt:1]]){
                 [tabArray addObject: [ NSNumber numberWithInteger: 1]];
             }
             else{

@@ -661,12 +661,82 @@
         return;
         
     }
+    else{
+        txtFirstName.backgroundColor = nil;
+        txtLastName.backgroundColor = nil;
+
+    }
     
     if([txtDateBirth.text isEqualToString:@""] || txtDateBirth.text == nil){
         txtDateBirth.backgroundColor = tmp.requiredFieldColor;
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Date of Birth is required"
                                                        message: @"Please enter Date of Birth"
+                                                      delegate: self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    else{
+        txtDateBirth.backgroundColor = nil;
+    }
+    
+    BOOL fieldMissing = NO;
+    if(GenderSelected == NO || MaritalStatusSelected == NO || DependentsSelected == NO )
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Information Needed"
+                                                       message: @"Please enter Gender, Marital Status, and Dependents"
+                                                      delegate: self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    if(([txtIncomeLevel.text isEqualToString:@""] || txtIncomeLevel.text == nil)){
+        txtIncomeLevel.backgroundColor = tmp.requiredFieldColor;
+        fieldMissing = YES;
+    }
+    else{
+        txtIncomeLevel.backgroundColor = nil;
+    }
+    
+    if(([txtOccupation.text isEqualToString:@""] || txtOccupation.text == nil)){
+        txtOccupation.backgroundColor = tmp.requiredFieldColor;
+        fieldMissing = YES;
+    }
+    else{
+        txtOccupation.backgroundColor = nil;
+    }
+    
+    if(([txtLicenseNum.text isEqualToString:@""] || txtLicenseNum.text == nil)){
+        txtLicenseNum.backgroundColor = tmp.requiredFieldColor;
+        fieldMissing = YES;
+    }
+    else{
+        txtLicenseNum.backgroundColor = nil;
+    }
+    
+    if(([txtLicenseState.text isEqualToString:@""] || txtLicenseState.text == nil)){
+        txtLicenseState.backgroundColor = tmp.requiredFieldColor;
+        fieldMissing = YES;
+    }
+    else{
+        txtLicenseState.backgroundColor = nil;
+    }
+    
+    if(([txtRelationApplicant.text isEqualToString:@""] || txtRelationApplicant.text == nil)){
+        txtRelationApplicant.backgroundColor = tmp.requiredFieldColor;
+        fieldMissing = YES;
+    }
+    else{
+        txtRelationApplicant.backgroundColor = nil;
+    }
+    
+    if(fieldMissing == YES){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Information Needed"
+                                                       message: @"Please enter information in the fields highlighted"
                                                       delegate: self
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil];

@@ -46,7 +46,6 @@
 		EC1CBFB218AC3BED00076249 /* HomNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFAE18AC3BED00076249 /* HomNavControllerViewController.m */; };
 		EC1CBFEC18AC3C9800076249 /* PolicyInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFB618AC3C9800076249 /* PolicyInfoList.m */; };
 		EC1CBFF118AC3C9800076249 /* QuoteAddDriverUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */; };
-		EC1CBFF218AC3C9800076249 /* QuoteAddDriverUITableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */; };
 		EC1CBFF418AC3C9800076249 /* QuoteApplicantListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */; };
 		EC1CBFF518AC3C9800076249 /* QuoteApplicantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC718AC3C9800076249 /* QuoteApplicantTableViewCell.m */; };
 		EC1CBFF618AC3C9800076249 /* QuoteApplicantUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBFC918AC3C9800076249 /* QuoteApplicantUITableViewController.m */; };
@@ -178,7 +177,6 @@
 		EC1CBFB618AC3C9800076249 /* PolicyInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolicyInfoList.m; sourceTree = "<group>"; };
 		EC1CBFBF18AC3C9800076249 /* QuoteAddDriverUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteAddDriverUITableViewController.h; sourceTree = "<group>"; };
 		EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAddDriverUITableViewController.m; sourceTree = "<group>"; };
-		EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteAddDriverUITableViewController.xib; sourceTree = "<group>"; };
 		EC1CBFC418AC3C9800076249 /* QuoteApplicantListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicantListTableViewController.h; sourceTree = "<group>"; };
 		EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteApplicantListTableViewController.m; sourceTree = "<group>"; };
 		EC1CBFC618AC3C9800076249 /* QuoteApplicantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteApplicantTableViewCell.h; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 				EC1CC03518AC5A5100076249 /* PDMain.storyboard */,
 				EC1CBFBF18AC3C9800076249 /* QuoteAddDriverUITableViewController.h */,
 				EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */,
-				EC1CBFC118AC3C9800076249 /* QuoteAddDriverUITableViewController.xib */,
 				EC1CBFC418AC3C9800076249 /* QuoteApplicantListTableViewController.h */,
 				EC1CBFC518AC3C9800076249 /* QuoteApplicantListTableViewController.m */,
 				EC1CBFC618AC3C9800076249 /* QuoteApplicantTableViewCell.h */,
@@ -646,7 +643,6 @@
 				EC1CBF6718AC39CF00076249 /* PD_Icon_57.png in Resources */,
 				EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */,
 				EC1CBF7318AC3ABF00076249 /* checked.png in Resources */,
-				EC1CBFF218AC3C9800076249 /* QuoteAddDriverUITableViewController.xib in Resources */,
 				EC1CC05E18AC75F800076249 /* blueGrad5.jpeg in Resources */,
 				EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */,
 				EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */,

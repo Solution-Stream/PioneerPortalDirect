@@ -90,7 +90,7 @@
         NSInteger qd = app.quoteDriver != nil ? app.quoteDriver.count : 0;
         
     
-        if(qa > 0 && qv > 0 && qd > 0 && qc == [NSNumber numberWithInt:1]){
+        if(qa > 0 && qv > 0 && qd > 0 && [qc isEqualToNumber:[NSNumber numberWithInt:1]]){
             rightButton.enabled = YES;
         }
         else{

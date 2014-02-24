@@ -764,6 +764,8 @@
 
 
 - (IBAction)CheckVIN:(id)sender {
+    Globals *tmp = [Globals sharedSingleton];
+    
     if([txtVIN.text isEqualToString:@""]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid VIN"
                                                        message: @"VIN is invalid. Please check and enter again"
@@ -773,9 +775,8 @@
         [alert show];
     }
     else{
-        [activityIndicator startAnimating];
+        [tmp ShowWaitScreen:@"Looking up VIN"];
         
-        Globals *tmp = [Globals sharedSingleton];
         NSString *theURL = [NSString stringWithFormat:@"%@%@%@",tmp.globalServerName, @"/users.svc/checkvin/", txtVIN.text];
         
         NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
@@ -813,13 +814,14 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
 }
     
     - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+        Globals *tmp = [Globals sharedSingleton];
         NSDictionary *resultsDictionary = [responseData objectFromJSONData];
         NSArray *arrCodes = [resultsDictionary objectForKey:@"CheckVINResult"];
         LookupVINValues *lookupVINValues = [[LookupVINValues alloc] init];
         NSString *ABS_Text;
         NSString *Restraint_Text;
                 
-        [activityIndicator startAnimating];
+        [tmp HideWaitScreen];
         [txtVIN resignFirstResponder];
 
                         
