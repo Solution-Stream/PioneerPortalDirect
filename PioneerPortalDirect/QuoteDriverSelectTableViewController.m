@@ -150,7 +150,7 @@
     {
         QuoteVehicle *vehicle = (QuoteVehicle *)info;
         vehicle.assignedDriverID = [arrayQuoteDriverID objectAtIndex:indexPath.row];
-        vehicle.assignedDriverName = [arrayQuoteDriver objectAtIndex:indexPath.row];        
+        //vehicle.assignedDriverName = [arrayQuoteDriver objectAtIndex:indexPath.row];
     }
     [self.managedObjectContext save:nil];
     

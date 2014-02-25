@@ -24,6 +24,8 @@
 @implementation QuoteAssignDriversTableViewController
 @synthesize ReviewTableView,currentQuote;
 
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -81,6 +83,7 @@
 
 -(void)LoadQuoteVehicleList{
     Globals *tmp = [Globals sharedSingleton];
+    NSMutableDictionary *DriverDictonary = [[NSMutableDictionary alloc] init];
     tmp.currentVehicleID = @"";
     self.managedObjectContext = tmp.managedObjectContext;
     
@@ -91,27 +94,6 @@
     arrayQuoteDriverID = [[NSMutableArray alloc] init];
     
     arrayQuoteVehicleDriver = [[NSMutableArray alloc] init];
-        
-    NSFetchRequest *_fetchReqE = [[NSFetchRequest alloc] init];
-    _fetchReqE.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@%@%@",@"quoteID =='", tmp.currentQuoteGuid, @"'", nil]];
-    NSEntityDescription *entityE = [NSEntityDescription entityForName:@"QuoteVehicle" inManagedObjectContext:self.managedObjectContext];
-    [_fetchReqE setEntity:entityE];
-    //sorting
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"year" ascending: NO];
-    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
-    [_fetchReqE setSortDescriptors:sortDescriptors];
-    
-    
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:_fetchReqE error:nil];
-    
-    for (NSManagedObject *info in fetchedObjects)
-    {
-        QuoteVehicle *Vehicle = (QuoteVehicle *)info;
-        NSString *VehicleString = [NSString stringWithFormat:@"%@%@%@%@%@", Vehicle.year, @" ", Vehicle.make, @" ", Vehicle.model];
-        [arrayQuoteVehicle addObject:VehicleString];
-        [arrayQuoteVehicleID addObject:Vehicle.vehicleID];
-        [arrayQuoteVehicleDriver addObject:NULL_TO_NIL(Vehicle.assignedDriverName)];
-    }
     
     //fill driver arrays
     NSFetchRequest *_fetchReqD = [[NSFetchRequest alloc] init];
@@ -132,10 +114,32 @@
         NSString *driverString = [NSString stringWithFormat:@"%@%@%@", driver.firstName, @" ", driver.lastName];
         [arrayQuoteDriver addObject:driverString];
         [arrayQuoteDriverID addObject:driver.driverID];
-        
+        [DriverDictonary setObject:driverString forKey:driver.driverID];
     }
 
+    NSFetchRequest *_fetchReqE = [[NSFetchRequest alloc] init];
+    _fetchReqE.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@%@%@",@"quoteID =='", tmp.currentQuoteGuid, @"'", nil]];
+    NSEntityDescription *entityE = [NSEntityDescription entityForName:@"QuoteVehicle" inManagedObjectContext:self.managedObjectContext];
+    [_fetchReqE setEntity:entityE];
+    //sorting
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"year" ascending: NO];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
+    [_fetchReqE setSortDescriptors:sortDescriptors];
     
+    
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:_fetchReqE error:nil];
+    
+    for (NSManagedObject *info in fetchedObjects)
+    {
+        QuoteVehicle *Vehicle = (QuoteVehicle *)info;
+        NSString *VehicleString = [NSString stringWithFormat:@"%@%@%@%@%@", Vehicle.year, @" ", Vehicle.make, @" ", Vehicle.model];
+        NSString *assignedDriverID = Vehicle.assignedDriverID;
+        NSString *driverNameFromID = [DriverDictonary objectForKey:assignedDriverID];
+        [arrayQuoteVehicle addObject:VehicleString];
+        [arrayQuoteVehicleID addObject:Vehicle.vehicleID];
+        [arrayQuoteVehicleDriver addObject:NULL_TO_NIL(driverNameFromID)];
+    }
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -148,6 +152,10 @@
 {
     // Return the number of rows in the section.
     return [arrayQuoteVehicle count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 67.0f;
 }
 
 
@@ -174,6 +182,8 @@
     
     cell.txtVehicle.font = tmp.TableViewListFont;
     cell.txtDriver.font = tmp.TableViewListFont;
+    
+    
     
     return cell;
 }

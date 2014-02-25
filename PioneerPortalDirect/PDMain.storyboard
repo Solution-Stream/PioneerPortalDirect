@@ -1328,10 +1328,9 @@
             <objects>
                 <tabBarController storyboardIdentifier="QuoteTabController" definesPresentationContext="YES" id="Xh1-7B-Xz4" customClass="QuoteUITabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="j79-ng-G2B">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="j79-ng-G2B">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="wqZ-WO-ck5" kind="relationship" relationship="viewControllers" id="Fgy-kL-EIZ"/>
@@ -4201,25 +4200,25 @@
                         <inset key="contentInset" minX="0.0" minY="25" maxX="0.0" maxY="0.0"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="25" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="QuoteReviewTableViewCell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VehicleListCell" id="0K0-HL-kY0" customClass="QuoteReviewTableViewCell">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="QuoteReviewTableViewCell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VehicleListCell" rowHeight="67" id="0K0-HL-kY0" customClass="QuoteReviewTableViewCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0K0-HL-kY0" id="kzJ-KV-nWl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phV-h1-KWG">
-                                            <rect key="frame" x="6" y="11" width="140" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phV-h1-KWG">
+                                            <rect key="frame" x="20" y="11" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Driver" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JYl-bw-PQT">
-                                            <rect key="frame" x="154" y="11" width="139" height="21"/>
+                                            <rect key="frame" x="20" y="33" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.094117656349999995" green="0.51372551919999998" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="textColor" red="0.065553606410000007" green="0.32417726650000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>

@@ -35,7 +35,7 @@
     
     tmp.requiredFieldColor = [UIColor colorWithRed:1 green: 0.0 blue:0.0 alpha:.1];
     
-    tmp.TableViewListFont = [UIFont boldSystemFontOfSize:13.0];
+    tmp.TableViewListFont = [UIFont boldSystemFontOfSize:15.0];
     
     tmp.devMode = @"NO";
     
