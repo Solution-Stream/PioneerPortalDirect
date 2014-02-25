@@ -206,6 +206,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"QuoteDriverListTableCell";
     
     
@@ -222,15 +223,12 @@
     cell.txtRightCell.text = @"";
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-//    if(indexPath.row == 0){
-//        UIImage *PlusImage = [UIImage imageNamed:@"SmallBluePlus.png"];
-//        cell.imgDriverIcon.image = PlusImage;
-//    }
-//    else{
-        UIImage *PlusImage = [UIImage imageNamed:@"user_real_person.png"];
-        cell.imgDriverIcon.image = PlusImage;
-//    }
+    
+    UIImage *PlusImage = [UIImage imageNamed:@"user_real_person.png"];
+    cell.imgDriverIcon.image = PlusImage;
 
+    cell.txtLeftCell.font = tmp.TableViewListFont;
+    cell.txtRightCell.font = tmp.TableViewListFont;
     
     return cell;
 }

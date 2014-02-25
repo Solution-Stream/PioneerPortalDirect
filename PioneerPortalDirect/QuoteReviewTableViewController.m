@@ -379,6 +379,7 @@ int GetQuoteNumTries;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"CellIdentifier";
     
     
@@ -396,6 +397,8 @@ int GetQuoteNumTries;
     }else{
         [[cell textLabel] setText:@""];
     }
+    
+    cell.textLabel.font = tmp.TableViewListFont;
     
     return cell;
 }

@@ -153,9 +153,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"VehicleListCell";
-    
-    
     
     QuoteReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -173,8 +172,8 @@
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    
-    
+    cell.txtVehicle.font = tmp.TableViewListFont;
+    cell.txtDriver.font = tmp.TableViewListFont;
     
     return cell;
 }

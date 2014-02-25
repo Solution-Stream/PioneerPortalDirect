@@ -161,6 +161,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"QuoteListTableCell";
     
     
@@ -177,6 +178,8 @@
     cell.txtRightCell.text = [arrayQuoteStatus objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    cell.txtLeftCell.font = tmp.TableViewListFont;
+    cell.txtRightCell.font = tmp.TableViewListFont;
     
     return cell;
 }

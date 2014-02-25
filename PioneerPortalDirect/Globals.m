@@ -28,6 +28,7 @@ static Globals *shared = NULL;
 @synthesize VehicleTypeListLoaded,AntiLockBrakeListLoaded,PassiveRestraintListLoaded,DaysWeekListLoaded,MiniTortListLoaded,UninsuredMotoristLoaded,UnderInsuredMotoristListLoaded,PropertyDamageLoaded,PropertyProtectionLoaded;
 @synthesize currentDriverID,createNewDriver,quoteViewIndex,currentVehicleID,createNewVehicle,vcAddDriver,quoteDriverViewIndex,quoteSelectedVehicle,requiredFieldColor,DropdownListLoaded,currentApplicantID,createNewApplicant;
 @synthesize quoteApplicantViewIndex,annualPremium,QuoteDriversAddedToQuote,QuoteVehiclesAddedToQuote,numberQuoteVehicles,numberQuoteDrivers,numQuoteDriversLoaded,numQuoteVehiclesLoaded,quoteConnectionFailed;
+@synthesize TableViewListFont;
 
 -(id)init{
     if(self = [super init])
@@ -50,6 +51,15 @@ static Globals *shared = NULL;
         }
         else{
             self.requiredFieldColor = [def objectForKey:@"requiredFieldColor"];
+        }
+        
+        //TableViewListFont
+        if([def objectForKey:@"TableViewListFont"] == nil){
+            [def setObject:TableViewListFont forKey:@"TableViewListFont"];
+            [def synchronize];
+        }
+        else{
+            self.TableViewListFont = [def objectForKey:@"TableViewListFont"];
         }
         
         //quoteConnectionFailed

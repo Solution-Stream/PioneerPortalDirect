@@ -175,9 +175,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"QuoteListTableViewCell";
-    
-    
+    Globals *tmp = [Globals sharedSingleton];
+    static NSString *CellIdentifier = @"QuoteListTableViewCell";    
     
     QuoteListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -190,14 +189,11 @@
     cell.txtRightCell.text = @"";
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-//    if(indexPath.row == 0){
-//        UIImage *PlusImage = [UIImage imageNamed:@"SmallBluePlus.png"];
-//        cell.imgIcon.image = PlusImage;
-//    }
-//    else{
-        UIImage *PlusImage = [UIImage imageNamed:@"blueCar.png"];
-        cell.imgIcon.image = PlusImage;
-//    }
+    UIImage *PlusImage = [UIImage imageNamed:@"blueCar.png"];
+    cell.imgIcon.image = PlusImage;
+
+    cell.txtLeftCell.font = tmp.TableViewListFont;
+    cell.txtRightCell.font = tmp.TableViewListFont;
     
     return cell;
 }

@@ -91,6 +91,8 @@
 
 @property (nonatomic, retain) UIColor *requiredFieldColor;
 
+@property UIFont *TableViewListFont;
+
 
 - (void)LoadPolicyDataForUser:(NSString *)username;
 - (void)ShowLoadingScreen;

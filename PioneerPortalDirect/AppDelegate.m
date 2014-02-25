@@ -24,41 +24,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // !!!: Use the next line only during beta
-    //@try {
-    //[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-    
-    
-    //}
-    //@catch (NSException *exception) {
-    //SendEmail *sEmail = [[SendEmail alloc] init];
-    //[sEmail sendEmail:@"bjkalski@gmail.com" subject:@"AppDelegate Error" body:exception.reason];
-    //}
-    //@finally {
-    
-    //}
-    
-    
-    // Override point for customization after application launch.
-    //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    //    HomeTableViewController *controller = (HomeTableViewController *)navigationController.topViewController;
-    //   controller.managedObjectContext = self.managedObjectContext;
-    //LoginTableViewController *LoginTblCntrllr = [[LoginTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    //UINavigationController *navCtrlr = [[UINavigationController alloc]initWithRootViewController:LoginTblCntrllr];
-    //[self.window setRootViewController:navCtrlr];
-    //navCtrlr.delegate = self;
-    //navCtrlr.navigationBarHidden = YES;
+    //Set initial values of various global variables
     
     Globals *tmp = [[Globals sharedSingleton] init];
     tmp.managedObjectContext = self.managedObjectContext;
+    
     tmp.DriversInfoDoneLoading = @"";
+    
     tmp.GlobalTimeout = @"20.0"; //timeout for all web service connections
+    
     tmp.requiredFieldColor = [UIColor colorWithRed:1 green: 0.0 blue:0.0 alpha:.1];
     
-    tmp.devMode = @"NO";
+    tmp.TableViewListFont = [UIFont boldSystemFontOfSize:13.0];
     
-    //Load dropdown data into Core Data
-    [tmp LoadCoreData];
+    tmp.devMode = @"NO";
     
     //navigation bar properties
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(54/255.0) green:(100/255.0) blue:(139/255.0) alpha:1]] ;
@@ -73,6 +52,9 @@
     [[UIBarButtonItem appearanceWhenContainedIn: [UINavigationController class],nil]
      setTitleTextAttributes:textAttributes
      forState:UIControlStateNormal];
+    
+    //Load dropdown data into Core Data
+    [tmp LoadCoreData];
 
     
     return YES;
