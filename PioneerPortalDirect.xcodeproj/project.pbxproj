@@ -21,9 +21,9 @@
 		EC1CBF4A18AC34EE00076249 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2E18AC34EE00076249 /* CoreData.framework */; };
 		EC1CBF5218AC34EE00076249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5018AC34EE00076249 /* InfoPlist.strings */; };
 		EC1CBF5418AC34EE00076249 /* PioneerPortalDirectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CBF5318AC34EE00076249 /* PioneerPortalDirectTests.m */; };
-		EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */; };
-		EC1CBF6118AC381D00076249 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5E18AC381D00076249 /* Default.png */; };
-		EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5F18AC381D00076249 /* Default@2x.png */; };
+		EC1CBF6018AC381D00076249 /* PDIcon_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5D18AC381D00076249 /* PDIcon_640x1136.png */; };
+		EC1CBF6118AC381D00076249 /* PDIcon_320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5E18AC381D00076249 /* PDIcon_320x480.png */; };
+		EC1CBF6218AC381D00076249 /* PDIcon_640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF5F18AC381D00076249 /* PDIcon_640x960.png */; };
 		EC1CBF6718AC39CF00076249 /* PD_Icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */; };
 		EC1CBF6818AC39CF00076249 /* PD_Icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */; };
 		EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */; };
@@ -103,6 +103,14 @@
 		EC1CC0B618AD07B900076249 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B518AD07B900076249 /* Login.m */; };
 		EC1CC0B918AD07B900076249 /* QuoteVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B818AD07B900076249 /* QuoteVehicle.m */; };
 		EC1CC0BC18AD1FCE00076249 /* DropdownData.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0BB18AD1FCE00076249 /* DropdownData.m */; };
+		EC29AFAB18BE4C7C00A0B476 /* PD_Icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFA818BE4C7C00A0B476 /* PD_Icon_29.png */; };
+		EC29AFAC18BE4C7C00A0B476 /* PD_Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFA918BE4C7C00A0B476 /* PD_Icon_40.png */; };
+		EC29AFAD18BE4C7C00A0B476 /* PD_Icon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFAA18BE4C7C00A0B476 /* PD_Icon_60.png */; };
+		EC29AFB118BE4D9500A0B476 /* PD_Icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFAE18BE4D9500A0B476 /* PD_Icon_58.png */; };
+		EC29AFB218BE4D9500A0B476 /* PD_Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFAF18BE4D9500A0B476 /* PD_Icon_80.png */; };
+		EC29AFB318BE4D9500A0B476 /* PD_Icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */; };
+		EC29AFB618BE55F100A0B476 /* PDLaunch_640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */; };
+		EC29AFB718BE55F100A0B476 /* PDLaunch_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */; };
 		ECAE446E18B266BB000025DA /* LookupVINValues.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAE446D18B266BB000025DA /* LookupVINValues.m */; };
 		ECAE447318B29438000025DA /* lightHouse320-480.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447118B29438000025DA /* lightHouse320-480.png */; };
 		ECAE447418B29438000025DA /* lightHouse640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447218B29438000025DA /* lightHouse640-960.png */; };
@@ -138,9 +146,9 @@
 		EC1CBF4F18AC34EE00076249 /* PioneerPortalDirectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PioneerPortalDirectTests-Info.plist"; sourceTree = "<group>"; };
 		EC1CBF5118AC34EE00076249 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC1CBF5318AC34EE00076249 /* PioneerPortalDirectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PioneerPortalDirectTests.m; sourceTree = "<group>"; };
-		EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EC1CBF5E18AC381D00076249 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		EC1CBF5F18AC381D00076249 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		EC1CBF5D18AC381D00076249 /* PDIcon_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDIcon_640x1136.png; sourceTree = "<group>"; };
+		EC1CBF5E18AC381D00076249 /* PDIcon_320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDIcon_320x480.png; sourceTree = "<group>"; };
+		EC1CBF5F18AC381D00076249 /* PDIcon_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDIcon_640x960.png; sourceTree = "<group>"; };
 		EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_57.png; sourceTree = "<group>"; };
 		EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_114.png; sourceTree = "<group>"; };
 		EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PSM-logo-57px.png"; sourceTree = "<group>"; };
@@ -283,6 +291,14 @@
 		EC1CC0B818AD07B900076249 /* QuoteVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVehicle.m; sourceTree = "<group>"; };
 		EC1CC0BA18AD1FCE00076249 /* DropdownData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownData.h; sourceTree = "<group>"; };
 		EC1CC0BB18AD1FCE00076249 /* DropdownData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropdownData.m; sourceTree = "<group>"; };
+		EC29AFA818BE4C7C00A0B476 /* PD_Icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_29.png; sourceTree = "<group>"; };
+		EC29AFA918BE4C7C00A0B476 /* PD_Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_40.png; sourceTree = "<group>"; };
+		EC29AFAA18BE4C7C00A0B476 /* PD_Icon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_60.png; sourceTree = "<group>"; };
+		EC29AFAE18BE4D9500A0B476 /* PD_Icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_58.png; sourceTree = "<group>"; };
+		EC29AFAF18BE4D9500A0B476 /* PD_Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_80.png; sourceTree = "<group>"; };
+		EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_120.png; sourceTree = "<group>"; };
+		EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x960.png; sourceTree = "<group>"; };
+		EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x1136.png; sourceTree = "<group>"; };
 		ECAE446C18B266BB000025DA /* LookupVINValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupVINValues.h; sourceTree = "<group>"; };
 		ECAE446D18B266BB000025DA /* LookupVINValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupVINValues.m; sourceTree = "<group>"; };
 		ECAE447118B29438000025DA /* lightHouse320-480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightHouse320-480.png"; sourceTree = "<group>"; };
@@ -477,21 +493,29 @@
 		EC1CBF6318AC38C600076249 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				ECAE447718B2BAFB000025DA /* PioneerTransLogo150px.png */,
-				ECAE447518B2988D000025DA /* PioneerLogo.gif */,
-				ECAE447118B29438000025DA /* lightHouse320-480.png */,
-				ECAE447218B29438000025DA /* lightHouse640-960.png */,
+				EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */,
+				EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */,
 				EC1CBF6A18AC3AA900076249 /* blueCar.png */,
 				EC1CC05D18AC75F800076249 /* blueGrad5.jpeg */,
 				EC1CBF6C18AC3ABF00076249 /* Cabriolet_Red.png */,
 				EC1CBF6D18AC3ABF00076249 /* car-side.png */,
 				EC1CBF6E18AC3ABF00076249 /* checked.jpeg */,
 				EC1CBF6F18AC3ABF00076249 /* checked.png */,
-				EC1CBF5D18AC381D00076249 /* Default-568h@2x.png */,
-				EC1CBF5E18AC381D00076249 /* Default.png */,
-				EC1CBF5F18AC381D00076249 /* Default@2x.png */,
+				ECAE447118B29438000025DA /* lightHouse320-480.png */,
+				ECAE447218B29438000025DA /* lightHouse640-960.png */,
 				EC1CBF6518AC39CF00076249 /* PD_Icon_114.png */,
+				EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */,
+				EC29AFA818BE4C7C00A0B476 /* PD_Icon_29.png */,
+				EC29AFA918BE4C7C00A0B476 /* PD_Icon_40.png */,
 				EC1CBF6418AC39CF00076249 /* PD_Icon_57.png */,
+				EC29AFAE18BE4D9500A0B476 /* PD_Icon_58.png */,
+				EC29AFAA18BE4C7C00A0B476 /* PD_Icon_60.png */,
+				EC29AFAF18BE4D9500A0B476 /* PD_Icon_80.png */,
+				EC1CBF5E18AC381D00076249 /* PDIcon_320x480.png */,
+				EC1CBF5D18AC381D00076249 /* PDIcon_640x1136.png */,
+				EC1CBF5F18AC381D00076249 /* PDIcon_640x960.png */,
+				ECAE447518B2988D000025DA /* PioneerLogo.gif */,
+				ECAE447718B2BAFB000025DA /* PioneerTransLogo150px.png */,
 				EC1CC05F18AC769300076249 /* PSM-logo-150px.png */,
 				EC1CBF6618AC39CF00076249 /* PSM-logo-57px.png */,
 				EC1CC06718AC7A5D00076249 /* question.png */,
@@ -642,23 +666,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC29AFB718BE55F100A0B476 /* PDLaunch_640x1136.png in Resources */,
 				EC1CBF6B18AC3AA900076249 /* blueCar.png in Resources */,
 				EC1CBF6718AC39CF00076249 /* PD_Icon_57.png in Resources */,
+				EC29AFAC18BE4C7C00A0B476 /* PD_Icon_40.png in Resources */,
 				EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */,
+				EC29AFB218BE4D9500A0B476 /* PD_Icon_80.png in Resources */,
 				EC1CBF7318AC3ABF00076249 /* checked.png in Resources */,
 				EC1CC05E18AC75F800076249 /* blueGrad5.jpeg in Resources */,
 				EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */,
 				EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */,
-				EC1CBF6218AC381D00076249 /* Default@2x.png in Resources */,
+				EC1CBF6218AC381D00076249 /* PDIcon_640x960.png in Resources */,
 				EC1CBFFB18AC3C9800076249 /* QuoteDriver.xml in Resources */,
 				EC1CC06018AC769300076249 /* PSM-logo-150px.png in Resources */,
 				EC1CBF6818AC39CF00076249 /* PD_Icon_114.png in Resources */,
+				EC29AFAB18BE4C7C00A0B476 /* PD_Icon_29.png in Resources */,
+				EC29AFB318BE4D9500A0B476 /* PD_Icon_120.png in Resources */,
 				EC1CBF7018AC3ABF00076249 /* Cabriolet_Red.png in Resources */,
 				EC1CC06C18AC7A9A00076249 /* SmallBluePlus.png in Resources */,
 				EC1CC07618AC7CBB00076249 /* user_real_person.png in Resources */,
 				EC1CC07418AC7C3300076249 /* tick.png in Resources */,
-				EC1CBF6018AC381D00076249 /* Default-568h@2x.png in Resources */,
-				EC1CBF6118AC381D00076249 /* Default.png in Resources */,
+				EC1CBF6018AC381D00076249 /* PDIcon_640x1136.png in Resources */,
+				EC29AFB618BE55F100A0B476 /* PDLaunch_640x960.png in Resources */,
+				EC1CBF6118AC381D00076249 /* PDIcon_320x480.png in Resources */,
+				EC29AFB118BE4D9500A0B476 /* PD_Icon_58.png in Resources */,
 				EC1CC06B18AC7A9A00076249 /* SmallBluePlus.jpg in Resources */,
 				EC1CC03618AC5A5100076249 /* PDMain.storyboard in Resources */,
 				ECAE447418B29438000025DA /* lightHouse640-960.png in Resources */,
@@ -666,6 +697,7 @@
 				EC1CC06818AC7A5D00076249 /* question.png in Resources */,
 				EC1CBF7118AC3ABF00076249 /* car-side.png in Resources */,
 				EC1CC00718AC3C9800076249 /* QuoteXML.xml in Resources */,
+				EC29AFAD18BE4C7C00A0B476 /* PD_Icon_60.png in Resources */,
 				ECAE447318B29438000025DA /* lightHouse320-480.png in Resources */,
 				EC1CBF7218AC3ABF00076249 /* checked.jpeg in Resources */,
 				ECAE447618B2988D000025DA /* PioneerLogo.gif in Resources */,
