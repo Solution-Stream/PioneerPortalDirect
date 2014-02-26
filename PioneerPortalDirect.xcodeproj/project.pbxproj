@@ -611,6 +611,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Solution-Stream";
 				TargetAttributes = {
+					EC1CBF2418AC34EE00076249 = {
+						DevelopmentTeam = E3JEP5M9JW;
+					};
 					EC1CBF4418AC34EE00076249 = {
 						TestTargetID = EC1CBF2418AC34EE00076249;
 					};
@@ -866,11 +869,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PioneerPortalDirect/PioneerPortalDirect-Prefix.pch";
 				INFOPLIST_FILE = "PioneerPortalDirect/PioneerPortalDirect-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -880,11 +886,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PioneerPortalDirect/PioneerPortalDirect-Prefix.pch";
 				INFOPLIST_FILE = "PioneerPortalDirect/PioneerPortalDirect-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
