@@ -11,7 +11,7 @@
 @interface LookupVINValues : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
--(NSString*)LookupABSValue:(NSString *)code;
--(NSString*)LookupRestraintValue:(NSString *)code;
+-(NSMutableString*)LookupABSValue:(NSString *)code;
+-(NSMutableString*)LookupRestraintValue:(NSString *)code;
 
 @end

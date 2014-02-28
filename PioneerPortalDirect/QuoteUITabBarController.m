@@ -48,7 +48,23 @@
 
 -(void)StartupFunction{
     Globals *tmp = [Globals sharedSingleton];
+    
+    
+    CGRect frame = CGRectMake(0.0, 0, self.view.bounds.size.width, 48);
+    
+    UIView *trans_view = [[UIView alloc] initWithFrame:frame];
+    
+    [trans_view setBackgroundColor:[[UIColor alloc] initWithRed:0.0
+                                                          green:0.0
+                                                           blue:0.0
+                                                          alpha:0.5]];//you can change alpha value also
+    
+    [self.tabBar insertSubview:trans_view atIndex:0];//tabBar1 = your tabbar reference
 	
+    
+    
+    
+    
     self.selectedIndex = [tmp.quoteViewIndex intValue];
     [self.navigationController setToolbarHidden:YES];
     self.title = @"Auto Quote";

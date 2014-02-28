@@ -80,7 +80,5 @@
 
 -(IBAction)GenderFPressed:(id)sender;
 -(IBAction)GenderMPressed:(id)sender;
--(IBAction)SaveThenNextStep:(id)sender;
-- (IBAction)CancelAddDriver:(id)sender;
 
 @end

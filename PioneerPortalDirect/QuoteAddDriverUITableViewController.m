@@ -53,6 +53,11 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
     [self LoadToolbars];
     
     [self LoadData];
@@ -84,24 +89,32 @@
     self.tabBarItem.title = @"Add";
     label.text = self.title;
     
-    [self.navigationController setToolbarHidden:YES];
     
-    UIBarButtonItem *buttonAddDriver = [[UIBarButtonItem alloc] initWithTitle:@"Add Another Driver"
-                                                                        style:UIBarButtonItemStyleBordered
-                                                                       target: self
-                                                                       action:@selector(SaveThenNextStep:) ];
+    [self.navigationController setToolbarHidden:NO];
     
-    UIBarButtonItem *buttonNextStep = [[UIBarButtonItem alloc] initWithTitle:@"Next Step"
-                                                                       style:UIBarButtonItemStyleBordered
-                                                                      target: self
-                                                                      action:@selector(SaveThenNextStep:) ];
+    //toolbar buttons
+    UIBarButtonItem *save = [[UIBarButtonItem alloc]
+                             initWithTitle:@"Save Driver"
+                             style:UIBarButtonItemStyleBordered
+                             target:self
+                             action:@selector(SaveThenNextStep)];
+    
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc]
+                               initWithTitle:@"Cancel"
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(CancelAddDriver)];
     
     UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                               target:nil
                                                                               action:nil];
-    self.toolbarItems = nil;
     
-    self.toolbarItems = [ NSArray arrayWithObjects: flexible, buttonAddDriver, buttonNextStep, flexible, nil ];
+    
+    
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:70/255.0f green:155/255.0f blue:19/255.0f alpha:1.0]];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, cancel, nil];
+    self.toolbarItems = arrBtns;
 
 }
 
@@ -644,7 +657,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)SaveThenNextStep:(id)sender {
+- (void)SaveThenNextStep {
     Globals *tmp = [Globals sharedSingleton];
     
     if([txtFirstName.text isEqualToString:@""] || [txtLastName.text isEqualToString:@""]){
@@ -830,7 +843,7 @@
     [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
 }
 
-- (IBAction)CancelAddDriver:(id)sender {
+- (void)CancelAddDriver{
     txtFirstName.text = @"";
     txtLastName.text = @"";
     txtMiddleInitial.text = @"";

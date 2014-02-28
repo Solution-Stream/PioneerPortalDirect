@@ -42,8 +42,7 @@
 
 - (void)leftNavButtonFire:(id)sender;
 - (IBAction)SendUserToLoginScreen:(id)sender;
-- (IBAction)SaveThenNextStep:(id)sender;
-- (IBAction)CancelAddApplicant:(id)sender;
+
 
 @property (strong, nonatomic) IBOutlet UIToolbar *BottomToolBar;
 

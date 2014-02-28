@@ -109,6 +109,11 @@
 -(void)StartupFunctions{
     Globals *tmp = [Globals sharedSingleton];
     
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
     saveStatus = @"";
     
     arrBodilyInjury = [[NSMutableArray alloc] init];

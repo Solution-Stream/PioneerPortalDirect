@@ -25,6 +25,15 @@
 @synthesize quote,currentQuote,activityIndicator,responseData,vehicleYearPicker,vehicleUsagePicker,antiTheftPicker,bodilyInjuryPicker,vehicleTypePicker,antiLockBrakePicker,passiveRestraintPicker,daysOfWeekPicker;
 @synthesize btnCancel,vehicleMakePicker;
 
+bool CheckVINReturnedResults;
+NSMutableString *VINMake;
+NSMutableString *VINModel;
+NSMutableString *VINYear;
+NSMutableString *VINABS_Text;
+NSMutableString *VINRestraint_Text;
+NSMutableString *VINABS_Value;
+NSMutableString *VINRestraint_Value;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -38,6 +47,12 @@
     if(textField == txtGaragingZipCode){
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 5) ? NO : YES;
+    }
+    else if(textField == txtModel){
+        if(CheckVINReturnedResults){
+            [self DetermineIfUserWantsToClearVIN];
+        }
+        return YES;
     }
     else{
         return YES;
@@ -120,6 +135,11 @@
 {
     [super viewDidLoad];
     Globals *tmp = [Globals sharedSingleton];
+    
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
     
     txtYear.delegate = (id)self;
     txtWorkWeek.delegate = (id)self;
@@ -552,11 +572,13 @@
 
 -(void)VehicleMakeListDonePressed:(id)sender{
     [txtMake resignFirstResponder];
+    [self DetermineIfUserWantsToClearVIN];
 }
 
 
 -(void)VehicleYearDone:(id)sender{
     [txtYear resignFirstResponder];
+    [self DetermineIfUserWantsToClearVIN];
 }
 
 -(void)VehicleTypeDone:(id)sender{
@@ -573,19 +595,49 @@
 
 -(void)AntiLockBrakesDone:(id)sender{
     [txtAntiLockBrakes resignFirstResponder];
+    [self DetermineIfUserWantsToClearVIN];
 }
 
 -(void)PassiveRestraintDone:(id)sender{
     [txtPassiveRestraints resignFirstResponder];
+    [self DetermineIfUserWantsToClearVIN];
 }
 
 -(void)DaysWeekDone:(id)sender{
     [txtWorkWeek resignFirstResponder];
 }
 
-//-(void)BodilyInjuryDone:(id)sender{
-//    [txtBodilyInjuryLimit resignFirstResponder];
-//}
+-(void)DetermineIfUserWantsToClearVIN{
+    if(CheckVINReturnedResults == YES){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"VIN Notification"
+                                                       message: @"This field was determined from the VIN entered. Do you want to clear the VIN and enter a different vehicle?"
+                                                      delegate: self
+                                             cancelButtonTitle:@"YES"
+                                             otherButtonTitles:@"NO", nil];
+        alert.tag = 10;
+        [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        if(alertView.tag == 10){
+            //Restore VIN data
+            txtMake.text = VINMake;
+            txtModel.text = VINModel;
+            txtYear.text = VINYear;
+            txtAntiLockBrakes.text = VINABS_Text;
+            txtPassiveRestraints.text = VINRestraint_Text;
+            antLockBrakeCodeValue = VINABS_Value;
+            passiveRestraintCodeValue = VINRestraint_Value;
+        }
+    }
+    if(buttonIndex == 0){
+        if(alertView.tag == 10){
+            txtVIN.text = @"";
+        }
+    }
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -837,8 +889,18 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
             txtPassiveRestraints.text = Restraint_Text;
             antLockBrakeCodeValue = [occ objectForKey:@"ABS"];
             passiveRestraintCodeValue = [occ objectForKey:@"Restraint"];
+            //Save values to variables to be used to reset values if necessary
+            VINMake = [occ objectForKey:@"Make"];
+            VINModel = [occ objectForKey:@"Model"];
+            VINYear = [occ objectForKey:@"Year"];
+            VINABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
+            VINRestraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
+            VINABS_Value = [occ objectForKey:@"ABS"];
+            VINRestraint_Value = [occ objectForKey:@"Restraint"];
+            CheckVINReturnedResults = YES;
         }
         else{
+            CheckVINReturnedResults = NO;
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid VIN"
                                                            message: @"VIN is invalid. Please check and enter again"
                                                           delegate: self

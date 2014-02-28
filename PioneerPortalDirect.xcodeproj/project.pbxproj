@@ -111,6 +111,7 @@
 		EC29AFB318BE4D9500A0B476 /* PD_Icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */; };
 		EC29AFB618BE55F100A0B476 /* PDLaunch_640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */; };
 		EC29AFB718BE55F100A0B476 /* PDLaunch_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */; };
+		ECAB7E2918C0D91100541D98 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAB7E2818C0D91100541D98 /* clouds.png */; };
 		ECAE446E18B266BB000025DA /* LookupVINValues.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAE446D18B266BB000025DA /* LookupVINValues.m */; };
 		ECAE447318B29438000025DA /* lightHouse320-480.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447118B29438000025DA /* lightHouse320-480.png */; };
 		ECAE447418B29438000025DA /* lightHouse640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447218B29438000025DA /* lightHouse640-960.png */; };
@@ -299,6 +300,7 @@
 		EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_120.png; sourceTree = "<group>"; };
 		EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x960.png; sourceTree = "<group>"; };
 		EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x1136.png; sourceTree = "<group>"; };
+		ECAB7E2818C0D91100541D98 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		ECAE446C18B266BB000025DA /* LookupVINValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupVINValues.h; sourceTree = "<group>"; };
 		ECAE446D18B266BB000025DA /* LookupVINValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupVINValues.m; sourceTree = "<group>"; };
 		ECAE447118B29438000025DA /* lightHouse320-480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightHouse320-480.png"; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 		EC1CBF6318AC38C600076249 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				ECAB7E2818C0D91100541D98 /* clouds.png */,
 				EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */,
 				EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */,
 				EC1CBF6A18AC3AA900076249 /* blueCar.png */,
@@ -673,6 +676,7 @@
 				EC1CBF3518AC34EE00076249 /* InfoPlist.strings in Resources */,
 				EC29AFB218BE4D9500A0B476 /* PD_Icon_80.png in Resources */,
 				EC1CBF7318AC3ABF00076249 /* checked.png in Resources */,
+				ECAB7E2918C0D91100541D98 /* clouds.png in Resources */,
 				EC1CC05E18AC75F800076249 /* blueGrad5.jpeg in Resources */,
 				EC1CBF4018AC34EE00076249 /* Images.xcassets in Resources */,
 				EC1CBF6918AC39CF00076249 /* PSM-logo-57px.png in Resources */,

@@ -100,6 +100,11 @@
 }
 
 -(void)StartupFunctions{
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+
     [self SetTabBarImages];
     
     Globals *tmp = [Globals sharedSingleton];
@@ -115,14 +120,33 @@
     self.tabBarItem.title = @"Applicant";
     label.text = self.title;
     
-    [self.navigationController setToolbarHidden:YES];
+    [self.navigationController setToolbarHidden:NO];
     [self.navigationController setNavigationBarHidden:YES];
     
-    //    UIBarButtonItem *buttonLeftNav = [[UIBarButtonItem alloc] initWithTitle:@"Back to Login"
-    //                                                                       style:UIBarButtonItemStyleBordered
-    //                                                                      target: self
-    //                                                                      action:@selector(leftNavButtonFire:) ];
-    //    self.navigationItem.leftBarButtonItem = buttonLeftNav;
+    //toolbar buttons
+    UIBarButtonItem *save = [[UIBarButtonItem alloc]
+                  initWithTitle:@"Save Applicant"
+                  style:UIBarButtonItemStyleBordered
+                  target:self
+                             action:@selector(SaveThenNextStep)];
+    
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Cancel"
+                                  style:UIBarButtonItemStyleBordered
+                                  target:self
+                                  action:@selector(CancelAddApplicant)];
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    
+    
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:70/255.0f green:155/255.0f blue:19/255.0f alpha:1.0]];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, cancel, nil];
+    self.toolbarItems = arrBtns;
+
     
     
     arrayStateList = [[NSMutableArray alloc] init];
@@ -460,7 +484,7 @@
 }
 
 
-- (IBAction)SaveThenNextStep:(id)sender {
+- (void)SaveThenNextStep {
     Globals *tmp = [Globals sharedSingleton];
     
     if(![tmp validateEmail:txtEmail.text]){
@@ -601,7 +625,7 @@
     [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
 }
 
-- (IBAction)CancelAddApplicant:(id)sender {
+- (void)CancelAddApplicant {
     txtFirstName.text = @"";
     txtLastName.text = @"";
     txtMiddle.text = @"";

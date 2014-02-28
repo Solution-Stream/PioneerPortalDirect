@@ -72,6 +72,12 @@
 -(void)StartupFunctions{
     [self.navigationController setToolbarHidden:NO];
     
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    
     UIBarButtonItem *buttonEdit = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
                                                                    style:UIBarButtonItemStyleBordered
                                                                   target: self
