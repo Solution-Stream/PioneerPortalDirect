@@ -93,7 +93,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnCancel;
 
 - (IBAction)CheckVIN:(id)sender;
-- (IBAction)SaveThenNextStep:(id)sender;
-- (IBAction)CancelAddVehicle:(id)sender;
 
 @end
