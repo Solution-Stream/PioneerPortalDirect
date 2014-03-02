@@ -1339,7 +1339,7 @@
                         <segue destination="wqZ-WO-ck5" kind="relationship" relationship="viewControllers" id="Fgy-kL-EIZ"/>
                         <segue destination="caj-V6-FnD" kind="relationship" relationship="viewControllers" id="G2f-MK-CAq"/>
                         <segue destination="kJc-sX-yfx" kind="relationship" relationship="viewControllers" id="7mC-iw-ghR"/>
-                        <segue destination="2jG-th-x6a" kind="relationship" relationship="viewControllers" id="i4j-B9-75o"/>
+                        <segue destination="cU4-ve-8Lq" kind="relationship" relationship="viewControllers" id="i4j-B9-75o"/>
                         <segue destination="rRa-90-VI4" kind="relationship" relationship="viewControllers" id="SWM-MV-vGO"/>
                     </connections>
                 </tabBarController>
@@ -2833,50 +2833,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <inset key="contentInset" minX="0.0" minY="44" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="Quote - Liability Coverages" id="LNv-PR-On9">
                                 <cells/>
                             </tableViewSection>
                             <tableViewSection id="elG-g7-gMo">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="xy5-y5-sUP">
-                                        <rect key="frame" x="0.0" y="125" width="320" height="32"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="xy5-y5-sUP">
+                                        <rect key="frame" x="0.0" y="125" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xy5-y5-sUP" id="rBH-e3-bub">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bodily Injury" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xdo-zP-sfz">
-                                                    <rect key="frame" x="4" y="5" width="114" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="20" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bodily Injury" minimumFontSize="17" id="jKA-xO-hQF">
-                                                    <rect key="frame" x="126" y="1" width="164" height="30"/>
+                                                    <rect key="frame" x="20" y="22" width="140" height="25"/>
                                                     <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="IWJ-gB-hEG">
-                                        <rect key="frame" x="0.0" y="157" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IWJ-gB-hEG" id="BBy-dn-0ra">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Property Damage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cuW-a4-K3o">
-                                                    <rect key="frame" x="4" y="5" width="120" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="160" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Property Damage" minimumFontSize="17" id="fAn-mf-sW5">
-                                                    <rect key="frame" x="126" y="1" width="164" height="30"/>
+                                                    <rect key="frame" x="160" y="22" width="140" height="25"/>
                                                     <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -2884,131 +2873,33 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="WnH-Dq-LPQ">
-                                        <rect key="frame" x="0.0" y="189" width="320" height="32"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="WnH-Dq-LPQ">
+                                        <rect key="frame" x="0.0" y="173" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WnH-Dq-LPQ" id="xfN-WS-lyz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Medical Provider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FPL-am-Pxj">
-                                                    <rect key="frame" x="4" y="5" width="115" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Medical Provider" minimumFontSize="17" id="LzM-d5-bEU">
-                                                    <rect key="frame" x="127" y="1" width="164" height="30"/>
-                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="NH0-Eu-8fK">
-                                        <rect key="frame" x="0.0" y="221" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NH0-Eu-8fK" id="DEK-8U-o7L">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Personal Injury" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ds2-gO-kgF">
-                                                    <rect key="frame" x="4" y="5" width="98" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Personal Injury Protection" minimumFontSize="17" id="2dd-1F-PXc">
-                                                    <rect key="frame" x="127" y="1" width="164" height="30"/>
-                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="z4W-Ho-UdZ">
-                                        <rect key="frame" x="0.0" y="253" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4W-Ho-UdZ" id="Pz8-EB-dos">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Property Protection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4eR-4T-zAF">
-                                                    <rect key="frame" x="4" y="5" width="126" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="20" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Property Protection" minimumFontSize="17" id="Jyi-dt-Apb">
-                                                    <rect key="frame" x="132" y="1" width="159" height="30"/>
+                                                    <rect key="frame" x="20" y="22" width="140" height="25"/>
                                                     <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="biE-fb-6kL">
-                                        <rect key="frame" x="0.0" y="285" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biE-fb-6kL" id="2hU-vN-c28">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uninsured Motorist Limit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7mN-RO-Qfc">
-                                                    <rect key="frame" x="4" y="5" width="162" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Uninsured Motorist Limit" minimumFontSize="17" id="9YX-7k-VRP">
-                                                    <rect key="frame" x="181" y="1" width="108" height="30"/>
-                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="lfO-lN-DYS">
-                                        <rect key="frame" x="0.0" y="317" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lfO-lN-DYS" id="dJd-KM-VDH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Underinsured Motorist Limit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pKf-rA-4a8">
-                                                    <rect key="frame" x="4" y="5" width="177" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Underinsured Motorist Limit" minimumFontSize="17" id="ek0-oi-3Tg">
-                                                    <rect key="frame" x="183" y="1" width="108" height="30"/>
-                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="32" id="4Qc-bH-aDu">
-                                        <rect key="frame" x="0.0" y="349" width="320" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Qc-bH-aDu" id="juG-5M-N2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mini Tort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nyy-qo-0eJ">
-                                                    <rect key="frame" x="4" y="5" width="75" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="160" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mini Tort" minimumFontSize="17" id="uXo-j9-BsS">
-                                                    <rect key="frame" x="183" y="1" width="108" height="30"/>
+                                                    <rect key="frame" x="160" y="22" width="140" height="25"/>
                                                     <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -3016,27 +2907,91 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="dmT-tH-Hsj">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TUO-Vc-FPL">
-                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="Y4Z-PG-PXm">
+                                        <rect key="frame" x="0.0" y="221" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUO-Vc-FPL" id="npp-uS-cVb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y4Z-PG-PXm" id="5io-WR-wLF">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dFU-ET-QV2">
-                                                    <rect key="frame" x="0.0" y="-1" width="300" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Save Coverages">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="SaveQuote:" destination="2jG-th-x6a" eventType="touchUpInside" id="4vO-lD-TcR"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Medical Provider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FPL-am-Pxj">
+                                                    <rect key="frame" x="20" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Medical Provider" minimumFontSize="17" id="LzM-d5-bEU">
+                                                    <rect key="frame" x="20" y="22" width="280" height="25"/>
+                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="IWJ-gB-hEG">
+                                        <rect key="frame" x="0.0" y="269" width="320" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IWJ-gB-hEG" id="BBy-dn-0ra">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Personal Injury" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ds2-gO-kgF">
+                                                    <rect key="frame" x="20" y="1" width="140" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Personal Injury Protection" minimumFontSize="17" id="2dd-1F-PXc">
+                                                    <rect key="frame" x="20" y="22" width="280" height="25"/>
+                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="NH0-Eu-8fK">
+                                        <rect key="frame" x="0.0" y="317" width="320" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NH0-Eu-8fK" id="DEK-8U-o7L">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uninsured Motorist Limit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7mN-RO-Qfc">
+                                                    <rect key="frame" x="20" y="1" width="201" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Uninsured Motorist Limit" minimumFontSize="17" id="9YX-7k-VRP">
+                                                    <rect key="frame" x="20" y="22" width="280" height="25"/>
+                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddDriverPrototypeCell" rowHeight="48" id="z4W-Ho-UdZ">
+                                        <rect key="frame" x="0.0" y="365" width="320" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4W-Ho-UdZ" id="Pz8-EB-dos">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Underinsured Motorist Limit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pKf-rA-4a8">
+                                                    <rect key="frame" x="20" y="1" width="218" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Underinsured Motorist Limit" minimumFontSize="17" id="ek0-oi-3Tg">
+                                                    <rect key="frame" x="20" y="22" width="280" height="25"/>
+                                                    <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3048,7 +3003,6 @@
                             <outlet property="delegate" destination="2jG-th-x6a" id="Nxm-xw-UjN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Coverages" id="NsZ-Ea-JHR"/>
                     <navigationItem key="navigationItem" title="Auto Quote - Liability Coverages" id="gSy-qQ-26M">
                         <barButtonItem key="backBarButtonItem" title="Coverages" id="T8d-EE-jSq"/>
                     </navigationItem>
@@ -3066,7 +3020,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBd-YI-ioR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5009" y="-262"/>
+            <point key="canvasLocation" x="5535" y="-262"/>
         </scene>
         <!--Quote Add DriverUI Table View Controller - Auto Quote - Add Driver-->
         <scene sceneID="Qtt-ac-uKm">
@@ -3821,7 +3775,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIo-6h-jK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5881" y="-252"/>
+            <point key="canvasLocation" x="6407" y="-252"/>
         </scene>
         <!--Quote Review Table View Controller-->
         <scene sceneID="afo-DE-rHd">
@@ -3864,7 +3818,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ija-Ps-Mgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6412" y="-228"/>
+            <point key="canvasLocation" x="6938" y="-228"/>
         </scene>
         <!--Quote Vehicle ListUI Table View Controller - Quote Vehicle List-->
         <scene sceneID="Tht-DJ-Dop">
@@ -3982,7 +3936,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odn-rZ-rhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7498" y="378"/>
+            <point key="canvasLocation" x="8024" y="378"/>
         </scene>
         <!--Quote Driver Select Table View Controller-->
         <scene sceneID="yO0-dT-QMT">
@@ -4068,7 +4022,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N73-lP-Z37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5443" y="-252"/>
+            <point key="canvasLocation" x="5969" y="-252"/>
         </scene>
         <!--Quote Vehicle Navigation Controller - Vehicle List-->
         <scene sceneID="s6w-nR-cd9">
@@ -4106,7 +4060,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rge-dm-BFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6972" y="378"/>
+            <point key="canvasLocation" x="7498" y="378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MiR-ei-QZz">
@@ -4144,6 +4098,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5c-aJ-brz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3066" y="-76"/>
+        </scene>
+        <!--Navigation Controller - Coverages-->
+        <scene sceneID="hdC-mK-WiY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cU4-ve-8Lq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Coverages" id="NsZ-Ea-JHR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4G-Nw-BtG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2jG-th-x6a" kind="relationship" relationship="rootViewController" id="RLl-hZ-3hS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmZ-cP-9lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5009" y="-262"/>
         </scene>
     </scenes>
     <resources>

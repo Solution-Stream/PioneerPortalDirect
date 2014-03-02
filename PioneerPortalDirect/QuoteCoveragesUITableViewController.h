@@ -68,6 +68,5 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, retain) Quotes *currentQuote;
 
-- (IBAction)SaveQuote:(id)sender;
 
 @end

@@ -89,6 +89,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"DriverSelectTableCell";
     
     
@@ -104,6 +105,8 @@
     cell.textLabel.text = [arrayQuoteDriver objectAtIndex:indexPath.row];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    cell.textLabel.font = tmp.TableViewListFont;
     
     return cell;
 }

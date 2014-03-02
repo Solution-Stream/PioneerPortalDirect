@@ -109,6 +109,34 @@
 -(void)StartupFunctions{
     Globals *tmp = [Globals sharedSingleton];
     
+    [self.navigationController setToolbarHidden:NO];
+    
+    self.tabBarItem.title = @"Coverages";
+    
+    //toolbar buttons
+    UIBarButtonItem *save = [[UIBarButtonItem alloc]
+                             initWithTitle:@"Save Coverages"
+                             style:UIBarButtonItemStyleBordered
+                             target:self
+                             action:@selector(SaveCoverages)];
+    
+//    UIBarButtonItem *cancel = [[UIBarButtonItem alloc]
+//                               initWithTitle:@"Cancel"
+//                               style:UIBarButtonItemStyleBordered
+//                               target:self
+//                               action:@selector(CancelAddDriver)];
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    
+    
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:70/255.0f green:155/255.0f blue:19/255.0f alpha:1.0]];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, nil];
+    self.toolbarItems = arrBtns;
+    
     //set background image
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
     [tempImageView setFrame:self.tableView.frame];
@@ -159,7 +187,7 @@
     txtUnderinsuredMotorist.delegate = (id)self;
     txtUninsuredMotorist.delegate = (id)self;
     
-    self.title = @"Auto Quote - Liability Coverages";
+    self.title = @"Coverages";
     CGRect frame = CGRectMake(0, 0, [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.textColor = [UIColor whiteColor];
@@ -170,7 +198,7 @@
     self.tabBarItem.title = @"Coverages";
     label.text = self.title;
     
-    [self.navigationController setToolbarHidden:YES];
+    
     
 //    UIBarButtonItem *buttonSave = [[UIBarButtonItem alloc] initWithTitle:@"Save Quote"
 //                                                                   style:UIBarButtonItemStyleBordered
@@ -638,7 +666,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)SaveQuote:(id)sender{
+-(void)SaveCoverages{
        
     Globals *tmp = [Globals sharedSingleton];
     
@@ -754,21 +782,29 @@
         [(QuoteUITabBarController *)self.tabBarController EnableReviewButton];
     }
     
-    if(ProceedToDrivers == YES){
-        tmp.quoteViewIndex = [NSNumber numberWithInt:1];
-        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
-        [self.navigationController pushViewController:svc animated:YES];
-    }
-    else if(ProceedToVehicles == YES){
-        tmp.quoteViewIndex = [NSNumber numberWithInt:2];
-        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
-        [self.navigationController pushViewController:svc animated:YES];
-    }
-    else{
-        tmp.quoteViewIndex = [NSNumber numberWithInt:4];
-        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
-        [self.navigationController pushViewController:svc animated:YES];
-    }
+//    if(ProceedToDrivers == YES){
+//        tmp.quoteViewIndex = [NSNumber numberWithInt:1];
+//        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
+//        [self.navigationController pushViewController:svc animated:YES];
+//    }
+//    else if(ProceedToVehicles == YES){
+//        tmp.quoteViewIndex = [NSNumber numberWithInt:2];
+//        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
+//        [self.navigationController pushViewController:svc animated:YES];
+//    }
+//    else{
+//        tmp.quoteViewIndex = [NSNumber numberWithInt:4];
+//        QuoteUITabBarController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteTabController"];
+//        [self.navigationController pushViewController:svc animated:YES];
+//    }
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Saved"
+                                                   message: @"Quote Coverages have been saved"
+                                                  delegate: self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+    alert.tag = 1;
+    [alert show];
     
 }
 

@@ -64,8 +64,11 @@
     
     
     
+    if(tmp.quoteViewIndex != [NSNumber numberWithInt:-1]){
+        self.tabBarController.selectedIndex = [tmp.quoteViewIndex intValue];
+    }
+    tmp.quoteViewIndex = [NSNumber numberWithInt:-1];
     
-    self.selectedIndex = [tmp.quoteViewIndex intValue];
     [self.navigationController setToolbarHidden:YES];
     self.title = @"Auto Quote";
     
