@@ -59,6 +59,13 @@ NSMutableString *VINRestraint_Value;
     }
 }
 
+- (BOOL) validateZipCode: (NSString *) zip {
+    NSString *zipRegex = @"^[0-9]{5}$";
+    
+    NSPredicate *zipTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", zipRegex];
+    return [zipTest evaluateWithObject:zip];
+}
+
 - (UIView *)pickerView:(UIPickerView *)pickerView
 
             viewForRow:(NSInteger)row
@@ -585,6 +592,20 @@ NSMutableString *VINRestraint_Value;
 
 -(void)doneWithNumberPadGaragingZipCode{
     [txtGaragingZipCode resignFirstResponder];
+    if(![self validateZipCode:txtGaragingZipCode.text]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid Information"
+                                                       message: @"Garaging Zip Code is invalid"
+                                                      delegate: self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        alert.tag = 15;
+        [alert show];
+    }
+    else{
+        [self CheckZipCodeForSplitCity:txtGaragingZipCode.text];
+        //garagingZipCode = txtGaragingZipCode.text;
+    }
+
 }
 
 -(void)cancelNumberPadAnnualMiles{
@@ -872,6 +893,27 @@ NSMutableString *VINRestraint_Value;
 
 }
 
+-(void) CheckZipCodeForSplitCity:(NSString *)zipCode{
+    Globals *tmp = [Globals sharedSingleton];
+    tmp.quoteConnectionFailed = @"";
+    NSString *postString = [NSString stringWithFormat:@"%@%@%@",tmp.globalServerName, @"/users.svc/CheckSplitCity/", zipCode];
+    //postString = [postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //NSURL *url=[[NSURL alloc] initWithString:[urlpath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *theURL = [NSURL URLWithString:postString];
+    
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:theURL];
+    
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    
+    [request setTimeoutInterval:[tmp.GlobalTimeout doubleValue]];
+    
+    (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+}
+
+
     - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
         // A response has been received, this is where we initialize the instance var you created
         // so that we can append data to it in the didReceiveData method
@@ -891,56 +933,67 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
     return nil;
 }
     
-    - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-        Globals *tmp = [Globals sharedSingleton];
-        NSDictionary *resultsDictionary = [responseData objectFromJSONData];
-        NSArray *arrCodes = [resultsDictionary objectForKey:@"CheckVINResult"];
-        LookupVINValues *lookupVINValues = [[LookupVINValues alloc] init];
-        NSString *ABS_Text;
-        NSString *Restraint_Text;
-                
-        [tmp HideWaitScreen];
-        [txtVIN resignFirstResponder];
-
-                        
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    Globals *tmp = [Globals sharedSingleton];
+    NSDictionary *resultsDictionary = [responseData objectFromJSONData];
+    NSArray *arrCodes = [resultsDictionary objectForKey:@"CheckVINResult"];
+    NSString *SplitCityValue = [resultsDictionary objectForKey:@"CheckSplitCityResult"];
+    LookupVINValues *lookupVINValues = [[LookupVINValues alloc] init];
+    NSString *ABS_Text;
+    NSString *Restraint_Text;
+    
+    [tmp HideWaitScreen];
+    [txtVIN resignFirstResponder];
+    
+    if([arrCodes count] > 0){
         for(NSDictionary *occ in arrCodes){
-        NSString *returnCode = [occ objectForKey:@"returnCode"];
-        if([returnCode isEqualToString:@"0"]){
-            txtMake.text = [occ objectForKey:@"Make"];
-            txtModel.text = [occ objectForKey:@"Model"];
-            txtYear.text = [occ objectForKey:@"Year"];
-            ABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
-            Restraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
-            txtAntiLockBrakes.text = ABS_Text;
-            txtPassiveRestraints.text = Restraint_Text;
-            antLockBrakeCodeValue = [occ objectForKey:@"ABS"];
-            passiveRestraintCodeValue = [occ objectForKey:@"Restraint"];
-            //Save values to variables to be used to reset values if necessary
-            VINMake = [occ objectForKey:@"Make"];
-            VINModel = [occ objectForKey:@"Model"];
-            VINYear = [occ objectForKey:@"Year"];
-            VINABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
-            VINRestraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
-            VINABS_Value = [occ objectForKey:@"ABS"];
-            VINRestraint_Value = [occ objectForKey:@"Restraint"];
-            CheckVINReturnedResults = YES;
+            NSString *returnCode = [occ objectForKey:@"returnCode"];
+            if([returnCode isEqualToString:@"0"]){
+                txtMake.text = [occ objectForKey:@"Make"];
+                txtModel.text = [occ objectForKey:@"Model"];
+                txtYear.text = [occ objectForKey:@"Year"];
+                ABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
+                Restraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
+                txtAntiLockBrakes.text = ABS_Text;
+                txtPassiveRestraints.text = Restraint_Text;
+                antLockBrakeCodeValue = [occ objectForKey:@"ABS"];
+                passiveRestraintCodeValue = [occ objectForKey:@"Restraint"];
+                //Save values to variables to be used to reset values if necessary
+                VINMake = [occ objectForKey:@"Make"];
+                VINModel = [occ objectForKey:@"Model"];
+                VINYear = [occ objectForKey:@"Year"];
+                VINABS_Text = [lookupVINValues LookupABSValue:[occ objectForKey:@"ABS"]];
+                VINRestraint_Text = [lookupVINValues LookupRestraintValue:[occ objectForKey:@"Restraint"]];
+                VINABS_Value = [occ objectForKey:@"ABS"];
+                VINRestraint_Value = [occ objectForKey:@"Restraint"];
+                CheckVINReturnedResults = YES;
+            }
+            else{
+                CheckVINReturnedResults = NO;
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid VIN"
+                                                               message: @"VIN is invalid. Please check and enter again"
+                                                              delegate: self
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
+                [alert show];
+            }
         }
-        else{
-            CheckVINReturnedResults = NO;
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Invalid VIN"
-                                                           message: @"VIN is invalid. Please check and enter again"
-                                                          delegate: self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-            [alert show];
-        }
-
-        }
-        
-        [connection cancel];
         
     }
+    if(SplitCityValue != nil){
+            NSString *scValue = SplitCityValue;
+            if([scValue isEqualToString:@"True"]){
+                txtSplitCity.text = @"Yes";
+            }
+            else{
+                txtSplitCity.text = @"No";
+            }
+    }
     
+    [connection cancel];
+    
+}
+
     - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
         Globals *tmp = [Globals sharedSingleton];
         tmp.connectionFailed = @"true";

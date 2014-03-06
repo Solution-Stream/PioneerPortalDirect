@@ -3723,7 +3723,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="tap to change" minimumFontSize="17" id="rCo-8L-Gmr">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="tap to change" minimumFontSize="17" id="rCo-8L-Gmr">
                                                     <rect key="frame" x="160" y="22" width="140" height="25"/>
                                                     <color key="textColor" red="0.25490197539999998" green="0.36078432199999999" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
