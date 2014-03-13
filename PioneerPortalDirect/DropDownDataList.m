@@ -81,6 +81,17 @@
     
     NSArray *arrCodes = [resultsDictionary objectForKey:@"GetDropdownDataResult"];
     
+    //if only one record is returned it is an error. Handle appropriately.
+    if([arrCodes count] == 1){
+        NSDictionary *occE = arrCodes[0];
+        NSString *value = [occE objectForKey:@"Code"];
+        NSString *desc = [occE objectForKey:@"Description"];
+        if([value isEqualToString:@"error"]){
+            [tmp BroadCastErrorMessage:desc];
+            return;
+        }
+    }
+    
     NSString *occCode = nil;
     NSString *occDesc = nil;
     NSString *occName = nil;
@@ -90,6 +101,7 @@
         occDesc = [occ objectForKey:@"Description"];
         occName = [occ objectForKey:@"Name"];
         DropdownData *vt = [NSEntityDescription insertNewObjectForEntityForName:@"DropdownData" inManagedObjectContext:self.managedObjectContext];
+        
         vt.code = occCode;
         vt.desc = occDesc;
         vt.name = occName;

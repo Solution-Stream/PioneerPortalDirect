@@ -36,7 +36,14 @@
     //Load userinfo
 	Globals *tmp = [Globals sharedSingleton];
     
-    txtEffectiveDates.text = [NSString stringWithFormat:@"%@%@%@", tmp.policyeffectiveDate, @" to ", tmp.policyexpirationDate];
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    if(![tmp.policyeffectiveDate length] == 0 && ![tmp.policyexpirationDate length] == 0){
+        txtEffectiveDates.text = [NSString stringWithFormat:@"%@%@%@", tmp.policyeffectiveDate, @" to ", tmp.policyexpirationDate];
+    }
     
     self.managedObjectContext = tmp.managedObjectContext;
     NSFetchRequest *_fetchReqE = [[NSFetchRequest alloc] init];
@@ -80,7 +87,8 @@
         txtEffectiveDates.text = [NSString stringWithFormat:@"%@%@%@", _policyList.effectiveDate, @" to ", _policyList.expirationDate];
     }
 }
-         
+
+
  -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
      if(indexPath.section == 0){
             return 128;

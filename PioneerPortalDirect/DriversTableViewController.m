@@ -36,6 +36,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
 
     NSError *error = nil;
     // retrieve the store URL
@@ -114,6 +119,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"DriversTableCell";
     
     DriversTableViewCell *cell = [tableView
@@ -136,6 +142,8 @@
         UIImage *PlusImage = [UIImage imageNamed:@"user_real_person.png"];
         cell.imgDriverIcon.image = PlusImage;
     }
+    
+    cell.txtDriversName.font = tmp.TableViewListFont;
     
     return cell;
 }

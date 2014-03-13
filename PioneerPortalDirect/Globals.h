@@ -102,6 +102,8 @@
 - (void)ShowWaitScreen:(NSString *)customMessage;
 - (void)HideWaitScreen;
 
+- (void)BroadCastErrorMessage:(NSString *)errorMessage;
+
 - (NSString *)GetAnnualIncomeText:(NSString *)incomeCode;
 
 - (NSString *)GetUUID;

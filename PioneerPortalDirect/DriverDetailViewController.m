@@ -29,6 +29,11 @@
     Globals *tmp = [Globals sharedSingleton];
     self.managedObjectContext = tmp.managedObjectContext;
     
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
     NSFetchRequest *_fetchReq = [[NSFetchRequest alloc] init];
     _fetchReq.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@%@",@"clientNumber =", tmp.clientNumber]];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"DriverInfo" inManagedObjectContext:self.managedObjectContext];

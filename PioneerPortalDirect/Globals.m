@@ -969,5 +969,9 @@ static Globals *shared = NULL;
     
 }
 
+-(void)BroadCastErrorMessage:(NSString *)errorMessage{
+    
+}
+
 
 @end

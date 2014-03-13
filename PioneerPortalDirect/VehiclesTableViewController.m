@@ -31,6 +31,17 @@
     return self;
 }
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    [self LoadVehicleGrid];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
@@ -95,6 +106,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Globals *tmp = [Globals sharedSingleton];
     static NSString *CellIdentifier = @"VehiclesTableCell";
     
     VehiclesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -125,6 +137,10 @@
     cell.txtVehicleYear.text = year;
     cell.txtVehicleMake.text = make;
     cell.txtVehicleModel.text = model;
+    
+    cell.txtVehicleYear.font = tmp.TableViewListFont;
+    cell.txtVehicleMake.font = tmp.TableViewListFont;
+    cell.txtVehicleModel.font = tmp.TableViewListFont;
     
     return cell;
 }
