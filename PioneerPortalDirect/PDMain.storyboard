@@ -485,16 +485,9 @@
                             <outlet property="delegate" destination="m1l-0r-iPt" id="0ba-RW-Jy0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Vehicles" id="wXP-pB-U85">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0w9-UY-AiZ">
-                            <connections>
-                                <action selector="EditVehicleList:" destination="m1l-0r-iPt" id="VMD-z1-AEz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Vehicles" id="wXP-pB-U85"/>
                     <connections>
                         <outlet property="VehiclesTableView" destination="3w7-4S-RMm" id="YXG-qd-UrW"/>
-                        <outlet property="btnEditVehicles" destination="0w9-UY-AiZ" id="x8S-ri-2Kf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FL4-OG-74G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -939,15 +932,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="PNR-OF-avl">
                         <barButtonItem key="backBarButtonItem" title="Drivers" id="D5e-OJ-bbs"/>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9NL-BG-mm3">
-                            <connections>
-                                <action selector="RemoveDriverEditMode:" destination="anq-7q-tY6" id="mPa-R2-BjH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btnEditDrivers" destination="9NL-BG-mm3" id="QrD-Ly-Is4"/>
                         <outlet property="tblDriverList" destination="tQ6-K0-hQV" id="ClE-Ea-62o"/>
                     </connections>
                 </tableViewController>
@@ -1326,13 +1313,7 @@
                             <outlet property="delegate" destination="HXw-2u-6hl" id="evj-Uv-JmU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Driver" id="hXe-EG-M7o">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NGH-n5-OI5">
-                            <connections>
-                                <action selector="AddDriverDone:" destination="HXw-2u-6hl" id="q9N-F8-nWd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Driver" id="hXe-EG-M7o"/>
                     <connections>
                         <outlet property="DependentNoButton" destination="a42-fy-tal" id="dIE-2O-XwV"/>
                         <outlet property="DependentYesButton" destination="3dd-5Q-lse" id="WYU-vq-1ql"/>
@@ -1895,13 +1876,7 @@
                             <outlet property="delegate" destination="Cge-PD-3QC" id="W34-Ee-XFB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Vehicle" id="rfQ-kc-gUH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fkL-fJ-Yk7">
-                            <connections>
-                                <action selector="AddVehicleToPolicy:" destination="Cge-PD-3QC" id="DhT-Cy-fwf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Vehicle" id="rfQ-kc-gUH"/>
                     <connections>
                         <outlet property="activityIndicator" destination="bgX-fT-510" id="Jcb-Dr-Eld"/>
                         <outlet property="btnLookupVIN" destination="E4k-SX-Ulh" id="OUE-9y-av1"/>

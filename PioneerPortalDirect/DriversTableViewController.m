@@ -20,7 +20,7 @@
 
 @implementation DriversTableViewController
 
-@synthesize numDrivers,btnEditDrivers;
+@synthesize numDrivers,btnEditDrivers,cancelButton;
 @synthesize managedObjectContext = __managedObjectContext;
 
 
@@ -37,15 +37,61 @@
 {
     [super viewDidLoad];
     
+    [self StartupFunctions];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    
+    [self StartupFunctions];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)StartupFunctions{
+    //set up toolbar
+    [self.navigationController setToolbarHidden:NO];
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Delete Driver"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(ToggleEditing)];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Add Driver"
+                                  style:UIBarButtonItemStyleBordered
+                                  target:self
+                                  action:@selector(NavigateToAddDriverScreen)];
+    
+    
+    cancelButton = [[UIBarButtonItem alloc]
+                    initWithTitle:@"Cancel"
+                    style:UIBarButtonItemStyleBordered
+                    target:self
+                    action:@selector(ToggleEditing)];
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:editButton, flexible, flexible, addButton, nil];
+    self.toolbarItems = arrBtns;
+    
+    
     //set background image
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
     [tempImageView setFrame:self.tableView.frame];
     self.tableView.backgroundView = tempImageView;
-
+    
     NSError *error = nil;
     // retrieve the store URL
     NSURL * storeURL = [[self.managedObjectContext persistentStoreCoordinator] URLForPersistentStore:[[[self.managedObjectContext persistentStoreCoordinator] persistentStores] lastObject]];
-    // lock the current context   
+    // lock the current context
     
     [[NSFileManager defaultManager]removeItemAtURL:storeURL error:&error];
     
@@ -93,15 +139,6 @@
 
 }
 
--(void)viewDidAppear:(BOOL)animated{
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -134,14 +171,14 @@
     cell.txtDriversName.text = [arrayDrivers objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    if(indexPath.row == 0){
-        UIImage *PlusImage = [UIImage imageNamed:@"SmallBluePlus.png"];
-        cell.imgDriverIcon.image = PlusImage;
-    }
-    else{
+//    if(indexPath.row == 0){
+//        UIImage *PlusImage = [UIImage imageNamed:@"SmallBluePlus.png"];
+//        cell.imgDriverIcon.image = PlusImage;
+//    }
+//    else{
         UIImage *PlusImage = [UIImage imageNamed:@"user_real_person.png"];
         cell.imgDriverIcon.image = PlusImage;
-    }
+//    }
     
     cell.txtDriversName.font = tmp.TableViewListFont;
     
@@ -152,13 +189,7 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0){
-        return NO;
-    }
-    else{
-        return YES;
-    }
-
+    return YES;
 }
 
 
@@ -200,22 +231,49 @@
     
     UIStoryboard *storyboard = self.storyboard;
     DriverDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"DriversDetailViewController"];
-    UIViewController *addDriverController = [storyboard instantiateViewControllerWithIdentifier:@"AddDriverTableViewController"];
+    //UIViewController *addDriverController = [storyboard instantiateViewControllerWithIdentifier:@"AddDriverTableViewController"];
     //store policy number array to be used in detail view
     Globals *tmp = [Globals sharedSingleton];
     tmp.arrayGlobalPolicyNumbers = self->arrayPolicyNumbers;
            
-    if(indexPath.row == 0){
-        [self.navigationController pushViewController:addDriverController animated:YES];
-    }
-    else{
-        Globals *tmp = [Globals sharedSingleton];
+//    if(indexPath.row == 0){
+//        [self.navigationController pushViewController:addDriverController animated:YES];
+//    }
+//    else{
         tmp.clientNumber = [arrayClientNumbers objectAtIndex:indexPath.row];
         detailViewController.managedObjectContext = self.managedObjectContext;
         [self.navigationController pushViewController:detailViewController animated:YES];
-    }
+//   }
 
         
+}
+
+-(void)NavigateToAddDriverScreen{
+    UIStoryboard *storyboard = self.storyboard;
+    UIViewController *addDriverController = [storyboard instantiateViewControllerWithIdentifier:@"AddDriverTableViewController"];
+    [self.navigationController pushViewController:addDriverController animated:YES];
+}
+
+-(void)ToggleEditing{
+    if(self.editing){
+        [self setEditing:NO];
+        
+        NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
+        
+        // This is how you remove the button from the toolbar and animate it
+        [toolbarButtons removeObject:cancelButton];
+        [self setToolbarItems:toolbarButtons animated:YES];
+
+    }
+    else{
+        [self setEditing:YES];
+        
+        NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
+        if (![toolbarButtons containsObject:cancelButton]) {
+            [toolbarButtons insertObject:cancelButton atIndex:2];
+            [self setToolbarItems:toolbarButtons animated:YES];
+        }
+    }
 }
 
 

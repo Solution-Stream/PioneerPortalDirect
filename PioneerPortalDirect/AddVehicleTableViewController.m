@@ -43,7 +43,34 @@
     txtMake.delegate = (id)self;
     txtModel.delegate = (id)self;
     
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
     
+    //set up toolbar
+    [self.navigationController setToolbarHidden:NO];
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Save Vehicle"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(AddVehicleToPolicy)];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"Cancel"
+                                     style:UIBarButtonItemStyleBordered
+                                     target:self
+                                     action:@selector(CancelAddVehicle)];
+    
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:saveButton, flexible, cancelButton, nil];
+    self.toolbarItems = arrBtns;
+
     
     
     NSDate *now = [NSDate date];
@@ -131,6 +158,10 @@
     txtYear.inputView = vehicleYearPicker;
     txtYear.inputAccessoryView = DoneButtonViewVehicleYear;
 
+}
+
+-(void)CancelAddVehicle{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -422,7 +453,7 @@ didReceiveResponse:(NSURLResponse *) response {
     [webData setLength: 0];
 }
  
--(void) AddVehicleToPolicy:(id)sender{
+-(void) AddVehicleToPolicy{
     if([self.txtZipCode.text isEqualToString:@""] || [self.txtVIN.text isEqualToString:@""] || [self.txtYear.text isEqualToString:@""] || [self.txtMake.text isEqualToString:@""]
        || [self.txtModel.text isEqualToString:@""] || [self.txtAntiTheftDevice.text isEqualToString:@""] || [self.txtBodilyInjuryLimit.text isEqualToString:@""]
        || [self.txtVehicleUsage.text isEqualToString:@""]){

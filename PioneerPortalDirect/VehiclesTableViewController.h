@@ -20,8 +20,8 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *btnEditVehicles;
 @property (retain, nonatomic) NSTimer *timer;
 @property (retain, nonatomic) NSTimer *timerReloadVehicleList;
+@property UIBarButtonItem *cancelButton;
 
 - (IBAction)EditVehicleList:(id)sender;
-- (void) LoadVehicleGrid;
 
 @end

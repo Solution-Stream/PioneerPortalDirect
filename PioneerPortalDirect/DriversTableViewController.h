@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnEditDrivers;
 @property int numDrivers;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property UIBarButtonItem *cancelButton;
 
 
 @end

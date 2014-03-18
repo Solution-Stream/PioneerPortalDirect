@@ -49,7 +49,6 @@
 - (IBAction)BodilyInjuryDone:(id)sender;
 - (IBAction)VehicleYearDone:(id)sender;
 - (IBAction)LookupVin:(id)sender;
-- (IBAction)AddVehicleToPolicy:(id)sender;
 
 
 @end

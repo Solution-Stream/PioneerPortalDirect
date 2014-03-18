@@ -72,7 +72,7 @@
 - (IBAction)DateOfBirthDonePressed:(id)sender;
 - (IBAction)LicenseStateDonePressed:(id)sender;
 - (IBAction)datePickerChanged:(id)sender;
-- (IBAction)AddDriverDone:(id)sender;
+
 - (IBAction)OccupationListDonePressed:(id)sender;
 - (IBAction)EmploymentListDonePressed:(id)sender;
 - (IBAction)AnnualIncomeListDonePressed:(id)sender;

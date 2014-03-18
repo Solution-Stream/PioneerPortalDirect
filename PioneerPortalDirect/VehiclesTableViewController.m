@@ -20,7 +20,7 @@
 @end
 
 @implementation VehiclesTableViewController
-@synthesize VehiclesTableView,timer,timerReloadVehicleList;
+@synthesize VehiclesTableView,timer,timerReloadVehicleList,cancelButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,23 +34,54 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    //set background image
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
-    [tempImageView setFrame:self.tableView.frame];
-    self.tableView.backgroundView = tempImageView;
-    
-    [self LoadVehicleGrid];
+    [self StartupFunctions];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
     
-    [self LoadVehicleGrid];
+    [self StartupFunctions];
     
 }
 
-- (void) LoadVehicleGrid{
+- (void) StartupFunctions{
+    //set up toolbar
+    [self.navigationController setToolbarHidden:NO];
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Delete Vehicle"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(ToggleEditing)];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Add Vehicle"
+                                  style:UIBarButtonItemStyleBordered
+                                  target:self
+                                  action:@selector(NavigateToAddVehicleScreen)];
+    
+    
+    cancelButton = [[UIBarButtonItem alloc]
+                    initWithTitle:@"Cancel"
+                    style:UIBarButtonItemStyleBordered
+                    target:self
+                    action:@selector(ToggleEditing)];
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:editButton, flexible, flexible, addButton, nil];
+    self.toolbarItems = arrBtns;
+
+    
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    
     arrVehicleYear = [[NSMutableArray alloc] init];
     arrVehicleMake = [[NSMutableArray alloc] init];
     arrVehicleModel = [[NSMutableArray alloc] init];
@@ -83,6 +114,35 @@
     [self->VehiclesTableView reloadData];
     [VehiclesTableView setEditing:NO animated:YES];
 }
+
+-(void) NavigateToAddVehicleScreen{
+    UIStoryboard *storyboard = self.storyboard;
+    UIViewController *addVehicleController = [storyboard instantiateViewControllerWithIdentifier:@"AddVehicleTableViewController"];
+    [self.navigationController pushViewController:addVehicleController animated:YES];
+}
+
+-(void)ToggleEditing{
+    if(self.editing){
+        [self setEditing:NO];
+        
+        NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
+        
+        // This is how you remove the button from the toolbar and animate it
+        [toolbarButtons removeObject:cancelButton];
+        [self setToolbarItems:toolbarButtons animated:YES];
+        
+    }
+    else{
+        [self setEditing:YES];
+        
+        NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
+        if (![toolbarButtons containsObject:cancelButton]) {
+            [toolbarButtons insertObject:cancelButton atIndex:2];
+            [self setToolbarItems:toolbarButtons animated:YES];
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -149,12 +209,7 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0){
-        return NO;
-    }
-    else{
-        return YES;
-    }
+    return YES;
 }
 
 
@@ -165,17 +220,17 @@
     
     UIStoryboard *storyboard = self.storyboard;
     VehiclesDetailTableViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"VehiclesDetailTableViewController"];
-    UIViewController *addVehicleController = [storyboard instantiateViewControllerWithIdentifier:@"AddVehicleTableViewController"];
+    //UIViewController *addVehicleController = [storyboard instantiateViewControllerWithIdentifier:@"AddVehicleTableViewController"];
     //store policy number array to be used in detail view
         
-    if(indexPath.row == 0){
-        [self.navigationController pushViewController:addVehicleController animated:YES];
-    }
-    else{
+//    if(indexPath.row == 0){
+//        [self.navigationController pushViewController:addVehicleController animated:YES];
+//    }
+//    else{
         Globals *tmp = [Globals sharedSingleton];
         tmp.VIN = [arrVehicleVIN objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:detailViewController animated:YES];
-    }
+//    }
 
 }
 
@@ -214,7 +269,7 @@
         Globals *tmp = [Globals sharedSingleton];
         if([tmp.VehiclesDoneLoading isEqualToString:@"done"]){
             tmp.VehiclesDoneLoading = @"";
-            [self LoadVehicleGrid];
+            [self StartupFunctions];
         }
         else{
             [tmp ShowWaitScreen:@"Reloading Vehicle List"];
@@ -231,7 +286,7 @@
         [timerReloadVehicleList invalidate];
         timerReloadVehicleList = nil;
         
-        [self LoadVehicleGrid];
+        [self StartupFunctions];
         [tmp HideWaitScreen];
     }
 }

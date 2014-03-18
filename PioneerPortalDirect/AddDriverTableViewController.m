@@ -83,6 +83,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    //set up toolbar
+    [self.navigationController setToolbarHidden:NO];
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Save Driver"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(AddDriverDone)];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Cancel"
+                                  style:UIBarButtonItemStyleBordered
+                                  target:self
+                                  action:@selector(CancelAddDriver)];
+    
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects:saveButton, flexible, cancelButton, nil];
+    self.toolbarItems = arrBtns;
+    
     txtFirstName.delegate = (id)self;
     txtLastName.delegate = (id)self;
     txtMiddleInitial.delegate = (id)self;
@@ -259,6 +288,10 @@
     txtSSN.inputAccessoryView = numberToolbar;
 }
 
+-(void)CancelAddDriver{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 -(void)cancelNumberPad{
     [txtSSN resignFirstResponder];
     txtSSN.text = @"";
@@ -405,7 +438,7 @@
     [txtAnnualIncome resignFirstResponder];
 }
 
--(void) AddDriverDone:(id)sender{
+-(void) AddDriverDone{
     if([self.txtFirstName.text isEqualToString:@""]
        || [self.txtLastName.text isEqualToString:@""]
        || [self.txtAnnualIncome.text isEqualToString:@""]

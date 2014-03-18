@@ -40,12 +40,20 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     
+    [self StartupFunctions];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self StartupFunctions];
+    
+}
+
+-(void) StartupFunctions{
     Globals *tmp = [Globals sharedSingleton];
     
     //set background image
@@ -60,28 +68,28 @@
     
     
     buttonItemSave = [[ UIBarButtonItem alloc ] initWithTitle: @"Save"
-                                                                 style: UIBarButtonItemStyleDone
-                                                                target: self
-                                                                action: @selector(SaveUserInfo:) ];
+                                                        style: UIBarButtonItemStyleDone
+                                                       target: self
+                                                       action: @selector(SaveUserInfo:) ];
     
     buttonItemCancel = [[ UIBarButtonItem alloc ] initWithTitle: @"Cancel"
-                                                                   style: UIBarButtonItemStyleDone
-                                                                  target: self
-                                                                  action: @selector(CancelEditUserInfo:) ];
+                                                          style: UIBarButtonItemStyleDone
+                                                         target: self
+                                                         action: @selector(CancelEditUserInfo:) ];
     
     buttonItemEdit = [[ UIBarButtonItem alloc ] initWithTitle: @"Edit"
-                                                                 style: UIBarButtonItemStyleDone
-                                                                target: self
-                                                                action: @selector(EditUserInfo:) ];
+                                                        style: UIBarButtonItemStyleDone
+                                                       target: self
+                                                       action: @selector(EditUserInfo:) ];
     
     flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                              target:nil
-                                                                              action:nil];
+                                                             target:nil
+                                                             action:nil];
     
     buttonGetQuote = [[UIBarButtonItem alloc] initWithTitle:@"Get Auto Insurance Quote"
-                                                                   style:UIBarButtonItemStyleBordered
-                                                                  target: self
-                                                                  action:@selector(GotoQuoteScreen:) ];
+                                                      style:UIBarButtonItemStyleBordered
+                                                     target: self
+                                                     action:@selector(GotoQuoteScreen:) ];
     [self SetToolBarButtons:NO];
     
     self.txtEmail.text = @"";
@@ -108,8 +116,8 @@
     
     if([username isEqualToString:@""] || [password isEqualToString:@""])
     {
-//        UIStoryboard *storyboard = self.storyboard;
-//        UIViewController *LoginView = [storyboard instantiateViewControllerWithIdentifier:@"LoginTableViewController"];
+        //        UIStoryboard *storyboard = self.storyboard;
+        //        UIViewController *LoginView = [storyboard instantiateViewControllerWithIdentifier:@"LoginTableViewController"];
         //[self presentViewController:finished animated:NO completion:NULL];
         if(timer){
             [timer invalidate];
@@ -126,7 +134,7 @@
         //if the user didn't just log in
         if(![tmp.userJustLoggedIn isEqualToString:@"true"]){
             tmp.userJustLoggedIn = @"";
-            [tmp LoadPolicyDataForUser:username];                 
+            [tmp LoadPolicyDataForUser:username];
             
             if(([tmp.DriversInfoDoneLoading isEqualToString:@"done"] && [tmp.SetUserInfoDoneLoading isEqualToString:@"done"]
                 && [tmp.PolicyInfoDoneLoading isEqualToString:@"done"] && [tmp.VehiclesDoneLoading isEqualToString:@"done"])){
@@ -177,6 +185,7 @@
     [numberToolbar sizeToFit];
     self.txtPhoneHome.inputAccessoryView = numberToolbar;
     self.txtPhoneWork.inputAccessoryView = numberToolbar;
+
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
