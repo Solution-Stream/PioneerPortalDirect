@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) IBOutlet UILabel *txtAnnualPremium;
 
-@property (strong, nonatomic) IBOutlet UILabel *txtReviewText;
+
 
 - (void)GetRate:(NSString *)guid;
 

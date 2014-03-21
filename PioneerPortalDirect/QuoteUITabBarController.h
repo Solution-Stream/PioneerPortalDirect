@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Quotes.h"
 
-@interface QuoteUITabBarController : UITabBarController
+@interface QuoteUITabBarController : UITabBarController<UITabBarControllerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, retain) Quotes *currentQuote;

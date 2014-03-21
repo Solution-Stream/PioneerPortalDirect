@@ -80,6 +80,7 @@
     [self CheckQuote];
 }
 
+
 -(void)DisableReviewButton{
     rightButton.enabled = NO;
 }

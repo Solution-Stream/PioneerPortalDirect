@@ -118,6 +118,8 @@
 
 - (BOOL)QuoteReadyForReview:(NSString *) quoteGuid;
 
+- (void)SetTabBarImagesForTabBarController:(UITabBarController *)tabBarController;
+
 + (Globals *) sharedSingleton;
 
 @end

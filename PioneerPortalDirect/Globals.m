@@ -973,5 +973,60 @@ static Globals *shared = NULL;
     
 }
 
+-(void)SetTabBarImagesForTabBarController:(UITabBarController *)tabBarController{
+    Globals *tmp = [Globals sharedSingleton];
+    NSMutableArray *tempArray = [tmp SetTabBarImages:tmp.currentQuoteGuid];
+    
+    NSInteger qa = [tempArray[0] integerValue];
+    NSInteger qd = [tempArray[1] integerValue];
+    NSInteger qv = [tempArray[2] integerValue];
+    NSInteger qc = [tempArray[3] integerValue];
+    
+    NSArray *viewControllers = [[NSArray alloc] init];
+    viewControllers = tabBarController.viewControllers;
+    //review tab
+    ((UIViewController*)viewControllers[4]).tabBarItem.image = [UIImage imageNamed:@"car-side.png"];
+    
+    
+    if((int)qa == 1){
+        ((UIViewController*)viewControllers[0]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+        [[[[tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+        [[[[tabBarController tabBar]items]objectAtIndex:3]setEnabled:TRUE];
+    }
+    else{
+        ((UIViewController*)viewControllers[0]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
+        [[[[tabBarController tabBar]items]objectAtIndex:2]setEnabled:FALSE];
+        [[[[tabBarController tabBar]items]objectAtIndex:3]setEnabled:FALSE];
+    }
+    
+    if((int)qd == 1){
+        ((UIViewController*)viewControllers[1]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:4]setEnabled:TRUE];
+    }
+    else{
+        ((UIViewController*)viewControllers[1]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:4]setEnabled:FALSE];
+    }
+    
+    if((int)qv == 1){
+        ((UIViewController*)viewControllers[2]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:4]setEnabled:TRUE];
+    }
+    else{
+        ((UIViewController*)viewControllers[2]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
+        [[[[tabBarController tabBar]items]objectAtIndex:4]setEnabled:FALSE];
+    }
+    
+    if((int)qc == 1){
+        ((UIViewController*)viewControllers[3]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
+    }
+    else{
+        ((UIViewController*)viewControllers[3]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
+    }
+    
+}
+
 
 @end

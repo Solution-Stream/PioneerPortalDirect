@@ -94,7 +94,7 @@ BOOL bStayLoggedIn = false;
     
     timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
     
-    timerRetryConn = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(TestConnection) userInfo:nil repeats:YES];
+    //timerRetryConn = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(TestConnection) userInfo:nil repeats:YES];
     
 }
 
@@ -121,12 +121,7 @@ BOOL bStayLoggedIn = false;
     Globals *tmp = [Globals sharedSingleton];
     
     if(connectionAttempts > 15){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Network Error"
-                                                       message: @"Unable to connect to server. Please try again later."
-                                                      delegate: self
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil];
-        [alert show];
+        [self ConnectionFailed];
         [timerDDLoaded invalidate];
         timerDDLoaded = nil;
     }
@@ -308,7 +303,7 @@ BOOL bStayLoggedIn = false;
         connectionPromptOpen = YES;
     }
     [tmp LoadCoreData];
-    timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
+    timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
 }
 
 - (IBAction)NavigateToAutoQuote:(id)sender {
@@ -350,6 +345,7 @@ BOOL bStayLoggedIn = false;
     Globals *tmp = [Globals sharedSingleton];
     if(alertView.tag == 7){
         if(buttonIndex == 0){
+            timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
             connectionPromptOpen = NO;
             tmp.connectionFailed = @"";
         }
@@ -357,6 +353,9 @@ BOOL bStayLoggedIn = false;
             exit(0);
         }
         
+    }
+    if(alertView.tag == 10){
+        exit(0);
     }
     
 }

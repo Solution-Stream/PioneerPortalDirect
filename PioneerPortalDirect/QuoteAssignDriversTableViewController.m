@@ -297,47 +297,6 @@
 
 - (void)SetTabBarImages{
     Globals *tmp = [Globals sharedSingleton];
-    NSMutableArray *tempArray = [tmp SetTabBarImages:tmp.currentQuoteGuid];
-    
-    NSInteger qa = [tempArray[0] integerValue];
-    NSInteger qd = [tempArray[1] integerValue];
-    NSInteger qv = [tempArray[2] integerValue];
-    NSInteger qc = [tempArray[3] integerValue];
-    
-    NSArray *viewControllers = [[NSArray alloc] init];
-    viewControllers = self.tabBarController.viewControllers;
-    //review tab
-    ((UIViewController*)viewControllers[4]).tabBarItem.image = [UIImage imageNamed:@"car-side.png"];
-    
-    
-    if((int)qa == 1){
-        ((UIViewController*)viewControllers[0]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
-    }
-    else{
-        ((UIViewController*)viewControllers[0]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
-    }
-    
-    if((int)qd == 1){
-        ((UIViewController*)viewControllers[1]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
-    }
-    else{
-        ((UIViewController*)viewControllers[1]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
-    }
-    
-    if((int)qv == 1){
-        ((UIViewController*)viewControllers[2]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
-    }
-    else{
-        ((UIViewController*)viewControllers[2]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
-    }
-    
-    if((int)qc == 1){
-        ((UIViewController*)viewControllers[3]).tabBarItem.image = [UIImage imageNamed:@"tick.png"];
-    }
-    else{
-        ((UIViewController*)viewControllers[3]).tabBarItem.image = [UIImage imageNamed:@"question.png"];
-    }
-    
-}
+    [tmp SetTabBarImagesForTabBarController:self.tabBarController];}
 
 @end
