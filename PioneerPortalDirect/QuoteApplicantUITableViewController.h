@@ -39,6 +39,7 @@
 @property (strong, retain) Quotes *currentQuote;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonItemEdit;
+@property (strong, nonatomic) IBOutlet UISwitch *CreateDriverSlider;
 
 - (void)leftNavButtonFire:(id)sender;
 - (IBAction)SendUserToLoginScreen:(id)sender;

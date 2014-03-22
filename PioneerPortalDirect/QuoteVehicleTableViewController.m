@@ -23,7 +23,7 @@
 @implementation QuoteVehicleTableViewController
 @synthesize txtAnnualMileage,txtAntiLockBrakes,txtAntiTheftDevice,txtCarpool,txtGaragingZipCode,txtMake,txtMilesToWork,txtModel,txtPassiveRestraints,txtSplitCity,txtVehicleType,txtVehicleUsage,txtVIN,txtWorkWeek,txtYear;
 @synthesize quote,currentQuote,activityIndicator,responseData,vehicleYearPicker,vehicleUsagePicker,antiTheftPicker,bodilyInjuryPicker,vehicleTypePicker,antiLockBrakePicker,passiveRestraintPicker,daysOfWeekPicker;
-@synthesize btnCancel,vehicleMakePicker;
+@synthesize btnCancel,vehicleMakePicker,CarpoolSlider;
 
 bool CheckVINReturnedResults;
 NSMutableString *VINMake;
@@ -142,6 +142,10 @@ NSMutableString *VINRestraint_Value;
 {
     [super viewDidLoad];
     Globals *tmp = [Globals sharedSingleton];
+    
+    [CarpoolSlider addTarget:self
+        action:@selector(CarpoolSliderEditingDidEnd:)
+        forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
     
     [self.navigationController setToolbarHidden:NO];
     [self.navigationController setNavigationBarHidden:YES];
@@ -545,10 +549,12 @@ NSMutableString *VINRestraint_Value;
             
             
             if([vehicle.carpool isEqualToString:@"Y"]){
-                [self CarpoolYesPressed:self];
+                //[self CarpoolYesPressed:self];
+                CarpoolSlider.value = 0.0f;
             }
             if([vehicle.carpool isEqualToString:@"N"]){
-                [self CarpoolNoPressed:self];
+                //[self CarpoolNoPressed:self];
+                CarpoolSlider.value = 10.0f;
             }
         }
 
@@ -556,25 +562,38 @@ NSMutableString *VINRestraint_Value;
 
 }
 
-- (IBAction)CarpoolYesPressed:(id)sender {
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.CarpoolYesButton.backgroundColor = darkBlueColor;
-    self.CarpoolNoButton.backgroundColor = [UIColor whiteColor];
-    [self.CarpoolYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.CarpoolNoButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    carpool = @"Y";
-    CarpoolSelected = YES;
+- (void)CarpoolSliderEditingDidEnd:(NSNotification *)notification{
+    if(CarpoolSlider.value < 5.0f){
+        CarpoolSlider.value = 0.0f;
+        carpool = @"Y";
+        CarpoolSelected = YES;
+    }
+    if(CarpoolSlider.value > 5.0f){
+        CarpoolSlider.value = 10.0f;
+        carpool = @"N";
+        CarpoolSelected = YES;
+    }
 }
 
-- (IBAction)CarpoolNoPressed:(id)sender {
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.CarpoolYesButton.backgroundColor = [UIColor whiteColor];
-    self.CarpoolNoButton.backgroundColor = darkBlueColor;
-    [self.CarpoolYesButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.CarpoolNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    carpool = @"N";
-    CarpoolSelected = YES;
-}
+//- (IBAction)CarpoolYesPressed:(id)sender {
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.CarpoolYesButton.backgroundColor = darkBlueColor;
+//    self.CarpoolNoButton.backgroundColor = [UIColor whiteColor];
+//    [self.CarpoolYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [self.CarpoolNoButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    carpool = @"Y";
+//    CarpoolSelected = YES;
+//}
+//
+//- (IBAction)CarpoolNoPressed:(id)sender {
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.CarpoolYesButton.backgroundColor = [UIColor whiteColor];
+//    self.CarpoolNoButton.backgroundColor = darkBlueColor;
+//    [self.CarpoolYesButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.CarpoolNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    carpool = @"N";
+//    CarpoolSelected = YES;
+//}
 
 -(void)cancelNumberPadMiles{
     [txtMilesToWork resignFirstResponder];
@@ -892,6 +911,8 @@ NSMutableString *VINRestraint_Value;
     }
 
 }
+
+
 
 -(void) CheckZipCodeForSplitCity:(NSString *)zipCode{
     Globals *tmp = [Globals sharedSingleton];

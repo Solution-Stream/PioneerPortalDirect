@@ -81,9 +81,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *CarpoolYesButton;
 @property (strong, nonatomic) IBOutlet UIButton *CarpoolNoButton;
 
-- (IBAction)CarpoolYesPressed:(id)sender;
-- (IBAction)CarpoolNoPressed:(id)sender;
-
+@property (strong, nonatomic) IBOutlet UISlider *CarpoolSlider;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
@@ -93,5 +91,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnCancel;
 
 - (IBAction)CheckVIN:(id)sender;
+- (void)CarpoolSliderEditingDidEnd:(NSNotification *)notification;
 
 @end

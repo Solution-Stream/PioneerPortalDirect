@@ -68,17 +68,14 @@
 @property (strong, nonatomic) IBOutlet UIToolbar *BottomToolBar;
 @property (strong, nonatomic) IBOutlet UIButton *btnCancel;
 
-
+@property (strong, nonatomic) IBOutlet UISlider *MaritalStatusSlider;
+@property (strong, nonatomic) IBOutlet UISlider *GenderSlider;
+@property (strong, nonatomic) IBOutlet UISlider *DependentsSlider;
 
 @property (nonatomic, retain) Quotes *currentQuote;
 
-- (IBAction)DependentYesPressed:(id)sender;
-- (IBAction)DependentNoPressed:(id)sender;
-
--(IBAction)MaritalStatusMPressed:(id)sender;
--(IBAction)MaritalStatusSPressed:(id)sender;
-
--(IBAction)GenderFPressed:(id)sender;
--(IBAction)GenderMPressed:(id)sender;
+- (void)MaritalStatusSliderEditingDidEnd:(NSNotification *)notification;
+- (void)GenderSliderEditingDidEnd:(NSNotification *)notification;
+- (void)DependentsSliderEditingDidEnd:(NSNotification *)notification;
 
 @end

@@ -22,7 +22,7 @@
 
 @implementation QuoteAddDriverUITableViewController
 @synthesize txtDateBirth,txtDependents,txtEmploymentStatus,txtFirstName,txtGender,txtIncomeLevel,txtLastName,txtLicenseNum,txtLicenseState,txtMaritalStatus,txtMiddleInitial,txtOccupation,txtRelationApplicant;
-@synthesize currentQuote,btnCancel;
+@synthesize currentQuote,btnCancel,MaritalStatusSlider,GenderSlider,DependentsSlider;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,6 +52,21 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    [MaritalStatusSlider addTarget:self
+                      action:@selector(MaritalStatusSliderEditingDidEnd:)
+            forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+    
+    [GenderSlider addTarget:self
+                            action:@selector(GenderSliderEditingDidEnd:)
+                  forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+    
+    [DependentsSlider addTarget:self
+                            action:@selector(DependentsSliderEditingDidEnd:)
+                  forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+    
+    [self.navigationController setToolbarHidden:NO];
+    [self.navigationController setNavigationBarHidden:YES];
     
     //set background image
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clouds.png"]];
@@ -422,89 +437,102 @@
         RelationApplicantValue = qa.relationApplicantValue;
         
         if([qa.gender isEqualToString:@"M"]){
-            [self GenderMPressed:self];
+            GenderSlider.value = 0.0f;
+            Gender = qa.gender;
+            GenderSelected = YES;
         }
         if([qa.gender isEqualToString:@"F"]){
-            [self GenderFPressed:self];
+            GenderSlider.value = 10.0f;
+            Gender = qa.gender;
+            GenderSelected = YES;
         }
         
         if([qa.maritalStatus isEqualToString:@"M"]){
-            [self MaritalStatusMPressed:self];
+            MaritalStatusSlider.value = 0.0f;
+            MaritalStatus = qa.maritalStatus;
+            MaritalStatusSelected = YES;
         }
         if([qa.maritalStatus isEqualToString:@"S"]){
-            [self MaritalStatusSPressed:self];
+            MaritalStatusSlider.value = 10.0f;
+            MaritalStatus = qa.maritalStatus;
+            MaritalStatusSelected = YES;
         }
         
         if([qa.dependents isEqualToString:@"Y"]){
-            [self DependentYesPressed:self];
+            DependentsSlider.value = 0.0f;
+            HasDependents = qa.dependents;
+            DependentsSelected = YES;
         }
+        
         if([qa.dependents isEqualToString:@"N"]){
-            [self DependentNoPressed:self];
+            DependentsSlider.value = 10.0f;
+            HasDependents = qa.dependents;
+            DependentsSelected = YES;
         }
     }
     
 }
 
 
-- (IBAction)DependentYesPressed:(id)sender {
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.DependentYesButton.backgroundColor = darkBlueColor;
-    self.DependentNoButton.backgroundColor = [UIColor whiteColor];
-    [self.DependentYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.DependentNoButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    HasDependents = @"Y";
-    DependentsSelected = YES;
-}
+//- (IBAction)DependentYesPressed:(id)sender {
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.DependentYesButton.backgroundColor = darkBlueColor;
+//    self.DependentNoButton.backgroundColor = [UIColor whiteColor];
+//    [self.DependentYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [self.DependentNoButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    HasDependents = @"Y";
+//    DependentsSelected = YES;
+//}
 
-- (IBAction)DependentNoPressed:(id)sender {
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.DependentYesButton.backgroundColor = [UIColor whiteColor];
-    self.DependentNoButton.backgroundColor = darkBlueColor;
-    [self.DependentYesButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.DependentNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    HasDependents = @"N";
-    DependentsSelected = YES;
-}
+//- (IBAction)DependentNoPressed:(id)sender {
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.DependentYesButton.backgroundColor = [UIColor whiteColor];
+//    self.DependentNoButton.backgroundColor = darkBlueColor;
+//    [self.DependentYesButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.DependentNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    HasDependents = @"N";
+//    DependentsSelected = YES;
+//}
 
--(IBAction)MaritalStatusMPressed:(id)sender{
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.MaritalStatusSButton.backgroundColor = [UIColor whiteColor];
-    self.MaritalStatusMButton.backgroundColor = darkBlueColor;
-    [self.MaritalStatusSButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.MaritalStatusMButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    MaritalStatus = @"M";
-    MaritalStatusSelected = YES;
-}
+//-(IBAction)MaritalStatusMPressed:(id)sender{
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.MaritalStatusSButton.backgroundColor = [UIColor whiteColor];
+//    self.MaritalStatusMButton.backgroundColor = darkBlueColor;
+//    [self.MaritalStatusSButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.MaritalStatusMButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    MaritalStatus = @"M";
+//    MaritalStatusSelected = YES;
+//}
+//
+//-(IBAction)MaritalStatusSPressed:(id)sender{
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.MaritalStatusMButton.backgroundColor = [UIColor whiteColor];
+//    self.MaritalStatusSButton.backgroundColor = darkBlueColor;
+//    [self.MaritalStatusMButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.MaritalStatusSButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    MaritalStatus = @"S";
+//    MaritalStatusSelected = YES;
+//}
 
--(IBAction)MaritalStatusSPressed:(id)sender{
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.MaritalStatusMButton.backgroundColor = [UIColor whiteColor];
-    self.MaritalStatusSButton.backgroundColor = darkBlueColor;
-    [self.MaritalStatusMButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.MaritalStatusSButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    MaritalStatus = @"S";
-    MaritalStatusSelected = YES;
-}
-
--(IBAction)GenderFPressed:(id)sender{
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.GenderMStatusButton.backgroundColor = [UIColor whiteColor];
-    self.GenderFStatusButton.backgroundColor = darkBlueColor;
-    [self.GenderMStatusButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.GenderFStatusButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    Gender = @"F";
-    GenderSelected = YES;
-}
-
--(IBAction)GenderMPressed:(id)sender{
-    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-    self.GenderFStatusButton.backgroundColor = [UIColor whiteColor];
-    self.GenderMStatusButton.backgroundColor = darkBlueColor;
-    [self.GenderFStatusButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-    [self.GenderMStatusButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    Gender = @"M";
-    GenderSelected = YES;
-}
+//-(IBAction)GenderFPressed:(id)sender{
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.GenderMStatusButton.backgroundColor = [UIColor whiteColor];
+//    self.GenderFStatusButton.backgroundColor = darkBlueColor;
+//    [self.GenderMStatusButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.GenderFStatusButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    Gender = @"F";
+//    GenderSelected = YES;
+//}
+//
+//-(IBAction)GenderMPressed:(id)sender{
+//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+//    self.GenderFStatusButton.backgroundColor = [UIColor whiteColor];
+//    self.GenderMStatusButton.backgroundColor = darkBlueColor;
+//    [self.GenderFStatusButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
+//    [self.GenderMStatusButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    Gender = @"M";
+//    GenderSelected = YES;
+//}
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -841,6 +869,45 @@
     }
 
     [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
+}
+
+- (void)MaritalStatusSliderEditingDidEnd:(NSNotification *)notification{
+    if(MaritalStatusSlider.value < 5.0f){
+        MaritalStatusSlider.value = 0.0f;
+        MaritalStatus = @"M";
+        MaritalStatusSelected = YES;
+    }
+    if(MaritalStatusSlider.value > 5.0f){
+        MaritalStatusSlider.value = 10.0f;
+        MaritalStatus = @"S";
+        MaritalStatusSelected = YES;
+    }
+}
+
+- (void)GenderSliderEditingDidEnd:(NSNotification *)notification{
+    if(GenderSlider.value < 5.0f){
+        GenderSlider.value = 0.0f;
+        Gender = @"M";
+        GenderSelected = YES;
+    }
+    if(GenderSlider.value > 5.0f){
+        GenderSlider.value = 10.0f;
+        Gender = @"F";
+        GenderSelected = YES;
+    }
+}
+
+- (void)DependentsSliderEditingDidEnd:(NSNotification *)notification{
+    if(DependentsSlider.value < 5.0f){
+        DependentsSlider.value = 0.0f;
+        HasDependents = @"Y";
+        DependentsSelected = YES;
+    }
+    if(DependentsSlider.value > 5.0f){
+        DependentsSlider.value = 10.0f;
+        HasDependents = @"N";
+        DependentsSelected = YES;
+    }
 }
 
 - (void)CancelAddDriver{
