@@ -174,18 +174,17 @@
     {
         Quotes *quote = (Quotes *)info;
         
-        for(QuoteApplicant *Applicant in quote.quoteApplicant)
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+        NSArray *sortDescriptors = @[nameDescriptor];
+        NSArray *sortedArray = [quote.quoteApplicant sortedArrayUsingDescriptors:sortDescriptors];
+        
+        for(QuoteApplicant *Applicant in sortedArray)
         {
             NSString *ApplicantString = [NSString stringWithFormat:@"%@%@%@", Applicant.firstName, @" ", Applicant.lastName];
             [arrayQuoteApplicant addObject:ApplicantString];
             [arrayQuoteApplicantID addObject:Applicant.applicantID];
         }
         
-        //        if([arrayQuoteApplicant count] == 0){
-        //            tmp.createNewApplicant = @"YES";
-        //            QuoteAddApplicantUITableViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"QuoteAddApplicantUITableViewController"];
-        //            [self.navigationController pushViewController:svc animated:YES];
-        //        }
     }
     
     //[arrayQuoteApplicant sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];

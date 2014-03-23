@@ -131,7 +131,7 @@
     NSEntityDescription *entityE = [NSEntityDescription entityForName:@"QuoteVehicle" inManagedObjectContext:self.managedObjectContext];
     [_fetchReqE setEntity:entityE];
     //sorting
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"year" ascending: NO];
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"year" ascending: YES];
     NSArray* sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
     [_fetchReqE setSortDescriptors:sortDescriptors];
     

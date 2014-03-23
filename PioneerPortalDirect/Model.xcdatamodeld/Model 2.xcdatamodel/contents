@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="DriverInfo" representedClassName="DriverInfo" syncable="YES">
         <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
@@ -83,6 +83,7 @@
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="incomeLevel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="incomeLevelValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoNeeded" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="licenseNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="licenseState" optional="YES" attributeType="String" syncable="YES"/>
@@ -165,16 +166,16 @@
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DriverInfo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="DropdownData" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Login" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PolicyInfo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="QuoteApplicant" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="QuoteCoverages" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="QuoteDriver" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Quotes" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="QuoteVehicle" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="UserInfo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="VehicleList" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="DriverInfo" positionX="0" positionY="0" width="128" height="345"/>
+        <element name="DropdownData" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Login" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="PolicyInfo" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="QuoteApplicant" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="QuoteCoverages" positionX="0" positionY="0" width="128" height="330"/>
+        <element name="QuoteDriver" positionX="0" positionY="0" width="128" height="360"/>
+        <element name="Quotes" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="QuoteVehicle" positionX="0" positionY="0" width="128" height="495"/>
+        <element name="UserInfo" positionX="0" positionY="0" width="128" height="270"/>
+        <element name="VehicleList" positionX="0" positionY="0" width="128" height="150"/>
     </elements>
 </model>

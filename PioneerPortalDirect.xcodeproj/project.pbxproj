@@ -99,7 +99,6 @@
 		EC1CC0AA18AD07B900076249 /* Quotes.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0A918AD07B900076249 /* Quotes.m */; };
 		EC1CC0AD18AD07B900076249 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0AC18AD07B900076249 /* UserInfo.m */; };
 		EC1CC0B018AD07B900076249 /* DriverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0AF18AD07B900076249 /* DriverInfo.m */; };
-		EC1CC0B318AD07B900076249 /* QuoteDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B218AD07B900076249 /* QuoteDriver.m */; };
 		EC1CC0B618AD07B900076249 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B518AD07B900076249 /* Login.m */; };
 		EC1CC0B918AD07B900076249 /* QuoteVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0B818AD07B900076249 /* QuoteVehicle.m */; };
 		EC1CC0BC18AD1FCE00076249 /* DropdownData.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1CC0BB18AD1FCE00076249 /* DropdownData.m */; };
@@ -111,6 +110,7 @@
 		EC29AFB318BE4D9500A0B476 /* PD_Icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */; };
 		EC29AFB618BE55F100A0B476 /* PDLaunch_640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */; };
 		EC29AFB718BE55F100A0B476 /* PDLaunch_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */; };
+		EC34990A18DF561D002959F9 /* QuoteDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EC34990918DF561D002959F9 /* QuoteDriver.m */; };
 		ECAB7E2918C0D91100541D98 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAB7E2818C0D91100541D98 /* clouds.png */; };
 		ECAE446E18B266BB000025DA /* LookupVINValues.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAE446D18B266BB000025DA /* LookupVINValues.m */; };
 		ECAE447318B29438000025DA /* lightHouse320-480.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447118B29438000025DA /* lightHouse320-480.png */; };
@@ -284,8 +284,6 @@
 		EC1CC0AC18AD07B900076249 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		EC1CC0AE18AD07B900076249 /* DriverInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverInfo.h; sourceTree = "<group>"; };
 		EC1CC0AF18AD07B900076249 /* DriverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverInfo.m; sourceTree = "<group>"; };
-		EC1CC0B118AD07B900076249 /* QuoteDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriver.h; sourceTree = "<group>"; };
-		EC1CC0B218AD07B900076249 /* QuoteDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriver.m; sourceTree = "<group>"; };
 		EC1CC0B418AD07B900076249 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		EC1CC0B518AD07B900076249 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		EC1CC0B718AD07B900076249 /* QuoteVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVehicle.h; sourceTree = "<group>"; };
@@ -300,6 +298,8 @@
 		EC29AFB018BE4D9500A0B476 /* PD_Icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PD_Icon_120.png; sourceTree = "<group>"; };
 		EC29AFB418BE55F100A0B476 /* PDLaunch_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x960.png; sourceTree = "<group>"; };
 		EC29AFB518BE55F100A0B476 /* PDLaunch_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PDLaunch_640x1136.png; sourceTree = "<group>"; };
+		EC34990818DF561D002959F9 /* QuoteDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDriver.h; sourceTree = "<group>"; };
+		EC34990918DF561D002959F9 /* QuoteDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDriver.m; sourceTree = "<group>"; };
 		ECAB7E2818C0D91100541D98 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		ECAE446C18B266BB000025DA /* LookupVINValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupVINValues.h; sourceTree = "<group>"; };
 		ECAE446D18B266BB000025DA /* LookupVINValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupVINValues.m; sourceTree = "<group>"; };
@@ -533,6 +533,8 @@
 		EC1CC02918AC53B100076249 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				EC34990818DF561D002959F9 /* QuoteDriver.h */,
+				EC34990918DF561D002959F9 /* QuoteDriver.m */,
 				EC1CC0BA18AD1FCE00076249 /* DropdownData.h */,
 				EC1CC0BB18AD1FCE00076249 /* DropdownData.m */,
 				EC1CC0AE18AD07B900076249 /* DriverInfo.h */,
@@ -545,8 +547,6 @@
 				EC1CC0A618AD07B900076249 /* QuoteApplicant.m */,
 				EC1CC09C18AD07B900076249 /* QuoteCoverages.h */,
 				EC1CC09D18AD07B900076249 /* QuoteCoverages.m */,
-				EC1CC0B118AD07B900076249 /* QuoteDriver.h */,
-				EC1CC0B218AD07B900076249 /* QuoteDriver.m */,
 				EC1CC0A818AD07B900076249 /* Quotes.h */,
 				EC1CC0A918AD07B900076249 /* Quotes.m */,
 				EC1CC0B718AD07B900076249 /* QuoteVehicle.h */,
@@ -757,6 +757,7 @@
 				EC1CC00618AC3C9800076249 /* QuoteVehicleNavigationController.m in Sources */,
 				EC1CC05818AC5E1200076249 /* SendEmail.m in Sources */,
 				EC1CBF8C18AC3BAC00076249 /* CoreDataTableViewController.m in Sources */,
+				EC34990A18DF561D002959F9 /* QuoteDriver.m in Sources */,
 				EC1CC00018AC3C9800076249 /* QuoteReviewTableViewController.m in Sources */,
 				EC1CC07218AC7BC800076249 /* QuoteVehicleTableViewController.m in Sources */,
 				EC1CC05718AC5E1200076249 /* QuoteListTableViewCell.m in Sources */,
@@ -772,7 +773,6 @@
 				EC1CBFFE18AC3C9800076249 /* QuoteDriverSelectTableViewController.m in Sources */,
 				EC1CC05218AC5DE200076249 /* GetQuoteRate.m in Sources */,
 				EC1CBFF418AC3C9800076249 /* QuoteApplicantListTableViewController.m in Sources */,
-				EC1CC0B318AD07B900076249 /* QuoteDriver.m in Sources */,
 				EC1CC01E18AC3D0B00076249 /* SetUserInfo.m in Sources */,
 				EC1CC02718AC3D0B00076249 /* ViewCertificateTableViewController.m in Sources */,
 				EC1CC06F18AC7B4D00076249 /* QuoteListTableViewController.m in Sources */,

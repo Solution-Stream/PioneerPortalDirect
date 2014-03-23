@@ -153,7 +153,7 @@ NSMutableString *VINRestraint_Value;
     
     //toolbar buttons
     UIBarButtonItem *save = [[UIBarButtonItem alloc]
-                             initWithTitle:@"Save Driver"
+                             initWithTitle:@"Save Vehicle"
                              style:UIBarButtonItemStyleBordered
                              target:self
                              action:@selector(SaveThenNextStep)];

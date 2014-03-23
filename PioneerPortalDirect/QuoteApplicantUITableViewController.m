@@ -10,6 +10,7 @@
 #import "QuoteAddDriverUITableViewController.h"
 #import "QuoteUITabBarController.h"
 #import "QuoteApplicant.h"
+#import "QuoteDriver.h"
 #import "QuoteCoverages.h"
 #import "Quotes.h"
 #import "QuoteDriverListUITableViewController.h"
@@ -22,7 +23,7 @@
 
 @implementation QuoteApplicantUITableViewController
 @synthesize btnNextStep,txtAddress,txtCity,txtDateBirth,txtEmail,txtFirstName,txtLastName,txtMiddle,txtResidencyType,txtSSN,txtState,txtZip,BottomToolBar,buttonItemEdit;
-@synthesize managedObjectContext = __managedObjectContext,currentQuote;
+@synthesize managedObjectContext = __managedObjectContext,currentQuote, CreateDriverSlider;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -144,13 +145,17 @@
     
     //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:70/255.0f green:155/255.0f blue:19/255.0f alpha:1.0]];
     
-    NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, cancel, nil];
-    self.toolbarItems = arrBtns;
+    
     
     //if it is a new quote disable the cancel button
-    NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
-    [toolbarButtons removeObject:cancel];
-    [self setToolbarItems:toolbarButtons animated:YES];
+    if([tmp.createNewApplicant isEqualToString:@"YES"]){
+        NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, nil];
+        self.toolbarItems = arrBtns;
+    }
+    else{
+        NSArray *arrBtns = [[NSArray alloc]initWithObjects:save, flexible, cancel, nil];
+        self.toolbarItems = arrBtns;
+    }
     
     
     arrayStateList = [[NSMutableArray alloc] init];
@@ -319,8 +324,20 @@
         txtState.text = app.state;
         txtZip.text = app.zip;
     }
-
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    Globals *tmp = [Globals sharedSingleton];
+    NSInteger count = 7;
+    if(![tmp.currentApplicantID isEqualToString:@""])
+    {
+        count = 6;
+    }
+    
+    return count;
+}
+
 
 -(void)cancelNumberPad{
     [txtSSN resignFirstResponder];
@@ -564,6 +581,37 @@
         
         [currentQuote addQuoteApplicantObject:qa];
         
+        //add a driver also if swtich is flipped
+        if(CreateDriverSlider.isOn == YES){
+            NSString *guidD = tmp.GetUUID;
+            QuoteDriver *qd = [NSEntityDescription insertNewObjectForEntityForName:@"QuoteDriver" inManagedObjectContext:self.managedObjectContext];
+            qd.firstName = txtFirstName.text;
+            qd.middleInitial = txtMiddle.text;
+            qd.lastName = txtLastName.text;
+            //qd.address = txtAddress.text;
+            //qd.city = txtCity.text;
+            //qd.state = txtState.text;
+            //qd.zip = txtZip.text;
+            qd.dateBirth = txtDateBirth.text;
+            //qd.ssn = txtSSN.text;
+            //qd.email = txtEmail.text;
+            //qd.residencyType = txtResidencyType.text;
+            //qd.residencyTypeValue = residencyTypeValue;
+            //qd.applicantID = guid;
+            qd.driverID = guidD;
+            qd.infoNeeded = @"incomplete";
+            
+            [currentQuote addQuoteDriverObject:qd];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Driver/Applicant Added"
+                                                           message: @"Additional information will be needed for the driver added to the driver list"
+                                                          delegate: self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+            alert.tag = 22;
+            [alert show];
+        }
+        
         [self.managedObjectContext save:nil];  // write to database
     }
     
@@ -573,7 +621,15 @@
         [(QuoteUITabBarController *)self.tabBarController EnableReviewButton];
     }
     
-    [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
+    if(CreateDriverSlider.isOn == NO){
+        [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView.tag == 22){
+        [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
+    }
 }
 
 - (void)CancelAddApplicant {

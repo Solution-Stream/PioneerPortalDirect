@@ -11,6 +11,7 @@
 @interface QuoteDriverListUITableViewController : UITableViewController{
     NSMutableArray *arrayQuoteDriver;
     NSMutableArray *arrayQuoteDriverID;
+    NSMutableArray *arrayQDInfoNeeded;
 }
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

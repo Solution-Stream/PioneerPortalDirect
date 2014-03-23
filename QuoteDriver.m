@@ -2,7 +2,7 @@
 //  QuoteDriver.m
 //  PioneerPortalDirect
 //
-//  Created by Brian Kalski on 2/13/14.
+//  Created by Brian Kalski on 3/23/14.
 //  Copyright (c) 2014 Solution-Stream. All rights reserved.
 //
 
@@ -31,6 +31,7 @@
 @dynamic quoteID;
 @dynamic relationApplicant;
 @dynamic relationApplicantValue;
+@dynamic infoNeeded;
 @dynamic quotes;
 
 @end

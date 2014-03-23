@@ -825,6 +825,7 @@
             driver.occupationValue = OccupationValue;
             driver.incomeLevel = txtIncomeLevel.text;
             driver.incomeLevelValue = AnnualIncomeValue;
+            driver.infoNeeded = @"";
         }
         currentQuote.quoteStatus = @"In Progress";
         [self.managedObjectContext save:nil];
@@ -855,6 +856,7 @@
         qa.completed = [NSNumber numberWithInt:1];
         //qa.quotes = currentQuote;
         qa.driverID = guid;
+        qa.infoNeeded = @"";
         
         tmp.createNewDriver = @"";
         

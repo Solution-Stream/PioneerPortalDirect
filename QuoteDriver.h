@@ -2,7 +2,7 @@
 //  QuoteDriver.h
 //  PioneerPortalDirect
 //
-//  Created by Brian Kalski on 2/13/14.
+//  Created by Brian Kalski on 3/23/14.
 //  Copyright (c) 2014 Solution-Stream. All rights reserved.
 //
 
@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSString * quoteID;
 @property (nonatomic, retain) NSString * relationApplicant;
 @property (nonatomic, retain) NSString * relationApplicantValue;
+@property (nonatomic, retain) NSString * infoNeeded;
 @property (nonatomic, retain) NSSet *quotes;
 @end
 

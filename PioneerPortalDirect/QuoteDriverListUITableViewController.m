@@ -155,6 +155,7 @@
     Globals *tmp = [Globals sharedSingleton];
     arrayQuoteDriver = [[NSMutableArray alloc] init];
     arrayQuoteDriverID = [[NSMutableArray alloc] init];
+    arrayQDInfoNeeded = [[NSMutableArray alloc] init];
     tmp.currentDriverID = @"";
     self.managedObjectContext = tmp.managedObjectContext;
     NSFetchRequest *_fetchReqE = [[NSFetchRequest alloc] init];
@@ -175,13 +176,21 @@
     {
         Quotes *quote = (Quotes *)info;
         
-        for(QuoteDriver *driver in quote.quoteDriver)
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+        NSArray *sortDescriptors = @[nameDescriptor];
+        NSArray *sortedArray = [quote.quoteDriver sortedArrayUsingDescriptors:sortDescriptors];
+
+        for(QuoteDriver *driver in sortedArray)
         {
+            
             NSString *driverString = [NSString stringWithFormat:@"%@%@%@", driver.firstName, @" ", driver.lastName];
             [arrayQuoteDriver addObject:driverString];
             [arrayQuoteDriverID addObject:driver.driverID];
+            [arrayQDInfoNeeded addObject:driver.infoNeeded];
         }
     }
+    
+    
     
     if([arrayQuoteDriver count] == 0){
         tmp.quoteViewIndex = [NSNumber numberWithInt:1];
@@ -226,7 +235,7 @@
     // Configure the cell...
     
     cell.txtLeftCell.text = [arrayQuoteDriver objectAtIndex:indexPath.row];
-    cell.txtRightCell.text = @"";
+    cell.txtRightCell.text = [arrayQDInfoNeeded objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
@@ -234,7 +243,7 @@
     cell.imgDriverIcon.image = PlusImage;
 
     cell.txtLeftCell.font = tmp.TableViewListFont;
-    cell.txtRightCell.font = tmp.TableViewListFont;
+    //cell.txtRightCell.font = tmp.TableViewListFont;
     
     return cell;
 }
