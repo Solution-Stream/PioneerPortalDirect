@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol VehiclesOnPolicyProtocol <NSObject>
+
+@required
+-(void) VehiclesOnPolicyResponse:(NSString *) response;
+
+@end
+
 @interface VehiclesOnPolicy : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -25,7 +32,10 @@
     NSMutableString *bodilyInjury;
     NSMutableString *comprehensive;
     NSMutableString *uninsuredMotorist;
+    id<VehiclesOnPolicyProtocol> _delegate;
+    
 }
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 -(void) LoadVehiclesOnPolicyList:(NSString *)policyNumber;

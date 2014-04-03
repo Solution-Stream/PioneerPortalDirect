@@ -100,14 +100,19 @@
     [connection cancel];
     NSLog(@"DriversOnPolicy Loaded");
     tmp.DriversInfoDoneLoading = @"done";
+    [self ReturnResponse:@"success"];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     Globals *tmp = [Globals sharedSingleton];
     NSLog(@"DriversOnPolicy failed");
     tmp.connectionFailed = @"true";
+    [self ReturnResponse:@"connectionError"];
 }
 
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(DriversOnPolicyResponse:) withObject:response];
+}
 
 
 @end

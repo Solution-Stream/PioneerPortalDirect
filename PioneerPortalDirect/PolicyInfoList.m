@@ -31,38 +31,9 @@
     NSError *saveError = nil;
     [self.managedObjectContext save:&saveError];
     
-//    NSString *theURL = [NSString stringWithFormat:@"%@%@%@",tmp.globalServerName, @"/users.svc/GetPolicyInfo/", policyNumber];
-//    
-//    NSError* err = nil;
-//    
-//    NSURLResponse* response = nil;
-//    
-//    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
-//    
-//    NSURL*URL = [NSURL URLWithString:theURL];
-//    
-//    [request setURL:URL];
-//    
-//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-//    
-//    [request setTimeoutInterval:[tmp.GlobalTimeout doubleValue];];
-//    
-//    NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-//    
-//    NSDictionary *resultsDictionary = [data objectFromJSONData];
-//    
-//    NSArray *arrCodes = [resultsDictionary objectForKey:@"GetPolicyInfoResult"];
-    
-    //for(NSDictionary *occ in arrCodes){
-        //PolicyInfo *policyInfoList = [NSEntityDescription insertNewObjectForEntityForName:@"PolicyInfo" inManagedObjectContext:self.managedObjectContext];
-        //policyInfoList.effectiveDate = [occ objectForKey:@"effectiveDate"];;
-        //policyInfoList.expirationDate = [occ objectForKey:@"expirationDate"];;
-    //}
-//    [self.managedObjectContext save:nil];  // write to database
-//    [conn cancel];
     NSLog(@"PolicyInfo Loaded");
     tmp.PolicyInfoDoneLoading = @"done";
-    
+    [self ReturnResponse:@"success"];
 }
 
 
@@ -71,6 +42,11 @@
     Globals *tmp = [Globals sharedSingleton];
     NSLog(@"PolicyInfo failed");
     tmp.connectionFailed = @"true";
+    [self ReturnResponse:@"connectionError"];
+}
+
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(PolicyInfoListResponse:) withObject:response];
 }
 
 

@@ -11,6 +11,13 @@
 #import "KeychainItemWrapper.h"
 #import "DriverInfo.h"
 
+@protocol DriversOnPolicyProtocol <NSObject>
+
+@required
+-(void) DriversOnPolicyResponse:(NSString *) response;
+
+@end
+
 @interface DriversOnPolicy : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -41,7 +48,10 @@
     NSMutableString *atFault5Years;
     NSMutableString *speedingTickets;
     NSMutableString *sortOrder;
+    id<DriversOnPolicyProtocol> _delegate;
+    
 }
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 -(void) LoadDriversOnPolicyList:(NSString *)policyNumberValue;

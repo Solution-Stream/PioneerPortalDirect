@@ -100,12 +100,19 @@
     [self.managedObjectContext save:nil];  // write to database
     [connection cancel];
     NSLog(@"UserInfo Loaded");
-    tmp.SetUserInfoDoneLoading = @"done";}
+    tmp.SetUserInfoDoneLoading = @"done";
+    [self ReturnResponse:@"success"];
+}
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     Globals *tmp = [Globals sharedSingleton];
     NSLog(@"SetUserInfo failed");
     tmp.connectionFailed = @"true";
+    [self ReturnResponse:@"connectionError"];
+}
+
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(SetUserInfoResponse:) withObject:response];
 }
 
 

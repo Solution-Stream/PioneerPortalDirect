@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol PolicyInfoListProtocol <NSObject>
+
+@required
+-(void) PolicyInfoListResponse:(NSString *) response;
+
+@end
+
 @interface PolicyInfoList : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -20,7 +27,10 @@
     
     NSMutableString *effectiveDate;
     NSMutableString *expirationDate;
+    id<PolicyInfoListProtocol> _delegate;
+    
 }
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 -(void) SetPolicyInfo:(NSString *) policyNumber;

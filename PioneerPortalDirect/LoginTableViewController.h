@@ -25,6 +25,7 @@
     NSString *userName;
     NSString *passWord;
     NSInteger connectionAttempts;
+    BOOL stopLogin;
 }
 @property (weak, nonatomic) IBOutlet UITextField *txtUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;

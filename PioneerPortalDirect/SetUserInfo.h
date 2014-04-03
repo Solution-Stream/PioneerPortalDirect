@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SetUserInfoProtocol <NSObject>
+
+@required
+-(void) SetUserInfoResponse:(NSString *) response;
+
+@end
+
+
 @interface SetUserInfo : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -31,7 +39,10 @@
     NSMutableString *email;
     NSMutableString *policyNumberValue;
     NSMutableString *clientNumber;
+    id<SetUserInfoProtocol> _delegate;
+    
 }
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 -(void) SetUserInfo:(NSString *) policyNumber;

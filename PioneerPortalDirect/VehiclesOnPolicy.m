@@ -102,14 +102,18 @@
     [connection cancel];
     NSLog(@"VehiclesOnPolicy Loaded");
     tmp.VehiclesDoneLoading = @"done";
+    [self ReturnResponse:@"success"];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     Globals *tmp = [Globals sharedSingleton];
     NSLog(@"VehiclesOnPolicy failed");
     tmp.connectionFailed = @"true";
+    [self ReturnResponse:@"connectionError"];
 }
 
-
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(VehiclesOnPolicyResponse:) withObject:response];
+}
 
 @end

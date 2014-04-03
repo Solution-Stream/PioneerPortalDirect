@@ -20,6 +20,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "JSONKit.h"
 #import "DropDownDataList.h"
+#import "PolicyInfoList.h"
+#import "SetUserInfo.h"
+#import "VehiclesOnPolicy.h"
 
 @interface LoginTableViewController ()
 
@@ -65,6 +68,8 @@ BOOL bStayLoggedIn = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    stopLogin = NO;
     
     [self downloadDropdownData];
     
@@ -168,6 +173,61 @@ BOOL bStayLoggedIn = false;
     }
 }
 
+-(void) DriversOnPolicyResponse:(NSString *) response{
+    if(stopLogin == YES){return;}
+    
+    if([response isEqualToString:@"success"]){
+        [self WaitForUserDataToLoad];
+    }
+    else{
+        [self GetLoginDataFailed];
+        stopLogin = YES;
+    }
+    
+}
+
+-(void) VehiclesOnPolicyResponse:(NSString *) response{
+    if(stopLogin == YES){return;}
+    
+    if([response isEqualToString:@"success"]){
+        [self WaitForUserDataToLoad];
+    }
+    else{
+        [self GetLoginDataFailed];
+        stopLogin = YES;
+    }
+    
+}
+
+-(void) PolicyInfoListResponse:(NSString *) response{
+    if(stopLogin == YES){return;}
+    
+    if([response isEqualToString:@"success"]){
+        [self WaitForUserDataToLoad];
+    }
+    else{
+        [self GetLoginDataFailed];
+        stopLogin = YES;
+    }
+    
+}
+
+
+
+-(void) SetUserInfoResponse:(NSString *) response{
+    if(stopLogin == YES){return;}
+    
+    if([response isEqualToString:@"success"]){
+        [self WaitForUserDataToLoad];
+    }
+    else{
+        [self GetLoginDataFailed];
+        stopLogin = YES;
+    }
+    
+}
+
+
 -(void)WaitForUserDataToLoad{
     Globals *tmp = [Globals sharedSingleton];
     if((([tmp.DriversInfoDoneLoading isEqualToString:@"done"] && [tmp.SetUserInfoDoneLoading isEqualToString:@"done"] && [tmp.PolicyInfoDoneLoading isEqualToString:@"done"] && [tmp.VehiclesDoneLoading isEqualToString:@"done"])) || ([tmp.devMode isEqualToString: @"DEVMODE"])){
@@ -176,11 +236,6 @@ BOOL bStayLoggedIn = false;
         tmp.userJustLoggedIn = @"true";
         
         btnLogin.titleLabel.text = @"Login";
-        
-        if(timer){
-            [timer invalidate];
-            timer = nil;
-        }
         
         //Goto home page
         [activityIndicator stopAnimating];
@@ -231,8 +286,23 @@ BOOL bStayLoggedIn = false;
         tmp.mainPolicyNumber = userName;
         [self CreateNewKeyChain:userName: passWord];
         
-        [tmp LoadPolicyDataForUser:userName];
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(WaitForUserDataToLoad) userInfo:nil repeats:NO];
+        //load policy info for user
+        DriversOnPolicy *driversList = [[DriversOnPolicy alloc] init];
+        driversList.delegate = self;
+        [driversList LoadDriversOnPolicyList:userName];
+        
+        VehiclesOnPolicy *vehicleList = [[VehiclesOnPolicy alloc] init];
+        vehicleList.delegate = self;
+        [vehicleList LoadVehiclesOnPolicyList:userName];
+        
+        PolicyInfoList *policyInfoList = [[PolicyInfoList alloc] init];
+        policyInfoList.delegate = self;
+        [policyInfoList SetPolicyInfo:userName];
+        
+        SetUserInfo *setUserInfoList = [[SetUserInfo alloc] init];
+        setUserInfoList.delegate = self;
+        [setUserInfoList SetUserInfo:userName];
+        //timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(WaitForUserDataToLoad) userInfo:nil repeats:NO];
         
     }
 }
@@ -285,6 +355,19 @@ BOOL bStayLoggedIn = false;
                                          cancelButtonTitle:@"Retry"
                                          otherButtonTitles:@"Exit", nil];
     alert.tag = 7;
+    [alert show];
+    
+}
+
+-(void)GetLoginDataFailed{
+    Globals *tmp = [Globals sharedSingleton];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error retrieving policy data"
+                                                   message: @"We could not retrieve your policy info.  Please contact support."
+                                                  delegate: self
+                                         cancelButtonTitle:@"Retry"
+                                         otherButtonTitles:@"Exit", nil];
+    alert.tag = 8;
     [alert show];
     
 }
