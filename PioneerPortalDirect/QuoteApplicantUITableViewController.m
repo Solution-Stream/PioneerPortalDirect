@@ -599,6 +599,7 @@
             //qd.residencyTypeValue = residencyTypeValue;
             //qd.applicantID = guid;
             qd.driverID = guidD;
+            qd.quoteID = tmp.currentQuoteGuid;
             qd.infoNeeded = @"incomplete";
             
             [currentQuote addQuoteDriverObject:qd];

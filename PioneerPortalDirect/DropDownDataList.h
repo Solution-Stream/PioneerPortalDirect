@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol DropDownDataListProtocol <NSObject>
+
+@required
+-(void) downloadResponse:(NSString *) response;
+
+@end
+
 @interface DropDownDataList : UITableViewController{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -17,8 +25,10 @@
     NSMutableString *occupationName;
     NSMutableString *occupationCode;
     
+    id<DropDownDataListProtocol> _delegate;
     
 }
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) UIAlertView *alert;

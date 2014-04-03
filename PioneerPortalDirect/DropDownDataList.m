@@ -85,9 +85,9 @@
     if([arrCodes count] == 1){
         NSDictionary *occE = arrCodes[0];
         NSString *value = [occE objectForKey:@"Code"];
-        NSString *desc = [occE objectForKey:@"Description"];
+        //NSString *desc = [occE objectForKey:@"Description"];
         if([value isEqualToString:@"error"]){
-            [tmp BroadCastErrorMessage:desc];
+            [self ReturnResponse:@"webServiceError"];
             return;
         }
     }
@@ -110,15 +110,17 @@
     [connection cancel];
     
     if([arrCodes count] > 0){
-        tmp.DropdownListLoaded = @"YES";
+        [self ReturnResponse:@"success"];
         NSLog(@"DropdownData Loaded");
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    Globals *tmp = [Globals sharedSingleton];
-    NSLog(@"DropdownList failed");
-    tmp.connectionFailed = @"true";
+    [self ReturnResponse:@"connectionError"];
+}
+
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(downloadResponse:) withObject:response];
 }
 
 

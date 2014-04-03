@@ -16,7 +16,6 @@
     NSTimer *timer;
     NSTimer *timerRetryConn;
     NSTimer *timerDDLoaded;
-    BOOL connectionPromptOpen;
     
     //---xml parsing---
     NSXMLParser *xmlParser;

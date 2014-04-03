@@ -52,11 +52,7 @@
     [[UIBarButtonItem appearanceWhenContainedIn: [UINavigationController class],nil]
      setTitleTextAttributes:textAttributes
      forState:UIControlStateNormal];
-    
-    //Load dropdown data into Core Data
-    [tmp LoadCoreData];
-
-    
+        
     return YES;
 }
 

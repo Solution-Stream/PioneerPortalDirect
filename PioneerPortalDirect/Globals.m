@@ -714,43 +714,7 @@ static Globals *shared = NULL;
 
 -(void)LoadCoreData{
     DropDownDataList *dropdownList = [[DropDownDataList alloc] init];
-    [dropdownList LoadDropDownDataList];
-//    OccupationList *occupationList = [[OccupationList alloc] init];
-//    [occupationList LoadOccupationList];
-//    
-//    EmploymentStatusList *employeeStatusList = [[EmploymentStatusList alloc] init];
-//    [employeeStatusList LoadEmploymentStatusList];
-//    
-//    AnnualIncomeList *annualIncomeList = [[AnnualIncomeList alloc] init];
-//    [annualIncomeList LoadAnnualIncomeList];
-//    
-//    VehicleTypeList *vehicleTypeList = [[VehicleTypeList alloc] init];
-//    [vehicleTypeList LoadVehicleTypeList];
-//    
-//    AntiLockBrakeList *antiBrakeList = [[AntiLockBrakeList alloc] init];
-//    [antiBrakeList LoadAntiLockBrakeList];
-//    
-//    PassiveRestraintList *passiveRestraintList = [[PassiveRestraintList alloc] init];
-//    [passiveRestraintList LoadPassiveRestraintList];
-//    
-//    DaysWeekList *daysWeekList = [[DaysWeekList alloc] init];
-//    [daysWeekList LoadDaysWeekList];
-//    
-//    PropertyDamageList *propertyDamage = [[PropertyDamageList alloc] init];
-//    [propertyDamage LoadPropertyDamageList];
-//    
-//    UnderInsuredMotoristList *underInsured = [[UnderInsuredMotoristList alloc] init];
-//    [underInsured LoadUnderinsuredMotoristList];
-//    
-//    UninsuredMotoristList *uninsured = [[UninsuredMotoristList alloc] init];
-//    [uninsured LoadUninsuredMotoristList];
-//    
-//    MiniTortList *miniTort = [[MiniTortList alloc] init];
-//    [miniTort LoadMiniTortList];
-//    
-//    PropertyProtectionList *propertyProtection = [[PropertyProtectionList alloc] init];
-//    [propertyProtection LoadPropertyProtectionList];
-    
+    [dropdownList LoadDropDownDataList];    
 }
 
 -(void)LoadPolicyDataForUser:(NSString *)username{

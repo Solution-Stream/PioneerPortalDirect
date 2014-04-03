@@ -19,6 +19,7 @@
 #import "SetUserInfo.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSONKit.h"
+#import "DropDownDataList.h"
 
 @interface LoginTableViewController ()
 
@@ -65,9 +66,7 @@ BOOL bStayLoggedIn = false;
 {
     [super viewDidLoad];
     
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lightHouse640-960.png"]];
-    //UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightHouse640-960.png"]];
-    //[self.view addSubview:backgroundView];
+    [self downloadDropdownData];
     
     [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightHouse320-480.png"]]];
     
@@ -92,10 +91,6 @@ BOOL bStayLoggedIn = false;
     buttonForgotPassword.enabled = NO;
     self.toolbarItems = [ NSArray arrayWithObjects: buttonForgotPassword, flexible, buttonGetQuote, nil ];
     
-    timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
-    
-    //timerRetryConn = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(TestConnection) userInfo:nil repeats:YES];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -110,30 +105,21 @@ BOOL bStayLoggedIn = false;
     
 }
 
--(void)TestConnection{
-    Globals *tmp = [Globals sharedSingleton];
-    if([tmp.connectionFailed isEqualToString:@"true"]){
-        [self ConnectionFailed];
-    }
+-(void)downloadDropdownData{
+    DropDownDataList *dropdownDataList = [[DropDownDataList alloc] init];
+    dropdownDataList.delegate = self;
+    [dropdownDataList LoadDropDownDataList];
 }
 
--(void) WaitForDropdownDataToLoad{
+-(void) downloadResponse:(NSString *) response{
     Globals *tmp = [Globals sharedSingleton];
-    
-    if(connectionAttempts > 15){
-        [self ConnectionFailed];
-        [timerDDLoaded invalidate];
-        timerDDLoaded = nil;
-    }
-    
-    if([tmp.DropdownListLoaded isEqualToString:@"YES"] || [tmp.devMode isEqualToString:@"YES"]){
-    if(timerDDLoaded){
-            [timerDDLoaded invalidate];
-            timerDDLoaded = nil;
-        }
+    if([response isEqualToString:@"success"] || [tmp.devMode isEqualToString:@"YES"]){
         [self EnableButtons];
     }
-    connectionAttempts++;
+    else{
+        [self ConnectionFailed];
+    }
+    
 }
 
 -(void)EnableButtons{
@@ -246,7 +232,7 @@ BOOL bStayLoggedIn = false;
         [self CreateNewKeyChain:userName: passWord];
         
         [tmp LoadPolicyDataForUser:userName];
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(WaitForUserDataToLoad) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(WaitForUserDataToLoad) userInfo:nil repeats:NO];
         
     }
 }
@@ -292,18 +278,15 @@ BOOL bStayLoggedIn = false;
 
 -(void)ConnectionFailed{
     Globals *tmp = [Globals sharedSingleton];
-    if(connectionPromptOpen != YES){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: tmp.connectionErrorTitle
-                                                       message: tmp.connectionErrorMessage
-                                                      delegate: self
-                                             cancelButtonTitle:@"Retry"
-                                             otherButtonTitles:@"Exit", nil];
-        alert.tag = 7;
-        [alert show];
-        connectionPromptOpen = YES;
-    }
-    [tmp LoadCoreData];
-    timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: tmp.connectionErrorTitle
+                                                   message: tmp.connectionErrorMessage
+                                                  delegate: self
+                                         cancelButtonTitle:@"Retry"
+                                         otherButtonTitles:@"Exit", nil];
+    alert.tag = 7;
+    [alert show];
+    
 }
 
 - (IBAction)NavigateToAutoQuote:(id)sender {
@@ -342,12 +325,9 @@ BOOL bStayLoggedIn = false;
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    Globals *tmp = [Globals sharedSingleton];
     if(alertView.tag == 7){
         if(buttonIndex == 0){
-            timerDDLoaded = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(WaitForDropdownDataToLoad) userInfo:nil repeats:YES];
-            connectionPromptOpen = NO;
-            tmp.connectionFailed = @"";
+            [self downloadDropdownData];
         }
         else{
             exit(0);
