@@ -77,7 +77,12 @@
     Globals *tmp = [Globals sharedSingleton];
     tmp.connectionFailed = @"";
     
-    NSDictionary *resultsDictionary = [responseData objectFromJSONData];
+    NSError *error;
+    NSDictionary *resultsDictionary = [NSJSONSerialization
+                                       JSONObjectWithData:responseData //1
+                                       
+                                       options:kNilOptions 
+                                       error:&error];
     
     NSArray *arrCodes = [resultsDictionary objectForKey:@"GetDropdownDataResult"];
     
