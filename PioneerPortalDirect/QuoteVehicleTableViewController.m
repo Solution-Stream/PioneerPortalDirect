@@ -727,10 +727,11 @@ NSMutableString *VINRestraint_Value;
         currentQuote = (Quotes *)info;
     }
     
-    if([txtYear.text isEqualToString:@""] || [txtMake.text isEqualToString:@""] || [txtModel.text isEqualToString:@""] || txtYear.text == nil || txtMake.text == nil || txtModel.text == nil){
+    if([txtYear.text isEqualToString:@""] || [txtVehicleType.text isEqualToString:@""] || [txtMake.text isEqualToString:@""] || [txtModel.text isEqualToString:@""] || txtYear.text == nil || txtVehicleType.text == nil || txtMake.text == nil || txtModel.text == nil){
         txtYear.backgroundColor = tmp.requiredFieldColor;
         txtMake.backgroundColor = tmp.requiredFieldColor;
         txtModel.backgroundColor = tmp.requiredFieldColor;
+        txtVehicleType.backgroundColor = tmp.requiredFieldColor;
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Information Needed"
                                                        message: @"Please enter the make, model, and year of vehicle"
@@ -741,6 +742,12 @@ NSMutableString *VINRestraint_Value;
         [alert show];
         return;
 
+    }
+    else{
+        txtYear.backgroundColor = [UIColor clearColor];
+        txtMake.backgroundColor = [UIColor clearColor];
+        txtModel.backgroundColor = [UIColor clearColor];
+        txtVehicleType.backgroundColor = [UIColor clearColor];
     }
     
     NSString *makeCode = [self GetVehicleMakeCode:txtMake.text];
@@ -755,6 +762,46 @@ NSMutableString *VINRestraint_Value;
         [alert show];
         return;
     }
+    
+    if([txtAntiLockBrakes.text isEqualToString:@""] ||
+       [txtPassiveRestraints.text isEqualToString:@""] ||
+       [txtAntiTheftDevice.text isEqualToString:@""] ||
+       [txtWorkWeek.text isEqualToString:@""] ||
+       [txtVehicleUsage.text isEqualToString:@""] ||
+       [txtAnnualMileage.text isEqualToString:@""] ||
+       [txtMilesToWork.text isEqualToString:@""] ||
+       [txtGaragingZipCode.text isEqualToString:@""] ||
+       [txtVehicleUsage.text isEqualToString:@""] ){
+        
+        txtAntiLockBrakes.backgroundColor = tmp.requiredFieldColor;
+        txtPassiveRestraints.backgroundColor = tmp.requiredFieldColor;
+        txtAntiTheftDevice.backgroundColor = tmp.requiredFieldColor;
+        txtWorkWeek.backgroundColor = tmp.requiredFieldColor;
+        txtVehicleUsage.backgroundColor = tmp.requiredFieldColor;
+        txtAnnualMileage.backgroundColor = tmp.requiredFieldColor;
+        txtMilesToWork.backgroundColor = tmp.requiredFieldColor;
+        txtGaragingZipCode.backgroundColor = tmp.requiredFieldColor;
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Required Information Missing"
+                                                       message: @"The fields in red are required."
+                                                      delegate: self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        alert.tag = 8;
+        [alert show];
+        return;
+    }
+    
+    if([carpool isEqualToString:@""] || carpool == nil){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Car Pool"
+                                                       message: @"Car Pool is required."
+                                                      delegate: self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        alert.tag = 8;
+        [alert show];
+        return;
+    }
+    
     
     if(![tmp.createNewVehicle isEqualToString:@"YES"]){
         //existing quote

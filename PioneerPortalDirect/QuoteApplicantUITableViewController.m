@@ -328,6 +328,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //hides the create driver row if the applicant is in edit mode
     Globals *tmp = [Globals sharedSingleton];
     NSInteger count = 7;
     if(![tmp.currentApplicantID isEqualToString:@""])
@@ -635,6 +636,7 @@
 
 - (void)CancelAddApplicant {
     txtFirstName.text = @"";
+    
     txtLastName.text = @"";
     txtMiddle.text = @"";
     txtDateBirth.text = @"";

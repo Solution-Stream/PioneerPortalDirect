@@ -924,7 +924,7 @@ static Globals *shared = NULL;
         NSInteger qd = app.quoteDriver.count;
         
     
-        if(qa > 0 && qv > 0 && qd > 0 && qc == [NSNumber numberWithInt:1]){
+        if(qa > 0 && qv > 0 && qd > 0 && qc > 0){
             return YES;
         }
         else{

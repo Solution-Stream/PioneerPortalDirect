@@ -359,9 +359,7 @@ BOOL bStayLoggedIn = false;
     
 }
 
--(void)GetLoginDataFailed{
-    Globals *tmp = [Globals sharedSingleton];
-    
+-(void)GetLoginDataFailed{    
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error retrieving policy data"
                                                    message: @"We could not retrieve your policy info.  Please contact support."
                                                   delegate: self

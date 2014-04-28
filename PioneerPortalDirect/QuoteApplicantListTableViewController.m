@@ -289,7 +289,7 @@
         Globals *tmp = [Globals sharedSingleton];
         self.managedObjectContext = tmp.managedObjectContext;
         
-        //delete all objects
+        //delete object from QuoteApplicant entity
         NSFetchRequest *_fetchReq = [[NSFetchRequest alloc] init];
         _fetchReq.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@%@%@",@"applicantID =='", applicantID, @"'", nil]];
         NSError *error;

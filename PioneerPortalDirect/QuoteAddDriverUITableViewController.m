@@ -869,7 +869,7 @@
     if([tmp QuoteReadyForReview:tmp.currentQuoteGuid]){
         [(QuoteUITabBarController *)self.tabBarController EnableReviewButton];
     }
-
+    
     [[self.navigationController popViewControllerAnimated:YES] viewWillAppear:YES];
 }
 
