@@ -28,6 +28,8 @@
 @synthesize txtAnnualPremium,QuoteReviewTableView;
 
 int GetQuoteNumTries;
+NSString *vehiclesInserted = @"";
+NSString *driversInserted = @"";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -129,18 +131,10 @@ int GetQuoteNumTries;
             NSString *_driverNum = [NSString stringWithFormat:@"%d", driverNum];
             
             InsertDriverIntoQuote *insertDriver = [[InsertDriverIntoQuote alloc] init];
+            insertDriver.delegate = self;
             [insertDriver InsertDriverIntoQuote:tmp.currentQuoteGuid firstName:Driver.firstName middle:Driver.middleInitial lastName:Driver.lastName dateBirth:dateBirth gender:Driver.gender maritalStatus:Driver.maritalStatus relationApplicant:Driver.relationApplicantValue dependents:Driver.dependents licenseState:Driver.licenseStateValue licenseNum:Driver.licenseNum occupation:Driver.occupationValue incomeLevel:Driver.incomeLevelValue driverNum:_driverNum];
             
             driverNum++;
-//            NSString *pathDriver = [[NSBundle mainBundle] bundlePath];
-//            NSString *xmlDriverPath = [pathDriver stringByAppendingPathComponent:@"QuoteDriver.xml"];
-//            NSString *xmlDriverString = [NSString stringWithContentsOfFile:xmlDriverPath encoding:NSUTF8StringEncoding error:nil];
-//            
-//            xmlDriverString = [xmlDriverString stringByReplacingOccurrencesOfString:@"<DEPENDENTS></DEPENDENTS>" withString:[NSString stringWithFormat:@"%@%@%@",@"<DEPENDENTS>", _driver.dependents, @"</DEPENDENTS>"]];
-//            xmlDriverString = [xmlDriverString stringByReplacingOccurrencesOfString:@"<MARITAL_STATUS></MARITAL_STATUS>" withString:[NSString stringWithFormat:@"%@%@%@",@"<MARITAL_STATUS>", _driver.maritalStatus, @"</MARITAL_STATUS>"]];
-//            xmlDriverString = [xmlDriverString stringByReplacingOccurrencesOfString:@"<OCCUPATION_CODE></OCCUPATION_CODE>" withString:[NSString stringWithFormat:@"%@%@%@",@"<OCCUPATION_CODE>", _driver.occupation, @"</OCCUPATION_CODE>"]];
-//            
-//            xmlQuoteString = [xmlQuoteString stringByReplacingOccurrencesOfString:@"<DRIVER_PLACEHOLDER/>" withString:[NSString stringWithFormat:@"%@%@", xmlDriverString, @"<DRIVER_PLACEHOLDER/>"]];
             
         }
         
@@ -159,131 +153,90 @@ int GetQuoteNumTries;
             if([vinValue isEqualToString:@""] || vinValue == nil){
                 vinValue = @"0";
             }
-//
-//            //InsertVehicleIntoQuote *insertVehicle = [[InsertVehicleIntoQuote alloc] init];
-//            //[insertVehicle InsertVehicleIntoQuote:vinValue guid:tmp.currentQuoteGuid year:_vehicle.year make:_vehicle.makeValue model:_vehicle.model bodilyInjury:bodilyInjuryValue medicalProv:medicalProviderValue miniTort:miniTortValue personalInjuryProtection:personalInjuryProtectionValue propertyDamage:propertyDamage propertyProtection:propertyProtection uninsuredValue:uninsuredValue underinsuredValue:underinsuredValue];
-//            NSString *path = [[NSBundle mainBundle] bundlePath];
-//            NSString *xmlPath = [path stringByAppendingPathComponent:@"QuoteVehicle.xml"];
-//            NSString *xmlVehicleString = [NSString stringWithContentsOfFile:xmlPath encoding:NSUTF8StringEncoding error:nil];
-//            
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VIN></VIN>" withString:[NSString stringWithFormat:@"%@%@%@",@"<VIN>", vinValue, @"</VIN>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VEH_YEAR></VEH_YEAR>" withString:[NSString stringWithFormat:@"%@%@%@",@"<VEH_YEAR>", _vehicle.year, @"</VEH_YEAR>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VEH_USE></VEH_USE>" withString:[NSString stringWithFormat:@"%@%@%@",@"<VEH_USE>", _vehicle.vehicleUsageValue, @"</VEH_USE>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VEH_TYPE></VEH_TYPE>" withString:[NSString stringWithFormat:@"%@%@%@",@"<VEH_TYPE>", _vehicle.vehicleTypeCode, @"</VEH_TYPE>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VEH_MODELS></VEH_MODELS>" withString:[NSString stringWithFormat:@"%@%@%@",@"<VEH_MODELS>", _vehicle.model, @"</VEH_MODELS>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<VEH_MAKE></VEH_MAKE>" withString:[NSString stringWithFormat:@"%@%@%@%@%@",@"<VEH_MAKE valueDescription=\"",_vehicle.make  ,@"\">", _vehicle.makeValue, @"</VEH_MAKE>"]];
-//            xmlVehicleString = [xmlVehicleString stringByReplacingOccurrencesOfString:@"<MULTI_CAR_DISCOUNT></MULTI_CAR_DISCOUNT>" withString:[NSString stringWithFormat:@"%@%@%@",@"<MULTI_CAR_DISCOUNT>", multiCarValue, @"</MULTI_CAR_DISCOUNT>"]];
-//            
-//            xmlQuoteString = [xmlQuoteString stringByReplacingOccurrencesOfString:@"<VEHICLE_PLACEHOLDER/>" withString:[NSString stringWithFormat:@"%@%@", xmlVehicleString, @"<VEHICLE_PLACEHOLDER/>"]];
             
             InsertVehicleIntoQuote *insertVehicle = [[InsertVehicleIntoQuote alloc] init];
+            insertVehicle.delegate = self;
             [insertVehicle InsertVehicleIntoQuote:vinValue guid:tmp.currentQuoteGuid year:_vehicle.year make:_vehicle.makeValue model:_vehicle.model bodilyInjury:bodilyInjuryValue medicalProv:medicalProviderValue miniTort:miniTortValue personalInjuryProtection:personalInjuryProtectionValue propertyDamage:propertyDamage propertyProtection:propertyProtection uninsuredValue:uninsuredValue underinsuredValue:underinsuredValue vehicleType:_vehicle.vehicleTypeCode vehicleUse:_vehicle.vehicleUsageValue carpool:_vehicle.carpool antiLock:_vehicle.antiLockBrakesValue passiveRestraint:_vehicle.passiveRestraintsValue antiTheft:_vehicle.antiTheftDeviceValue annualMiles:_vehicle.annualMileage milesOneWay:_vehicle.milesToWork daysWeek:_vehicle.workWeekValue multiCar:multiCarValue];
             
             
         }
         
-//        xmlQuoteString = [xmlQuoteString stringByReplacingOccurrencesOfString:@"<DRIVER_PLACEHOLDER/>" withString:@""];
-//        xmlQuoteString = [xmlQuoteString stringByReplacingOccurrencesOfString:@"<VEHICLE_PLACEHOLDER/>" withString:@""];
-//        xmlQuoteString = [xmlQuoteString stringByReplacingOccurrencesOfString:@"/" withString:@"\\/"];
-
-        
     }
     
-    [self GetRate:tmp.currentQuoteGuid];
-
 }
 
-
-
-- (void)GetRate:(NSString *)guid{
+-(void) insertDriverResponse:(NSString *) response{
     Globals *tmp = [Globals sharedSingleton];
-    tmp.annualPremium = @"";
-    
-    timerStartGetRate = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(CheckIfVehiclesDriversAreAdded:) userInfo:guid repeats:YES];
+    driversInserted = response;
+    if(![driversInserted isEqualToString:@""] && ![vehiclesInserted isEqualToString:@""]){
+        [self GetRate:tmp.currentQuoteGuid];
+    }
 }
 
--(void)CheckIfVehiclesDriversAreAdded:(NSTimer*)theTimer{
-    NSString *guid = (NSString*)[theTimer userInfo];
+-(void) insertVehicleResponse:(NSString *) response{
     Globals *tmp = [Globals sharedSingleton];
-    if([tmp.QuoteVehiclesAddedToQuote isEqualToString:@"YES"] && [tmp.QuoteDriversAddedToQuote isEqualToString:@"YES"]){
-        [timerStartGetRate invalidate];
-        timerStartGetRate = nil;
+    vehiclesInserted = response;
+    if(![driversInserted isEqualToString:@""] && ![vehiclesInserted isEqualToString:@""]){
+        [self GetRate:tmp.currentQuoteGuid];
+    }
+}
+
+-(void)GetRate:(NSString *)guid{
+    Globals *tmp = [Globals sharedSingleton];
+    if([driversInserted isEqualToString:@"YES"] && [vehiclesInserted isEqualToString:@"YES"]){
         GetQuoteRate *getQuote = [[GetQuoteRate alloc] init];
-        [getQuote RateQuote:guid];
-        timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(CheckIfRateHasArrived) userInfo:nil repeats:YES];
-    }
-    
-    if([tmp.QuoteVehiclesAddedToQuote isEqualToString:@"FAILED"] || [tmp.QuoteDriversAddedToQuote isEqualToString:@"FAILED"] || [tmp.quoteConnectionFailed isEqualToString:@"YES"])
-    {
-        [tmp HideWaitScreen];
-        [timerStartGetRate invalidate];
-        timerStartGetRate = nil;
-        
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error Getting Quote Rate"
-                                                       message: @"Error getting rate. Please try again later."
-                                                      delegate: self
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil];
-        alert.tag = 7;
-        [alert show];
-        
-    }
-
-}
-
-
--(void)CheckIfRateHasArrived{
-    Globals *tmp = [Globals sharedSingleton];
-
-    if(![tmp.annualPremium isEqualToString:@""])
-    {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * _annualPremium = [f numberFromString:tmp.annualPremium];
-        
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        NSString *groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-        [formatter setGroupingSeparator:groupingSeparator];
-        [formatter setGroupingSize:3];
-        [formatter setAlwaysShowsDecimalSeparator:NO];
-        [formatter setUsesGroupingSeparator:YES];
-        
-        NSString *formattedString = [formatter stringFromNumber:_annualPremium];
-                                     
-        annualPremium = formattedString;
-        [timer invalidate];
-        timer = nil;
-        tmp.annualPremium = @"";
-        tmp.QuoteVehiclesAddedToQuote = @"";
-        tmp.QuoteDriversAddedToQuote = @"";
-        tmp.numQuoteDriversLoaded = 0;
-        tmp.numQuoteVehiclesLoaded = 0;
-        tmp.numberQuoteDrivers = 0;
-        tmp.numberQuoteVehicles = 0;
-        [tmp HideWaitScreen];
-        [QuoteReviewTableView reloadData];
-        [self UpdateQuoteStatus];
+        getQuote.delegate = self;
+        [getQuote RateQuote:tmp.currentQuoteGuid];
     }
     else{
-        GetQuoteNumTries++;
-        if(GetQuoteNumTries > 10){
-            [tmp HideWaitScreen];
-            [timer invalidate];
-            timer = nil;
-            
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error Getting Quote Rate"
-                                                           message: @"Error getting rate. Please try again later."
-                                                          delegate: self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-            alert.tag = 7;
-            [alert show];
-            GetQuoteNumTries = 0;
-
-        }
-        
+        [self ShowFailedMessage];
     }
+}
+
+-(void)ShowFailedMessage{
+    Globals *tmp = [Globals sharedSingleton];
+    [tmp HideWaitScreen];
+    [timerStartGetRate invalidate];
+    timerStartGetRate = nil;
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error Getting Quote Rate"
+                                                   message: @"Error getting rate. Please try again later."
+                                                  delegate: self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+    alert.tag = 7;
+    [alert show];
+}
+
+-(void)GetRateResponse:(NSString *)response{
+    Globals *tmp = [Globals sharedSingleton];
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * _annualPremium = [f numberFromString:response];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
+    [formatter setGroupingSeparator:groupingSeparator];
+    [formatter setGroupingSize:3];
+    [formatter setAlwaysShowsDecimalSeparator:NO];
+    [formatter setUsesGroupingSeparator:YES];
+    
+    NSString *formattedString = [formatter stringFromNumber:_annualPremium];
+    
+    annualPremium = formattedString;
+    [timer invalidate];
+    timer = nil;
+    tmp.annualPremium = @"";
+    tmp.QuoteVehiclesAddedToQuote = @"";
+    tmp.QuoteDriversAddedToQuote = @"";
+    tmp.numQuoteDriversLoaded = 0;
+    tmp.numQuoteVehiclesLoaded = 0;
+    tmp.numberQuoteDrivers = 0;
+    tmp.numberQuoteVehicles = 0;
+    [tmp HideWaitScreen];
+    [QuoteReviewTableView reloadData];
+    [self UpdateQuoteStatus];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

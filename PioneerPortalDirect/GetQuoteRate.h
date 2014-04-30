@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GetRateProtocol
+
+@required
+-(void) GetRateResponse:(NSString *) response;
+
+@end
+
 @interface GetQuoteRate : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -19,6 +26,7 @@
     BOOL elementFound;
 }
 
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

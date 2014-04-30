@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol DropDownDataListProtocol <NSObject>
+@protocol DropDownDataListProtocol 
 
 @required
 -(void) downloadResponse:(NSString *) response;

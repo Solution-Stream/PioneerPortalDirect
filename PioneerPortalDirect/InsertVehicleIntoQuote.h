@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol InsertVehicleintoQuoteProtocol
+
+@required
+-(void) insertVehicleResponse:(NSString *) response;
+
+@end
+
 @interface InsertVehicleIntoQuote : UITableViewController<NSXMLParserDelegate>{
     NSMutableData *webData;
     NSMutableString *soapResults;
@@ -18,7 +25,7 @@
     NSXMLParser *xmlParser;
     BOOL elementFound;
 }
-
+@property (nonatomic,strong) id delegate;
 @property (retain, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

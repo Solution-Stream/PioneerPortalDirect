@@ -68,8 +68,9 @@
     NSString *saveResponse = [resultsDictionary objectForKey:@"RateQuoteResult"];
     
 
-    Globals *tmp = [Globals sharedSingleton];
-    tmp.annualPremium = saveResponse;
+    //Globals *tmp = [Globals sharedSingleton];
+    //tmp.annualPremium = saveResponse;
+    [self ReturnResponse:saveResponse];
     elementFound = FALSE;
     
 }
@@ -78,6 +79,7 @@
     Globals *tmp = [Globals sharedSingleton];
     tmp.connectionFailed = @"true";
     tmp.quoteConnectionFailed = @"YES";
+    [self ReturnResponse:@"FAILED"];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle: tmp.connectionErrorTitle
                                                    message: error.description
                                                   delegate: self
@@ -87,5 +89,8 @@
     
 }
 
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(GetRateResponse:) withObject:response];
+}
 
 @end

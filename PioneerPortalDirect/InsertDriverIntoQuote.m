@@ -82,13 +82,15 @@
         tmp.numQuoteDriversLoaded = numQuoteDriversLoaded + 1;
         NSInteger totalQuotedDriversLoaded = tmp.numQuoteDriversLoaded;
         if(totalQuotedDriversLoaded == totalQuotedDrivers){
-            tmp.QuoteDriversAddedToQuote = @"YES";
+            //tmp.QuoteDriversAddedToQuote = @"YES";
+            [self ReturnResponse:@"YES"];
         }
 //        tmp.vehicleRemoved = saveResponse;
 //        elementFound = FALSE;
     }
     else{
-        tmp.QuoteDriversAddedToQuote = @"FAILED";
+        [self ReturnResponse:@"FAILED"];
+        //tmp.QuoteDriversAddedToQuote = @"FAILED";
     }
 }
 
@@ -96,6 +98,7 @@
     Globals *tmp = [Globals sharedSingleton];
     tmp.connectionFailed = @"true";
     tmp.quoteConnectionFailed = @"YES";
+    [self ReturnResponse:@"FAILED"];
 //    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: tmp.connectionErrorTitle
 //                                                   message: tmp.connectionErrorMessage
 //                                                  delegate: self
@@ -103,6 +106,10 @@
 //                                         otherButtonTitles:nil];
 //    [alert show];
     
+}
+
+-(void)ReturnResponse:(NSString *) response{
+    [self.delegate performSelector:@selector(insertDriverResponse:) withObject:response];
 }
 
 
