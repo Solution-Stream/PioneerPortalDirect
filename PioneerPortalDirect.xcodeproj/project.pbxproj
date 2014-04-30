@@ -117,6 +117,8 @@
 		ECAE447418B29438000025DA /* lightHouse640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447218B29438000025DA /* lightHouse640-960.png */; };
 		ECAE447618B2988D000025DA /* PioneerLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447518B2988D000025DA /* PioneerLogo.gif */; };
 		ECAE447818B2BAFB000025DA /* PioneerTransLogo150px.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE447718B2BAFB000025DA /* PioneerTransLogo150px.png */; };
+		ECF85D3C19114EA600024E12 /* BarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF85D3B19114EA600024E12 /* BarCodeViewController.m */; };
+		ECF85D3E191150E600024E12 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF85D3D191150E600024E12 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +309,9 @@
 		ECAE447218B29438000025DA /* lightHouse640-960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightHouse640-960.png"; sourceTree = "<group>"; };
 		ECAE447518B2988D000025DA /* PioneerLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = PioneerLogo.gif; sourceTree = "<group>"; };
 		ECAE447718B2BAFB000025DA /* PioneerTransLogo150px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PioneerTransLogo150px.png; sourceTree = "<group>"; };
+		ECF85D3A19114EA600024E12 /* BarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeViewController.h; sourceTree = "<group>"; };
+		ECF85D3B19114EA600024E12 /* BarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeViewController.m; sourceTree = "<group>"; };
+		ECF85D3D191150E600024E12 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF85D3E191150E600024E12 /* AVFoundation.framework in Frameworks */,
 				EC1CBF2B18AC34EE00076249 /* CoreGraphics.framework in Frameworks */,
 				EC1CBF2F18AC34EE00076249 /* CoreData.framework in Frameworks */,
 				EC1CBF2D18AC34EE00076249 /* UIKit.framework in Frameworks */,
@@ -358,6 +364,7 @@
 		EC1CBF2718AC34EE00076249 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECF85D3D191150E600024E12 /* AVFoundation.framework */,
 				EC1CBF2818AC34EE00076249 /* Foundation.framework */,
 				EC1CBF2A18AC34EE00076249 /* CoreGraphics.framework */,
 				EC1CBF2C18AC34EE00076249 /* UIKit.framework */,
@@ -405,6 +412,8 @@
 				EC1CC06218AC77FA00076249 /* LoginTableViewController.m */,
 				EC1CC05918AC6B5300076249 /* Model.xcdatamodeld */,
 				EC1CC03518AC5A5100076249 /* PDMain.storyboard */,
+				ECF85D3A19114EA600024E12 /* BarCodeViewController.h */,
+				ECF85D3B19114EA600024E12 /* BarCodeViewController.m */,
 				EC1CBFBF18AC3C9800076249 /* QuoteAddDriverUITableViewController.h */,
 				EC1CBFC018AC3C9800076249 /* QuoteAddDriverUITableViewController.m */,
 				EC1CBFC418AC3C9800076249 /* QuoteApplicantListTableViewController.h */,
@@ -652,6 +661,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = EC1CBF1C18AC34ED00076249;
 			productRefGroup = EC1CBF2618AC34EE00076249 /* Products */;
@@ -731,6 +741,7 @@
 				EC1CC00518AC3C9800076249 /* QuoteVehicleListUITableViewController.m in Sources */,
 				EC1CC04C18AC5D9E00076249 /* DeleteVehicleFromPolicy.m in Sources */,
 				EC1CBFEC18AC3C9800076249 /* PolicyInfoList.m in Sources */,
+				ECF85D3C19114EA600024E12 /* BarCodeViewController.m in Sources */,
 				EC1CBFF918AC3C9800076249 /* QuoteCoveragesUITableViewController.m in Sources */,
 				EC1CC04518AC5BCD00076249 /* KeychainItemWrapper.m in Sources */,
 				EC1CC0AD18AD07B900076249 /* UserInfo.m in Sources */,

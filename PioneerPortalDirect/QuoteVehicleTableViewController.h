@@ -92,5 +92,6 @@
 
 - (IBAction)CheckVIN:(id)sender;
 - (void)CarpoolSliderEditingDidEnd:(NSNotification *)notification;
+- (IBAction)OpenBarCodeReader:(id)sender;
 
 @end

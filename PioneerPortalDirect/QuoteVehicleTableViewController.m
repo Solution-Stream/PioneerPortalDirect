@@ -15,6 +15,7 @@
 #import "DropdownData.h"
 #import "QuoteUITabBarController.h"
 #import "LookupVINValues.h"
+#import "BarCodeViewController.h"
 
 @interface QuoteVehicleTableViewController ()
 
@@ -575,25 +576,12 @@ NSMutableString *VINRestraint_Value;
     }
 }
 
-//- (IBAction)CarpoolYesPressed:(id)sender {
-//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-//    self.CarpoolYesButton.backgroundColor = darkBlueColor;
-//    self.CarpoolNoButton.backgroundColor = [UIColor whiteColor];
-//    [self.CarpoolYesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [self.CarpoolNoButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-//    carpool = @"Y";
-//    CarpoolSelected = YES;
-//}
-//
-//- (IBAction)CarpoolNoPressed:(id)sender {
-//    UIColor *darkBlueColor = [UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
-//    self.CarpoolYesButton.backgroundColor = [UIColor whiteColor];
-//    self.CarpoolNoButton.backgroundColor = darkBlueColor;
-//    [self.CarpoolYesButton setTitleColor:darkBlueColor forState:UIControlStateNormal];
-//    [self.CarpoolNoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    carpool = @"N";
-//    CarpoolSelected = YES;
-//}
+
+- (IBAction)OpenBarCodeReader:(id)sender {
+    BarCodeViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeViewController"];
+    [self.navigationController presentViewController:svc animated:YES completion:nil];
+}
+
 
 -(void)cancelNumberPadMiles{
     [txtMilesToWork resignFirstResponder];
@@ -1187,6 +1175,8 @@ willCacheResponse:(NSCachedURLResponse*)cachedResponse {
     }
     return foundMake;
 }
+
+
 
 
 
