@@ -3459,10 +3459,10 @@
                                                         <action selector="CheckVIN:" destination="8k3-tx-GDG" eventType="touchUpInside" id="oXL-iL-x1i"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFm-v4-zgf">
-                                                    <rect key="frame" x="275" y="8" width="31" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RFm-v4-zgf">
+                                                    <rect key="frame" x="219" y="-18" width="154" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="BC">
+                                                    <state key="normal" image="barcode_small">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -3831,7 +3831,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ija-Ps-Mgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6938" y="-228"/>
+            <point key="canvasLocation" x="7311" y="-252"/>
         </scene>
         <!--Quote Vehicle ListUI Table View Controller - Quote Vehicle List-->
         <scene sceneID="Tht-DJ-Dop">
@@ -4193,13 +4193,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g3-Vb-oJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6503" y="415"/>
+            <point key="canvasLocation" x="6846" y="-252"/>
         </scene>
     </scenes>
     <resources>
         <image name="PSM-logo-150px.png" width="150" height="70"/>
         <image name="PioneerTransLogo150px.png" width="150" height="70"/>
         <image name="SmallBluePlus.png" width="48" height="48"/>
+        <image name="barcode_small" width="40" height="23"/>
         <image name="blueCar.png" width="62" height="48"/>
         <image name="user_real_person.png" width="48" height="48"/>
     </resources>
