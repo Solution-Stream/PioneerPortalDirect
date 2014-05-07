@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "QuoteVehicle.h"
+#import "BarCodeViewController.h"
 
-@interface QuoteVehicleTableViewController : UITableViewController<UIPickerViewDataSource,UIPickerViewDelegate>{
+@interface QuoteVehicleTableViewController : UITableViewController<UIPickerViewDataSource,UIPickerViewDelegate,InsertBarcodeDelegate>{
     NSMutableArray *arrVehicleYears;
     NSMutableArray *arrVehicleType;
     NSMutableArray *arrVehicleTypeCode;

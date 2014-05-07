@@ -37,7 +37,7 @@
     
     tmp.TableViewListFont = [UIFont boldSystemFontOfSize:15.0];
     
-    tmp.devMode = @"NO";
+    tmp.devMode = @"YES";
     
     //navigation bar properties
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(54/255.0) green:(100/255.0) blue:(139/255.0) alpha:1]] ;

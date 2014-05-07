@@ -648,7 +648,7 @@
 				ORGANIZATIONNAME = "Solution-Stream";
 				TargetAttributes = {
 					EC1CBF2418AC34EE00076249 = {
-						DevelopmentTeam = E3JEP5M9JW;
+						DevelopmentTeam = 42G78RMJWH;
 					};
 					EC1CBF4418AC34EE00076249 = {
 						TestTargetID = EC1CBF2418AC34EE00076249;

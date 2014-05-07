@@ -142,6 +142,12 @@ NSMutableString *VINRestraint_Value;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Instantiate the barcode reader delegate
+    BarCodeViewController *bcvc = [[BarCodeViewController alloc] init];
+    bcvc.delegate = self;
+    
+    
     Globals *tmp = [Globals sharedSingleton];
     
     [CarpoolSlider addTarget:self
@@ -563,6 +569,8 @@ NSMutableString *VINRestraint_Value;
 
 }
 
+
+
 - (void)CarpoolSliderEditingDidEnd:(NSNotification *)notification{
     if(CarpoolSlider.value < 5.0f){
         CarpoolSlider.value = 0.0f;
@@ -580,6 +588,19 @@ NSMutableString *VINRestraint_Value;
 - (IBAction)OpenBarCodeReader:(id)sender {
     BarCodeViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeViewController"];
     [self.navigationController presentViewController:svc animated:YES completion:nil];
+}
+
+-(void) insertBarcodeResponse:(NSString *) response
+{
+    // Check for pipe character and remove if one exists
+    NSString *capturedVIN = response;
+    NSString *searchText = @"|";
+    //NSRange *range = [capturedVIN rangeOfString:searchText];
+    if ([capturedVIN rangeOfString:searchText].location == NSNotFound) {
+        capturedVIN = [capturedVIN substringFromIndex:1];
+    }
+    
+    txtVIN.text = capturedVIN;
 }
 
 

@@ -43,7 +43,12 @@
     
     [self loadBeepSound];
     
-       // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+}
+
+-(void) insertBarcodeResponse:(NSString *) response
+{
+    [self.delegate performSelector:@selector(insertBarcodeResponse:) withObject:response];
 }
 
 
