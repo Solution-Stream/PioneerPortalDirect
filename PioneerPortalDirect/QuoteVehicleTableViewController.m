@@ -22,7 +22,7 @@
 @end
 
 @implementation QuoteVehicleTableViewController
-@synthesize txtAnnualMileage,txtAntiLockBrakes,txtAntiTheftDevice,txtCarpool,txtGaragingZipCode,txtMake,txtMilesToWork,txtModel,txtPassiveRestraints,txtSplitCity,txtVehicleType,txtVehicleUsage,txtVIN,txtWorkWeek,txtYear;
+@synthesize txtAnnualMileage,txtAntiLockBrakes,txtAntiTheftDevice,txtCarpool,txtGaragingZipCode,txtMake,txtMilesToWork,txtModel,txtPassiveRestraints,txtSplitCity,txtVehicleType,txtVIN,txtVehicleUsage,txtWorkWeek,txtYear;
 @synthesize quote,currentQuote,activityIndicator,responseData,vehicleYearPicker,vehicleUsagePicker,antiTheftPicker,bodilyInjuryPicker,vehicleTypePicker,antiLockBrakePicker,passiveRestraintPicker,daysOfWeekPicker;
 @synthesize btnCancel,vehicleMakePicker,CarpoolSlider;
 
@@ -546,8 +546,7 @@ NSMutableString *VINRestraint_Value;
             if(vehicle.passiveRestraintsValue != nil) {passiveRestraintCodeValue = [NSMutableString stringWithString:vehicle.passiveRestraintsValue];}else{txtPassiveRestraints.text = @"";}
             if(vehicle.antiTheftDeviceValue != nil) {antiTheftValue = [NSMutableString stringWithString:vehicle.antiTheftDeviceValue];}else{txtAntiTheftDevice.text = @"";}
             if(vehicle.vehicleUsageValue != nil) {vehicleUsageValue = [NSMutableString stringWithString:vehicle.vehicleUsageValue];}else{txtVehicleUsage.text = @"";}
-            if(vehicle.workWeekValue != nil) {workWeekValue = [NSMutableString stringWithString:vehicle.workWeekValue];}else{txtWorkWeek.text = @"";}
-            
+            if(vehicle.workWeekValue != nil) {workWeekValue = [NSMutableString stringWithString:vehicle.workWeekValue];}else{txtWorkWeek.text = @"";}            
             
             if([vehicle.carpool isEqualToString:@"Y"]){
                 //[self CarpoolYesPressed:self];
@@ -558,9 +557,7 @@ NSMutableString *VINRestraint_Value;
                 CarpoolSlider.value = 10.0f;
             }
         }
-
     }
-
 }
 
 - (void)CarpoolSliderEditingDidEnd:(NSNotification *)notification{
@@ -576,12 +573,33 @@ NSMutableString *VINRestraint_Value;
     }
 }
 
+#pragma mark - Barcode Reader
 
 - (IBAction)OpenBarCodeReader:(id)sender {
+    // Instantiate the barcode reader delegate
+//    BarCodeViewController *bcvc = [[BarCodeViewController alloc] init];
+//    bcvc.delegate = self;
     BarCodeViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeViewController"];
     [self.navigationController presentViewController:svc animated:YES completion:nil];
+    svc.delegate = self;
 }
 
+// Implement the BarCodeReaderViewController delegate protocol
+-(void) insertBarcodeResponse:(NSString *) response
+{
+    // Check for pipe character and remove if one exists
+    NSString *capturedVIN = response;
+    NSString *searchText = @"|";
+    // Remove the pipe character, if any
+    if ([capturedVIN rangeOfString:searchText].location == NSNotFound) {
+        capturedVIN = [capturedVIN substringFromIndex:1];
+    }
+    //Set the VIN number to the text field
+    //[_txtVIN setText:capturedVIN];
+    [txtVIN performSelectorOnMainThread:@selector(setText:) withObject:capturedVIN waitUntilDone:NO];
+}
+
+#pragma mark -
 
 -(void)cancelNumberPadMiles{
     [txtMilesToWork resignFirstResponder];

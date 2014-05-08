@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+@protocol InsertBarcodeDelegate <NSObject>
+
+-(void) insertBarcodeResponse:(NSString *) response;
+
+@end
 
 
 @interface BarCodeViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
@@ -18,8 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;
 @property (weak, nonatomic) IBOutlet UILabel *lblPrompt;
 
+@property (nonatomic, strong) id delegate;
 
 
-- (IBAction)startStopReading:(id)sender;
+- (IBAction)stopReading:(id)sender;
 
 @end
