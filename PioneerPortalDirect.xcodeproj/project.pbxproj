@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3821C5191AD6340057593E /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3821C4191AD6340057593E /* beep.mp3 */; };
 		EC1CBF2918AC34EE00076249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2818AC34EE00076249 /* Foundation.framework */; };
 		EC1CBF2B18AC34EE00076249 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2A18AC34EE00076249 /* CoreGraphics.framework */; };
 		EC1CBF2D18AC34EE00076249 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CBF2C18AC34EE00076249 /* UIKit.framework */; };
@@ -132,6 +133,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA3821C4191AD6340057593E /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		EC1CBF2518AC34EE00076249 /* PioneerPortalDirect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PioneerPortalDirect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1CBF2818AC34EE00076249 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC1CBF2A18AC34EE00076249 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -476,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				EC1CBF3218AC34EE00076249 /* PioneerPortalDirect-Info.plist */,
+				AA3821C4191AD6340057593E /* beep.mp3 */,
 				EC1CBF3318AC34EE00076249 /* InfoPlist.strings */,
 				EC1CBF3618AC34EE00076249 /* main.m */,
 				EC1CBF3818AC34EE00076249 /* PioneerPortalDirect-Prefix.pch */,
@@ -703,6 +706,7 @@
 				EC1CBF6018AC381D00076249 /* PDIcon_640x1136.png in Resources */,
 				EC29AFB618BE55F100A0B476 /* PDLaunch_640x960.png in Resources */,
 				EC1CBF6118AC381D00076249 /* PDIcon_320x480.png in Resources */,
+				AA3821C5191AD6340057593E /* beep.mp3 in Resources */,
 				EC29AFB118BE4D9500A0B476 /* PD_Icon_58.png in Resources */,
 				EC1CC06B18AC7A9A00076249 /* SmallBluePlus.jpg in Resources */,
 				EC1CC03618AC5A5100076249 /* PDMain.storyboard in Resources */,

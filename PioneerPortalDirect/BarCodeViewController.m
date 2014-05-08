@@ -15,9 +15,9 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
-- (BOOL) startReading;
-- (void) stopReading;
+- (void) startReading;
 - (void) loadBeepSound;
+-(void) stopReader;
 
 @end
 
@@ -36,12 +36,10 @@
 {
     [super viewDidLoad];
     
-    // Set the flag to not reading
-    _isReading = NO;
-    
     _captureSession = nil;
     
     [self loadBeepSound];
+    [self startReading];
     
     // Do any additional setup after loading the view.
 }
@@ -51,36 +49,15 @@
     [self.delegate performSelector:@selector(insertBarcodeResponse:) withObject:response];
 }
 
-
-- (IBAction)startStopReading:(id)sender {
-    if (!_isReading){
-        if ([self startReading]){
-            [_bbitemStart setTitle:@"Stop"];
-            [_lblStatus setText:@"Scanning for BarCode..."];
-            [_lblPrompt setText:@"|--------------------------------------|"];
-                       
-        }
-    }
-    else{
-        [self stopReading];
-        [_bbitemStart setTitle:@"Start!"];
-        [_lblStatus setText:@"Code reader is not running"];
-        [_lblPrompt setText:@"Tap on Start! to read a VIN Code"];
-    }
-        
-    _isReading = !_isReading;
-    
-}
-
-- (BOOL)startReading {
+- (void)startReading {
     NSError *error;
-    
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     if (!input){
-        NSLog(@"%@", [error localizedDescription]);
-        return NO;
+        // Display alert if there is a camera problem
+        [[[UIAlertView alloc] initWithTitle:@"Camera not found" message:@"There was a problem initializing the camera." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [self stopReader];
     }
     
     _captureSession = [[AVCaptureSession alloc] init];
@@ -100,17 +77,22 @@
     [_viewPreview.layer addSublayer:_videoPreviewLayer];
     
     [_captureSession startRunning];
-    
-    return YES;
 }
 
-- (void) stopReading {
+- (IBAction)stopReading:(id)sender {
+    [self stopReader];
+}
+
+-(void)stopReader
+{
     [_captureSession stopRunning];
     _captureSession = nil;
     
     [_videoPreviewLayer removeFromSuperlayer];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// Implement protocol in AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // Check to see if the array is not nil
     if (metadataObjects != nil && [metadataObjects count] > 0) {
@@ -119,13 +101,17 @@
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeCode39Code]) {
             // The code is a Type 39 code, get the metadata now
             [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
-            _isReading = NO;
+            
+            // Have delegate handle response
+            [self.delegate insertBarcodeResponse:[metadataObj stringValue]];
+            
+            [self performSelectorOnMainThread:@selector(stopReader) withObject:nil waitUntilDone:NO];
+            [_captureSession stopRunning];
             
             if (_audioPlayer) {
                 [_audioPlayer play];
             }
+            [self stopReader];
         }
     }
 }
@@ -145,21 +131,10 @@
     }
 }
 
-
-- (IBAction)scanButtonTapped:(id)sender{
-    NSLog(@"TBD: scan barcode here...");
-}
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-// Prevent autorotation on this view controller
-- (NSUInteger)supportedInterfaceOrientations {
-    return (UIInterfaceOrientationMaskPortrait);
 }
 
 #pragma mark - Navigation

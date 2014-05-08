@@ -26,6 +26,6 @@
 @property (nonatomic, strong) id delegate;
 
 
-- (IBAction)startStopReading:(id)sender;
+- (IBAction)stopReading:(id)sender;
 
 @end
