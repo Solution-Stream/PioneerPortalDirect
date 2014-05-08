@@ -100,8 +100,7 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeCode39Code]) {
             // The code is a Type 39 code, get the metadata now
-            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
+                        
             // Have delegate handle response
             [self.delegate insertBarcodeResponse:[metadataObj stringValue]];
             
