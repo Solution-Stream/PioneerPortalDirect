@@ -22,7 +22,7 @@
 @end
 
 @implementation QuoteVehicleTableViewController
-@synthesize txtAnnualMileage,txtAntiLockBrakes,txtAntiTheftDevice,txtCarpool,txtGaragingZipCode,txtMake,txtMilesToWork,txtModel,txtPassiveRestraints,txtSplitCity,txtVehicleType,txtVehicleUsage,txtVIN,txtWorkWeek,txtYear;
+@synthesize txtAnnualMileage,txtAntiLockBrakes,txtAntiTheftDevice,txtCarpool,txtGaragingZipCode,txtMake,txtMilesToWork,txtModel,txtPassiveRestraints,txtSplitCity,txtVehicleType,txtVIN,txtVehicleUsage,txtWorkWeek,txtYear;
 @synthesize quote,currentQuote,activityIndicator,responseData,vehicleYearPicker,vehicleUsagePicker,antiTheftPicker,bodilyInjuryPicker,vehicleTypePicker,antiLockBrakePicker,passiveRestraintPicker,daysOfWeekPicker;
 @synthesize btnCancel,vehicleMakePicker,CarpoolSlider;
 
@@ -595,7 +595,8 @@ NSMutableString *VINRestraint_Value;
         capturedVIN = [capturedVIN substringFromIndex:1];
     }
     //Set the VIN number to the text field
-    txtVIN.text = capturedVIN;
+    //[_txtVIN setText:capturedVIN];
+    [txtVIN performSelectorOnMainThread:@selector(setText:) withObject:capturedVIN waitUntilDone:NO];
 }
 
 #pragma mark -

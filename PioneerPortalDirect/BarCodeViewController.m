@@ -1,4 +1,4 @@
-//
+ //
 //  BarCodeViewController.m
 //  VinReader
 //
@@ -44,10 +44,10 @@
     // Do any additional setup after loading the view.
 }
 
--(void) insertBarcodeResponse:(NSString *) response
-{
-    [self.delegate performSelector:@selector(insertBarcodeResponse:) withObject:response];
-}
+//-(void) insertBarcodeResponse:(NSString *) response
+//{
+//    [self.delegate performSelector:@selector(insertBarcodeResponse:) withObject:response];
+//}
 
 - (void)startReading {
     NSError *error;
@@ -111,8 +111,10 @@
             if (_audioPlayer) {
                 [_audioPlayer play];
             }
+            [_captureSession stopRunning];
             [self stopReader];
         }
+        
     }
 }
 
